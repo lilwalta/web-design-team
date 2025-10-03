@@ -1,1 +1,10 @@
-
+.mainHeader {
+    text-align: left;
+    font-size: large;
+    color: white;
+    font-weight: 400;
+}
+.logo {
+    position: fixed;
+    left: 5px;
+}

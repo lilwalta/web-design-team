@@ -6,8 +6,8 @@ const path = require("path");
 const publicDir = path.join(__dirname, "..", "public");
 
 const routes = {
-  "/": (req, res) => serveFile("index.html", res),
-  "/about": (req, res) => serveFile("about.html", res)
+  "/": (_, res) => serveFile("index.html", res),
+  "/about": (_, res) => serveFile("about.html", res)
 };
 
 function serveFile(fileName, res) {

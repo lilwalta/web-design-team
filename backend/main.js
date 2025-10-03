@@ -3,6 +3,27 @@ const url = require("url");
 const fs = require("fs");
 const path = require("path");
 
+const db = require('./db');
+
+const posts = db.prepare(`
+  SELECT posts.id, title, content, name AS category, created_at
+  FROM posts
+  LEFT JOIN categories ON posts.category_id = categories.id
+`).all();
+
+console.log(posts);
+
+const techPosts = db.prepare(`
+  SELECT title, content
+  FROM posts
+  WHERE category_id = (SELECT id FROM categories WHERE name = ?)
+`).all('Tech');
+
+console.log(techPosts);
+
+
+
+
 const publicDir = path.join(__dirname, "..", "public");
 
 const routes = {

@@ -7,30 +7,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/x-icon" href="../../Favicon/favicon.ico">
     <script src="script.js" defer></script>
 </head>
 <body>
 <header>
     <div class="container">
         <a href="#" class="brand">
-            <div class="brand-logo"><img src="../../Favicon/[img]" alt="logo">
+            <div class="brand-logo">
+                <img src="../../Favicon/[img]" alt="ThriveWell logo">
             </div>
-            ThriveWell
+            <span>ThriveWell</span>
         </a>
+
         <button class="menu-toggle" aria-label="Toggle navigation">
-            <svg stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
         </button>
-        <nav>
+
+        <nav aria-label="Main navigation">
             <ul>
-                <li><a href="#">Global Scores</a>
-                    <div class="dropdown">
+                <li>
+                    <a href="#">Global Scores</a>
+                    <div class="dropdown" role="menu">
                         <a href="#">Scores by country</a>
                         <a href="#">Scores by goal</a>
                         <a href="#">Data Download</a>
                     </div>
                 </li>
-                <li><a href="#">Methodology</a>
-                    <div class="dropdown">
+                <li>
+                    <a href="#">Methodology</a>
+                    <div class="dropdown" role="menu">
                         <a href="#">Methods Overview</a>
                         <a href="#">Goals</a>
                         <a href="#">Pressure Description</a>
@@ -38,22 +46,25 @@
                         <a href="#">Deep Dive</a>
                     </div>
                 </li>
-                <li><a href="#">OHI+</a>
-                    <div class="dropdown">
+                <li>
+                    <a href="#">OHI+</a>
+                    <div class="dropdown" role="menu">
                         <a href="#">What is OHI+</a>
                         <a href="#">Regional Assessments</a>
                         <a href="#">Conduct an OHI+</a>
                     </div>
                 </li>
-                <li><a href="#">Resources</a>
-                    <div class="dropdown">
+                <li>
+                    <a href="#">Resources</a>
+                    <div class="dropdown" role="menu">
                         <a href="#">Overview</a>
                         <a href="#">Tools</a>
                         <a href="#">Data</a>
                     </div>
                 </li>
-                <li><a href="#">About</a>
-                    <div class="dropdown">
+                <li>
+                    <a href="#">About</a>
+                    <div class="dropdown" role="menu">
                         <a href="#">What is OHI</a>
                         <a href="#">News</a>
                         <a href="#">OHI Fellows</a>
@@ -65,6 +76,7 @@
                 </li>
             </ul>
         </nav>
+
         <div class="actions">
             <a href="#" class="search">Search</a>
             <a href="#" class="cta">Get Involved</a>
@@ -74,31 +86,34 @@
 
 <footer class="footer">
     <div class="footer-container">
-        <div class="footer-column">
+        <section class="footer-column">
             <h3>Getting Started</h3>
             <ul>
                 <li><a href="#">Start Your Journey</a></li>
                 <li><a href="#">Mental Health Tips</a></li>
                 <li><a href="#">Find Support</a></li>
             </ul>
-        </div>
-        <div class="footer-column">
+        </section>
+
+        <section class="footer-column">
             <h3>Resources</h3>
             <ul>
                 <li><a href="#">Articles</a></li>
                 <li><a href="#">Community Forums</a></li>
                 <li><a href="#">Crisis Hotlines</a></li>
             </ul>
-        </div>
-        <div class="footer-column">
+        </section>
+
+        <section class="footer-column">
             <h3>About</h3>
             <ul>
                 <li><a href="#">Our Mission</a></li>
                 <li><a href="#">Team</a></li>
                 <li><a href="#">Events</a></li>
             </ul>
-        </div>
-        <div class="footer-column">
+        </section>
+
+        <section class="footer-column">
             <h3>Connect</h3>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -106,12 +121,13 @@
                 <a href="#"><i class="fab fa-x-twitter"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <form class="newsletter">
+            <form class="newsletter" aria-label="Newsletter sign-up">
                 <input type="email" placeholder="Join our newsletter" required />
                 <button type="submit">Join</button>
             </form>
-        </div>
+        </section>
     </div>
+
     <div class="footer-bottom">
         <p>© 2025 ThriveWell — Promoting Mental Health Awareness</p>
     </div>

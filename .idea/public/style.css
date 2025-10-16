@@ -136,63 +136,99 @@ nav li:hover > .dropdown {
     color: var(--dark-green);
 }
 
-/* --- MOBILE STYLES --- */
 @media (max-width: 900px) {
     .container {
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
     nav {
         width: 100%;
     }
+
     nav ul {
         display: none;
         flex-direction: column;
         width: 100%;
-        background: white;
-        border-top: 1px solid rgba(0,0,0,0.05);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        background: #f5fcf0; /* soft ThriveWell green */
+        border-top: 1px solid rgba(55,128,86,0.15);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        border-radius: 0 0 12px 12px;
         transition: all 0.3s ease;
     }
+
     nav ul.open {
         display: flex;
     }
+
     nav ul li {
         width: 100%;
-        border-bottom: 1px solid rgba(0,0,0,0.04);
+        border-bottom: 1px solid rgba(55,128,86,0.08);
+        overflow: hidden;
     }
+
     nav a {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0.9rem 1.25rem;
+        padding: 1rem 1.25rem;
         width: 100%;
         font-size: 1rem;
+        color: #101b05;
+        font-weight: 600;
+        text-decoration: none;
+        background: transparent;
+        transition: background 0.3s ease, color 0.3s ease;
     }
+
+    nav a:hover {
+        background: #dce9df;
+        color: #378056;
+    }
+
     .dropdown {
         position: static;
-        background: #f9faf9;
+        background: #edf6ee;
         border: none;
         display: none !important;
         flex-direction: column;
-        padding-left: 1.5rem;
+        padding: 0.5rem 1.25rem 0.75rem;
+        border-left: 3px solid #378056;
+        transition: max-height 0.3s ease;
     }
+
     .dropdown.open {
         display: flex !important;
     }
+
     .dropdown a {
         font-size: 0.9rem;
-        padding: 0.5rem 0;
+        padding: 0.4rem 0;
+        color: #2b4730;
+        border-radius: 6px;
     }
+
+    .dropdown a:hover {
+        color: #378056;
+        background: rgba(55,128,86,0.08);
+    }
+
     .menu-toggle {
         display: block;
     }
+
     .actions {
         display: none;
     }
+
     nav ul > li > a::after {
         content: '▾';
         font-size: 0.8rem;
+        transition: transform 0.3s ease;
+    }
+
+    nav ul > li.open > a::after {
+        transform: rotate(180deg);
     }
 }
 .footer {
@@ -336,8 +372,7 @@ html, body {
 .social-icons a:hover .fa-x-twitter { color: #68d7ff; }
 .social-icons a:hover .fa-linkedin-in { color: #146bb6; }
 
-
-/* ====== HERO SECTION ====== */
+/* Below this is custom content so for new css page copy above */
 .hero {
     background: linear-gradient(rgba(16, 27, 5, 0.6), rgba(16, 27, 5, 0.6)),
     url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
@@ -390,7 +425,6 @@ html, body {
     background: rgba(245, 252, 240, 0.2);
 }
 
-/* ====== ABOUT SECTION ====== */
 .about {
     background: #f5fcf0;
     padding: 4rem 2rem;
@@ -430,7 +464,6 @@ html, body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-/* ====== SUPPORT SECTION ====== */
 .support {
     background: #eaf4eb;
     text-align: center;
@@ -519,7 +552,6 @@ html, body {
     background: #5d825a;
 }
 
-/* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;

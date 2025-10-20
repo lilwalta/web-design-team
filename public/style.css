@@ -1,4 +1,3 @@
-
 :root {
     --dark-green: #101b05;
     --light-green: #f5fcf0;
@@ -137,63 +136,99 @@ nav li:hover > .dropdown {
     color: var(--dark-green);
 }
 
-/* --- MOBILE STYLES --- */
 @media (max-width: 900px) {
     .container {
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
     nav {
         width: 100%;
     }
+
     nav ul {
         display: none;
         flex-direction: column;
         width: 100%;
-        background: white;
-        border-top: 1px solid rgba(0,0,0,0.05);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        background: #f5fcf0; /* soft ThriveWell green */
+        border-top: 1px solid rgba(55,128,86,0.15);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        border-radius: 0 0 12px 12px;
         transition: all 0.3s ease;
     }
+
     nav ul.open {
         display: flex;
     }
+
     nav ul li {
         width: 100%;
-        border-bottom: 1px solid rgba(0,0,0,0.04);
+        border-bottom: 1px solid rgba(55,128,86,0.08);
+        overflow: hidden;
     }
+
     nav a {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0.9rem 1.25rem;
+        padding: 1rem 1.25rem;
         width: 100%;
         font-size: 1rem;
+        color: #101b05;
+        font-weight: 600;
+        text-decoration: none;
+        background: transparent;
+        transition: background 0.3s ease, color 0.3s ease;
     }
+
+    nav a:hover {
+        background: #dce9df;
+        color: #378056;
+    }
+
     .dropdown {
         position: static;
-        background: #f9faf9;
+        background: #edf6ee;
         border: none;
         display: none !important;
         flex-direction: column;
-        padding-left: 1.5rem;
+        padding: 0.5rem 1.25rem 0.75rem;
+        border-left: 3px solid #378056;
+        transition: max-height 0.3s ease;
     }
+
     .dropdown.open {
         display: flex !important;
     }
+
     .dropdown a {
         font-size: 0.9rem;
-        padding: 0.5rem 0;
+        padding: 0.4rem 0;
+        color: #2b4730;
+        border-radius: 6px;
     }
+
+    .dropdown a:hover {
+        color: #378056;
+        background: rgba(55,128,86,0.08);
+    }
+
     .menu-toggle {
         display: block;
     }
+
     .actions {
         display: none;
     }
+
     nav ul > li > a::after {
         content: '▾';
         font-size: 0.8rem;
+        transition: transform 0.3s ease;
+    }
+
+    nav ul > li.open > a::after {
+        transform: rotate(180deg);
     }
 }
 .footer {
@@ -336,3 +371,194 @@ html, body {
 .social-icons a:hover .fa-instagram { color: #fb67a9; }
 .social-icons a:hover .fa-x-twitter { color: #68d7ff; }
 .social-icons a:hover .fa-linkedin-in { color: #146bb6; }
+
+/* Below this is custom content so for new css page copy above */
+.hero {
+    background: linear-gradient(rgba(16, 27, 5, 0.6), rgba(16, 27, 5, 0.6)),
+    url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    color: #f5fcf0;
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons .btn {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn.primary {
+    background: #378056;
+    color: #f5fcf0;
+}
+
+.btn.primary:hover {
+    background: #5d825a;
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 2px solid #f5fcf0;
+    color: #f5fcf0;
+}
+
+.btn.secondary:hover {
+    background: rgba(245, 252, 240, 0.2);
+}
+
+.about {
+    background: #f5fcf0;
+    padding: 4rem 2rem;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.about-text h2 {
+    color: #101b05;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    color: #5d825a;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.about-image img {
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.support {
+    background: #eaf4eb;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.support h2 {
+    color: #101b05;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.support p {
+    color: #5d825a;
+    margin-bottom: 2rem;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.support-card {
+    background: #f5fcf0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.support-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* ====== NEWSLETTER SECTION ====== */
+.newsletter-section {
+    background: #37807A;
+    color: #f5fcf0;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-content h2 {
+    margin-bottom: 1rem;
+}
+
+.newsletter-content p {
+    margin-bottom: 2rem;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.newsletter-form input {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 30px;
+    width: 65%;
+    max-width: 300px;
+}
+
+.newsletter-form button {
+    padding: 0.8rem 1.5rem;
+    background: #101b05;
+    color: #f5fcf0;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background: #5d825a;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 100%;
+    }
+}

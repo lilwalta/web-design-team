@@ -9,14 +9,13 @@
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="index.css"/>
     <link rel="icon" type="image/x-icon" href="../../Favicon/favicon.ico">
-    <script src="script.js" defer></script>
 </head>
 <body>
 <header>
     <div class="container">
         <a href="#" class="brand">
             <div class="brand-logo">
-                <img src="../../Favicon/[img]"> <!-- Add alt for image later -->
+                <img src="../../Favicon/"> <!-- Add alt for image later -->
             </div>
             <span>ThriveWell</span>
         </a>
@@ -125,6 +124,68 @@
             </div>
         </div>
     </section>
+    <section class="scheduler">
+        <div class="scheduler-container">
+            <h1>Book a Wellness Session</h1>
+            <p>Select a date and time to connect with a ThriveWell counselor or peer supporter.</p>
+
+            <form id="scheduler-form">
+                <div class="form-row">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Your name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="date">Choose Date</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="time">Choose Time</label>
+                    <select id="time" name="time" required>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="09:30">09:30 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="10:30">10:30 AM</option>
+                        <option value="10:30">11:00 AM</option>
+                        <option value="10:30">11:30 AM</option>
+                        <option value="10:30">12:00 PM</option>
+                        <option value="10:30">12:30 PM</option>
+                        <option value="10:30">1:00 PM</option>
+                        <option value="10:30">1:30 PM</option>
+                        <option value="10:30">2:00 PM</option>
+                        <option value="10:30">2:30 PM</option>
+                        <option value="10:30">3:00 PM</option>
+                        <option value="10:30">3:30 PM</option>
+                        <option value="10:30">4:00 PM</option>
+                        <option value="17:00">4:30 PM</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="type">Session Type</label>
+                    <select id="type" required>
+                        <option value="counseling">Counseling Session</option>
+                        <option value="peer">Peer Support Chat</option>
+                        <option value="group">Group Session</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn primary">Schedule Appointment</button>
+            </form>
+
+            <div id="confirmation" class="confirmation hidden">
+                <h2>Thank You!</h2>
+                <p>Your session has been scheduled. A confirmation email will be sent shortly.</p>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <footer class="footer">
@@ -175,5 +236,7 @@
         <p>© 2025 ThriveWell — Promoting Mental Health Awareness</p>
     </div>
 </footer>
+<script src="script.js"></script>
+<script src="email.js"></script>
 </body>
 </html>

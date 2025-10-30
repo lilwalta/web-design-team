@@ -113,3 +113,154 @@
         padding: 1.5rem;
     }
 }
+/* --- PROFESSIONAL GUIDED LEARNING MODAL --- */
+.guided-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1200;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6); /* neutral dark overlay */
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+.guided-overlay.show {
+    display: flex;
+    opacity: 1;
+}
+
+.guided-content {
+    background: #f5fcf0;
+    color: #101b05;
+    border-radius: 20px;
+    max-width: 800px;
+    width: 95%;
+    padding: 3rem 2.5rem;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: modalFadeIn 0.5s ease forwards;
+}
+
+/* Close Button */
+.guided-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #101b05;
+    transition: color 0.2s ease;
+}
+.guided-close:hover { color: #378056; }
+
+/* Header / Title */
+.guided-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Progress Bar */
+.guided-progress {
+    width: 100%;
+    height: 10px;
+    background: #dce9df;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+#guided-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #37807a;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+}
+
+/* Step Content */
+.guided-step {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #5d825a;
+    min-height: 120px;
+    transition: all 0.4s ease;
+    animation: stepChange 0.4s ease;
+}
+
+/* Controls */
+.guided-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.guided-controls button {
+    background: #37807a;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.guided-controls button:hover:not(:disabled) {
+    background: #5d825a;
+    transform: translateY(-2px);
+}
+.guided-controls button:disabled {
+    background: #a5c1b0;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Full Article Button */
+.full-article-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.8rem;
+    background: #37807a;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.full-article-btn:hover {
+    background: #5d825a;
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes stepChange {
+    0% { opacity: 0; transform: translateX(20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .guided-content { width: 95%; padding: 2rem 1.5rem; border-radius: 16px; }
+    .guided-header h3 { font-size: 1.5rem; }
+    .guided-step { font-size: 1rem; }
+    .guided-controls button { flex: 1; padding: 0.6rem 0.8rem; font-size: 0.95rem; }
+    .full-article-btn { width: 100%; padding: 0.7rem; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .guided-content { max-width: 650px; padding: 2.5rem 2rem; }
+}

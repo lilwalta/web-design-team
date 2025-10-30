@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ThriveWell Forum</title>
-    <link rel="stylesheet" href="disorders.css" />
-    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThriveWell - Disorders</title>
+    <link rel="stylesheet" href="disorders.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
+
+<!-- HEADER / NAVIGATION -->
 <header>
     <div class="container">
         <a href="#" class="brand">
             <div class="brand-logo">
-                <img src="../../Favicon/[img]"> <!-- Add alt for image later -->
+                <img src="../../Favicon/[img]" alt="Logo">
             </div>
             <span>ThriveWell</span>
         </a>
@@ -28,9 +29,7 @@
 
         <nav aria-label="Main navigation">
             <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
+                <li><a href="index.html">Home</a></li>
                 <li>
                     <a href="disorders.html">Disorders</a>
                     <div class="dropdown" role="menu">
@@ -71,14 +70,17 @@
         </div>
     </div>
 </header>
+
+<!-- HERO -->
 <section class="hero info-hero">
     <div class="hero-content">
         <h1>Understanding Mental Health Disorders</h1>
-        <p>Explore trusted information about common mental health challenges — symptoms, causes, and ways to get support.</p><br>
+        <p>Explore trusted information about common mental health challenges — symptoms, causes, and ways to get support.</p>
         <p>Mental health affects how we think, feel, and act. Learning about common disorders helps reduce stigma and makes it easier to support yourself and others.</p>
     </div>
 </section>
 
+<!-- DISORDERS GRID -->
 <section class="disorders-grid">
     <div class="container">
         <h2>Explore Common Disorders</h2>
@@ -86,31 +88,61 @@
             <div class="card">
                 <h3>Anxiety Disorders</h3>
                 <p>Learn about generalized anxiety, panic disorder, phobias, and more.</p>
-                <a href="#">Learn More →</a>
+                <a href="#" class="learn-more">Learn More →</a>
             </div>
 
             <div class="card">
                 <h3>Depression</h3>
                 <p>Understand symptoms, causes, and treatment options for depressive disorders.</p>
-                <a href="#">Learn More →</a>
+                <a href="#" class="learn-more">Learn More →</a>
             </div>
 
             <div class="card">
                 <h3>Eating Disorders</h3>
                 <p>Discover resources about anorexia, bulimia, and binge-eating disorder.</p>
-                <a href="#">Learn More →</a>
+                <a href="#" class="learn-more">Learn More →</a>
             </div>
 
             <div class="card">
                 <h3>PTSD & Trauma</h3>
                 <p>Information about post-traumatic stress disorder and recovery strategies.</p>
-                <a href="#">Learn More →</a>
+                <a href="#" class="learn-more">Learn More →</a>
             </div>
         </div>
     </div>
 </section>
+<!-- Guided Preview Modal -->
+<div id="guided-modal" class="guided-overlay">
+    <div class="guided-content">
+        <span class="guided-close">&times;</span>
 
+        <!-- Header / Title -->
+        <div class="guided-header">
+            <h3 id="guided-title">Disorder Name</h3>
+        </div>
 
+        <!-- Progress Bar -->
+        <div class="guided-progress">
+            <div id="guided-progress-bar"></div>
+        </div>
+
+        <!-- Step Content -->
+        <div class="guided-step" id="guided-text">
+            Step content will appear here.
+        </div>
+
+        <!-- Controls -->
+        <div class="guided-controls">
+            <button id="prev-step" disabled>← Previous</button>
+            <button id="next-step">Next →</button>
+        </div>
+
+        <!-- Full Article / Full Guided Walkthrough -->
+        <a href="#" target="_blank" id="modal-link" class="full-article-btn">Read Full Article →</a>
+    </div>
+</div>
+
+<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-container">
         <section class="footer-column">
@@ -154,7 +186,6 @@
             </form>
         </section>
     </div>
-
     <div class="footer-bottom">
         <p>© 2025 ThriveWell — Promoting Mental Health Awareness</p>
     </div>

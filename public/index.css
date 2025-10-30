@@ -4,6 +4,7 @@
     color: #f5fcf0;
     text-align: center;
     padding: 6rem 2rem;
+    background-attachment: fixed;
 }
 
 .hero-content {

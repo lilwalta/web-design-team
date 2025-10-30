@@ -1,0 +1,115 @@
+/* --- MENTAL HEALTH PAGE --- */
+
+.info-hero {
+    background: linear-gradient(rgba(16, 27, 5, 0.75), rgba(16, 27, 5, 0.75)),
+    url('https://images.unsplash.com/photo-1588776814546-ec7d9b9e1a17?auto=format&fit=crop&w=1600&q=80')
+    center/cover no-repeat;
+    color: var(--light-green);
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.info-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* OVERVIEW */
+.overview {
+    background: var(--light-green);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.overview h2 {
+    color: var(--dark-green);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.overview p {
+    color: var(--mid-green);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* DISORDERS GRID */
+.disorders-grid {
+    background: #eaf4eb;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.disorders-grid h2 {
+    color: var(--dark-green);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.disorders-grid .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.disorders-grid .card {
+    background: var(--light-green);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.disorders-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.disorders-grid .card i {
+    font-size: 2rem;
+    color: var(--accent-green);
+    margin-bottom: 1rem;
+}
+
+.disorders-grid .card h3 {
+    color: var(--dark-green);
+    margin-bottom: 0.5rem;
+}
+
+.disorders-grid .card p {
+    color: var(--mid-green);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.disorders-grid .card a {
+    color: var(--accent-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.disorders-grid .card a:hover {
+    color: var(--teal);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .info-hero h1 {
+        font-size: 2rem;
+    }
+    .disorders-grid {
+        padding: 3rem 1rem;
+    }
+    .disorders-grid .card {
+        padding: 1.5rem;
+    }
+}

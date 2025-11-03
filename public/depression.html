@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ThriveWell</title>
+    <title>Depression | ThriveWell</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="article.css"/>
     <link rel="icon" type="image/x-icon" href="../../Favicon/favicon.ico">
 </head>
 <body>
+
+<!-- ===== HEADER ===== -->
 <header>
     <div class="container">
-        <a href="#" class="brand">
+        <a href="index.html" class="brand">
             <div class="brand-logo">
-                <img src="../../Favicon/"> <!-- Add alt for image later -->
+                <img src="../../Favicon/" alt="ThriveWell logo">
             </div>
             <span>ThriveWell</span>
         </a>
@@ -28,40 +30,11 @@
 
         <nav aria-label="Main navigation">
             <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="disorders.html">Disorders</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Overview</a>
-                        <a href="#">Goals</a>
-                        <a href="#">Deep Dive</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Take Action</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Contacts</a>
-                        <a href="#">Support a Charity</a>
-                        <a href="#">Goals</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Resources</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Local Helplines</a>
-                        <a href="#">National Helplines</a>
-                        <a href="#">Data</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Forum</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Sign Up</a>
-                        <a href="#">Log In</a>
-                    </div>
-                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="disorders.html" class="active">Disorders</a></li>
+                <li><a href="#">Take Action</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Forum</a></li>
             </ul>
         </nav>
 
@@ -72,6 +45,59 @@
     </div>
 </header>
 
+<!-- ===== ARTICLE HERO ===== -->
+<section class="article-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Understanding Depression</h1>
+        <p>Learn about depressive disorders, their impact, and effective ways to find support and recovery.</p>
+    </div>
+</section>
+
+<!-- ===== MAIN ARTICLE ===== -->
+<main class="article-content">
+    <article>
+        <h2>What Is Depression?</h2>
+        <p>Depression is a common and serious mental health condition that affects how a person feels, thinks, and handles daily activities. While occasional sadness is normal, depression involves persistent low mood, loss of interest, and decreased energy that lasts for weeks or months.</p>
+
+        <p>Depressive disorders include major depressive disorder, persistent depressive disorder (dysthymia), and seasonal affective disorder. Each type affects individuals differently but shares core symptoms of emotional, cognitive, and physical impairment.</p>
+
+        <h2>Symptoms and Signs</h2>
+        <p>Recognizing depression is crucial for early intervention. Key symptoms may include:</p>
+        <ul>
+            <li>Persistent sadness, emptiness, or hopelessness</li>
+            <li>Loss of interest or pleasure in activities once enjoyed</li>
+            <li>Changes in appetite, weight, or sleep patterns</li>
+            <li>Fatigue, lack of energy, or slowed movements</li>
+            <li>Difficulty concentrating or making decisions</li>
+            <li>Feelings of guilt or worthlessness</li>
+            <li>Thoughts of self-harm or death (seek help immediately if present)</li>
+        </ul>
+
+        <h2>Causes and Risk Factors</h2>
+        <p>Depression can result from a complex interplay of genetics, brain chemistry, life experiences, and environmental stressors. Trauma, chronic illness, major life changes, or prolonged stress may trigger depressive episodes. A family history of depression can increase susceptibility.</p>
+
+        <h2>Treatment and Coping Strategies</h2>
+        <p>Treatment for depression is highly effective and often involves a combination of therapy, medication, and lifestyle changes. Cognitive Behavioral Therapy (CBT) and other forms of psychotherapy help identify negative thought patterns and build coping skills. Antidepressant medications can support recovery under medical supervision.</p>
+
+        <p>Lifestyle strategies such as exercise, balanced nutrition, adequate sleep, social support, and mindfulness practices can reduce symptoms and improve overall well-being.</p>
+
+        <h2>Seeking Help</h2>
+        <p>If depression affects daily functioning or leads to thoughts of self-harm, it is essential to seek professional help immediately. Early intervention leads to better outcomes. Reach out to licensed therapists, healthcare providers, or support groups for guidance.</p>
+
+        <div class="highlight-box">
+            <h3>Need Immediate Support?</h3>
+            <p>For urgent mental health assistance, you can call or text <strong>988</strong> in the U.S., or find local hotlines <a href="resources.html">here</a>.</p>
+        </div>
+
+        <div class="article-links">
+            <a href="anxiety.html" class="prev-article"><i class="fa-solid fa-arrow-left"></i> Previous: Anxiety Disorders</a>
+            <a href="eating.html" class="next-article">Next: Eating Disorders <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </article>
+</main>
+
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
     <div class="footer-container">
         <section class="footer-column">
@@ -120,7 +146,7 @@
         <p>© 2025 ThriveWell — Promoting Mental Health Awareness</p>
     </div>
 </footer>
+
 <script src="script.js"></script>
-<script src="email.js"></script>
 </body>
 </html>

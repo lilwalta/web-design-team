@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ThriveWell</title>
+    <title>PTSD & Trauma | ThriveWell</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="article.css"/>
     <link rel="icon" type="image/x-icon" href="../../Favicon/favicon.ico">
 </head>
 <body>
+
+<!-- ===== HEADER ===== -->
 <header>
     <div class="container">
-        <a href="#" class="brand">
+        <a href="index.html" class="brand">
             <div class="brand-logo">
-                <img src="../../Favicon/"> <!-- Add alt for image later -->
+                <img src="../../Favicon/" alt="ThriveWell logo">
             </div>
             <span>ThriveWell</span>
         </a>
@@ -28,40 +30,11 @@
 
         <nav aria-label="Main navigation">
             <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="disorders.html">Disorders</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Overview</a>
-                        <a href="#">Goals</a>
-                        <a href="#">Deep Dive</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Take Action</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Contacts</a>
-                        <a href="#">Support a Charity</a>
-                        <a href="#">Goals</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Resources</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Local Helplines</a>
-                        <a href="#">National Helplines</a>
-                        <a href="#">Data</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Forum</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Sign Up</a>
-                        <a href="#">Log In</a>
-                    </div>
-                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="disorders.html">Disorders</a></li>
+                <li><a href="#">Take Action</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Forum</a></li>
             </ul>
         </nav>
 
@@ -72,6 +45,64 @@
     </div>
 </header>
 
+<!-- ===== ARTICLE HERO ===== -->
+<section class="article-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>PTSD & Trauma</h1>
+        <p>Learn about post-traumatic stress disorder, its symptoms, effects, and strategies for recovery and resilience.</p>
+    </div>
+</section>
+
+<!-- ===== MAIN ARTICLE ===== -->
+<main class="article-content">
+    <article>
+        <h2>What is PTSD?</h2>
+        <p>Post-Traumatic Stress Disorder (PTSD) is a mental health condition triggered by experiencing or witnessing a traumatic event. Trauma can include accidents, natural disasters, abuse, war, or other life-threatening situations. PTSD can significantly impact daily functioning, relationships, and emotional well-being.</p>
+
+        <h2>Symptoms and Signs</h2>
+        <p>PTSD symptoms are often grouped into four categories:</p>
+        <ul>
+            <li><strong>Intrusive Memories:</strong> Flashbacks, nightmares, and unwanted thoughts about the traumatic event.</li>
+            <li><strong>Avoidance:</strong> Avoiding places, people, or activities that remind you of the trauma.</li>
+            <li><strong>Negative Mood & Cognition:</strong> Persistent fear, guilt, shame, numbness, or negative beliefs about oneself or others.</li>
+            <li><strong>Altered Arousal & Reactivity:</strong> Hypervigilance, irritability, sleep difficulties, or difficulty concentrating.</li>
+        </ul>
+
+        <h2>Causes and Risk Factors</h2>
+        <p>PTSD can develop after any traumatic event. Not everyone exposed to trauma develops PTSD, and risk factors include:</p>
+        <ul>
+            <li>Severity, duration, and proximity to the traumatic event</li>
+            <li>Personal or family history of mental health disorders</li>
+            <li>Lack of social support following trauma</li>
+            <li>Ongoing stress or subsequent traumatic events</li>
+        </ul>
+
+        <h2>Treatment and Coping Strategies</h2>
+        <p>Recovery from PTSD is possible with proper care. Treatment may include:</p>
+        <ul>
+            <li><strong>Therapy:</strong> Cognitive Processing Therapy (CPT), Eye Movement Desensitization and Reprocessing (EMDR), or exposure therapy.</li>
+            <li><strong>Medication:</strong> Antidepressants or anti-anxiety medications may help manage symptoms.</li>
+            <li><strong>Self-care & Lifestyle:</strong> Mindfulness, exercise, adequate sleep, and stress reduction techniques.</li>
+            <li><strong>Support Networks:</strong> Family, friends, and peer support groups provide crucial emotional backing.</li>
+        </ul>
+
+        <h2>Seeking Help</h2>
+        <p>If you or someone you know may be experiencing PTSD, seek professional help. Early intervention improves recovery outcomes. Licensed therapists, support groups, and crisis services are available.</p>
+
+        <div class="highlight-box">
+            <h3>Immediate Support</h3>
+            <p>Contact the National Center for PTSD at <strong>1-802-296-6300</strong> or visit <a href="https://www.ptsd.va.gov/">www.ptsd.va.gov</a> for resources.</p>
+        </div>
+
+        <div class="article-links">
+            <a href="eating-disorders.html" class="prev-article"><i class="fa-solid fa-arrow-left"></i> Previous: Eating Disorders</a>
+            <a href="index.html" class="next-article">Back to Home <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </article>
+</main>
+
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
     <div class="footer-container">
         <section class="footer-column">
@@ -120,7 +151,7 @@
         <p>© 2025 ThriveWell — Promoting Mental Health Awareness</p>
     </div>
 </footer>
+
 <script src="script.js"></script>
-<script src="email.js"></script>
 </body>
 </html>

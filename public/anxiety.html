@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ThriveWell</title>
+    <title>Anxiety Disorders | ThriveWell</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="article.css"/>
     <link rel="icon" type="image/x-icon" href="../../Favicon/favicon.ico">
 </head>
 <body>
+
+<!-- ===== HEADER ===== -->
 <header>
     <div class="container">
-        <a href="#" class="brand">
+        <a href="index.html" class="brand">
             <div class="brand-logo">
-                <img src="../../Favicon/"> <!-- Add alt for image later -->
+                <img src="../../Favicon/" alt="ThriveWell logo">
             </div>
             <span>ThriveWell</span>
         </a>
@@ -28,40 +30,11 @@
 
         <nav aria-label="Main navigation">
             <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="disorders.html">Disorders</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Overview</a>
-                        <a href="#">Goals</a>
-                        <a href="#">Deep Dive</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Take Action</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Contacts</a>
-                        <a href="#">Support a Charity</a>
-                        <a href="#">Goals</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Resources</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Local Helplines</a>
-                        <a href="#">National Helplines</a>
-                        <a href="#">Data</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Forum</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Sign Up</a>
-                        <a href="#">Log In</a>
-                    </div>
-                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="disorders.html" class="active">Disorders</a></li>
+                <li><a href="#">Take Action</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Forum</a></li>
             </ul>
         </nav>
 
@@ -72,6 +45,57 @@
     </div>
 </header>
 
+<!-- ===== ARTICLE HERO ===== -->
+<section class="article-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Understanding Anxiety Disorders</h1>
+        <p>When everyday worries become overwhelming, it’s important to recognize, understand, and manage anxiety effectively.</p>
+    </div>
+</section>
+
+<!-- ===== MAIN ARTICLE ===== -->
+<main class="article-content">
+    <article>
+        <h2>What Are Anxiety Disorders?</h2>
+        <p>Anxiety disorders are among the most common mental health conditions, affecting millions worldwide. While occasional anxiety is a normal reaction to stress, anxiety disorders cause persistent fear or worry that can interfere with daily life. These feelings often arise without clear triggers and can persist long after a stressful event has passed.</p>
+
+        <p>Common types of anxiety disorders include generalized anxiety disorder (GAD), panic disorder, social anxiety disorder, phobias, and separation anxiety. Each type can manifest differently but often shares the core feature of excessive, uncontrollable fear or apprehension.</p>
+
+        <h2>Symptoms and Signs</h2>
+        <p>Symptoms vary from person to person, but they typically include physical sensations, emotional distress, and behavioral changes. Recognizing these signs is the first step toward effective management:</p>
+        <ul>
+            <li>Excessive and ongoing worry or fear</li>
+            <li>Restlessness, irritability, or feeling on edge</li>
+            <li>Racing thoughts and difficulty concentrating</li>
+            <li>Sleep disturbances or fatigue</li>
+            <li>Physical symptoms like rapid heartbeat, sweating, or trembling</li>
+        </ul>
+
+        <h2>Causes and Risk Factors</h2>
+        <p>Anxiety can develop from a combination of biological, environmental, and psychological factors. Genetics may increase vulnerability, while life experiences such as trauma, chronic stress, or major transitions can trigger or worsen symptoms. Brain chemistry and an overactive “fight or flight” response also play important roles.</p>
+
+        <h2>Coping Strategies and Treatments</h2>
+        <p>The good news is that anxiety disorders are highly treatable. Therapy is often the first line of care, particularly Cognitive Behavioral Therapy (CBT), which helps people identify and challenge negative thought patterns. Medication, such as antidepressants or anti-anxiety drugs, can also be helpful under medical supervision.</p>
+
+        <p>Beyond clinical treatment, lifestyle adjustments make a powerful impact. Regular physical activity, mindfulness meditation, adequate sleep, and balanced nutrition can significantly reduce symptoms. Building a strong support network of friends, family, or peers fosters emotional stability and reduces isolation.</p>
+
+        <h2>When to Seek Help</h2>
+        <p>If anxiety begins to interfere with work, school, or relationships, it’s important to reach out for help. Early intervention can prevent symptoms from worsening and make treatment more effective. Talking to a licensed therapist, counselor, or healthcare provider is a courageous and essential step toward recovery.</p>
+
+        <div class="highlight-box">
+            <h3>Need Immediate Support?</h3>
+            <p>If you ever feel overwhelmed, you’re not alone. You can call or text <strong>988</strong> in the U.S. to reach the Suicide and Crisis Lifeline, or find local mental health hotlines <a href="resources.html">here</a>.</p>
+        </div>
+
+        <div class="article-links">
+            <a href="depression.html" class="prev-article"><i class="fa-solid fa-arrow-left"></i> Previous: Depression</a>
+            <a href="ptsd.html" class="next-article">Next: PTSD & Trauma <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </article>
+</main>
+
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
     <div class="footer-container">
         <section class="footer-column">
@@ -120,7 +144,7 @@
         <p>© 2025 ThriveWell — Promoting Mental Health Awareness</p>
     </div>
 </footer>
+
 <script src="script.js"></script>
-<script src="email.js"></script>
 </body>
 </html>

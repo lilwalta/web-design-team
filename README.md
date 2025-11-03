@@ -17,3 +17,4 @@ Disorders page is just some quick cards with a modal preview then full articles 
 Take action will be a things you can do, charities and finally goals/motives of the website<br>
 A resources page will have some contact info using a database to find your area to find local helplines then the national helplines will be on there. The data will show graphs on things like mental health in certain areas then what are money will go to/has gone too.<br>
 The forum will be a signup/login page then the forum (will probably be hard to setup this will be a 3 person thing during a meeting)<br>
+Final thing I want to work on together is making sure parts of the website are actually relevant to mental health like color scheme, info, footer, etc.<br>

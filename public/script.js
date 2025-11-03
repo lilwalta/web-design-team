@@ -145,3 +145,12 @@ guidedClose.addEventListener('click', () => guidedOverlay.classList.remove('show
 window.addEventListener('click', e => {
     if(e.target === guidedOverlay) guidedOverlay.classList.remove('show');
 });
+
+document.getElementById('reveal-news').addEventListener('click', () => {
+    const extraNews = document.querySelector('.additional-news');
+    extraNews.classList.toggle('hidden');
+
+    const btn = document.getElementById('reveal-news');
+    btn.textContent = extraNews.classList.contains('hidden') ? 'Reveal More' : 'Show Less';
+});
+

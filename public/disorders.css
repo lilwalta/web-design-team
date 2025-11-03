@@ -1,4 +1,3 @@
-/* --- MENTAL HEALTH PAGE --- */
 
 .info-hero {
     background: linear-gradient(rgba(16, 27, 5, 0.75), rgba(16, 27, 5, 0.75)),
@@ -21,7 +20,6 @@
     line-height: 1.6;
 }
 
-/* OVERVIEW */
 .overview {
     background: var(--light-green);
     text-align: center;
@@ -41,7 +39,6 @@
     line-height: 1.7;
 }
 
-/* DISORDERS GRID */
 .disorders-grid {
     background: #eaf4eb;
     padding: 4rem 2rem;
@@ -101,7 +98,6 @@
     color: var(--teal);
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .info-hero h1 {
         font-size: 2rem;
@@ -113,7 +109,6 @@
         padding: 1.5rem;
     }
 }
-/* --- PROFESSIONAL GUIDED LEARNING MODAL --- */
 .guided-overlay {
     display: none;
     position: fixed;
@@ -151,7 +146,6 @@
     animation: modalFadeIn 0.5s ease forwards;
 }
 
-/* Close Button */
 .guided-close {
     position: absolute;
     top: 1rem;
@@ -163,14 +157,12 @@
 }
 .guided-close:hover { color: #378056; }
 
-/* Header / Title */
 .guided-header h3 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
-/* Progress Bar */
 .guided-progress {
     width: 100%;
     height: 10px;
@@ -187,7 +179,6 @@
     transition: width 0.4s ease;
 }
 
-/* Step Content */
 .guided-step {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -197,7 +188,6 @@
     animation: stepChange 0.4s ease;
 }
 
-/* Controls */
 .guided-controls {
     display: flex;
     justify-content: space-between;
@@ -225,7 +215,6 @@
     opacity: 0.7;
 }
 
-/* Full Article Button */
 .full-article-btn {
     display: inline-block;
     margin-top: 1.5rem;
@@ -243,7 +232,6 @@
     transform: translateY(-2px);
 }
 
-/* Animations */
 @keyframes modalFadeIn {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -253,7 +241,6 @@
     100% { opacity: 1; transform: translateX(0); }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .guided-content { width: 95%; padding: 2rem 1.5rem; border-radius: 16px; }
     .guided-header h3 { font-size: 1.5rem; }

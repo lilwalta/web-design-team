@@ -6,18 +6,18 @@
     <title>Eating Disorders | ThriveWell</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="article.css"/>
-    <link rel="icon" type="image/x-icon" href="../../Favicon/favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="stylesheet" href="../../css/article.css"/>
+    <link rel="icon" type="image/x-icon" href="../../../Favicon/favicon.ico">
+    <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
     <div class="container">
-        <a href="index.html" class="brand">
+        <a href="#" class="brand">
             <div class="brand-logo">
-                <img src="../../Favicon/" alt="ThriveWell logo">
+                <img src="../../../Favicon/" alt="ThriveWell Logo">
             </div>
             <span>ThriveWell</span>
         </a>
@@ -30,11 +30,38 @@
 
         <nav aria-label="Main navigation">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="disorders.html" class="active">Disorders</a></li>
-                <li><a href="#">Take Action</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">Forum</a></li>
+                <li><a href="../../">Home</a></li>
+                <li>
+                    <a href="../">Disorders</a>
+                    <div class="dropdown" role="menu">
+                        <a href="#">Overview</a>
+                        <a href="#">Goals</a>
+                        <a href="#">Deep Dive</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="../../action/">Take Action</a>
+                    <div class="dropdown" role="menu">
+                        <a href="#">Contacts</a>
+                        <a href="#">Support a Charity</a>
+                        <a href="#">Goals</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="../../resources/">Resources</a>
+                    <div class="dropdown" role="menu">
+                        <a href="#">Local Helplines</a>
+                        <a href="#">National Helplines</a>
+                        <a href="#">Data</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Forum</a>
+                    <div class="dropdown" role="menu">
+                        <a href="#">Sign Up</a>
+                        <a href="#">Log In</a>
+                    </div>
+                </li>
             </ul>
         </nav>
 
@@ -45,7 +72,6 @@
     </div>
 </header>
 
-<!-- ===== ARTICLE HERO ===== -->
 <section class="article-hero">
     <div class="overlay"></div>
     <div class="hero-content">
@@ -54,14 +80,13 @@
     </div>
 </section>
 
-<!-- ===== MAIN ARTICLE ===== -->
 <main class="article-content">
     <article>
         <h2>What Are Eating Disorders?</h2>
         <p>Eating disorders are serious mental health conditions characterized by unhealthy relationships with food, body image, and weight. They affect individuals physically, mentally, and socially. Common types include:</p>
         <ul>
             <li><strong>Anorexia Nervosa:</strong> Severe restriction of food intake leading to dangerously low body weight.</li>
-            <li><strong>Bulimia Nervosa:</strong> Cycles of binge eating followed by purging or compensatory behaviors.</li>
+            <li><strong>Bulimia Nervosa:</strong> Cycles of binge-eating followed by purging or compensatory behaviors.</li>
             <li><strong>Binge-Eating Disorder:</strong> Recurrent episodes of eating large amounts of food without purging, often accompanied by guilt or distress.</li>
         </ul>
 
@@ -69,7 +94,7 @@
         <p>Eating disorders manifest in both physical and emotional symptoms. Some signs may include:</p>
         <ul>
             <li>Extreme preoccupation with weight, calories, and body shape</li>
-            <li>Severe restriction, bingeing, or purging behaviors</li>
+            <li>Severe restriction, binging, or purging behaviors</li>
             <li>Frequent dieting or avoidance of certain foods</li>
             <li>Changes in mood, irritability, or social withdrawal</li>
             <li>Physical changes such as fatigue, dizziness, or gastrointestinal issues</li>
@@ -92,17 +117,16 @@
 
         <div class="highlight-box">
             <h3>Need Immediate Support?</h3>
-            <p>Contact the National Eating Disorders Association helpline at <strong>1-800-931-2237</strong>, or explore local resources <a href="resources.html">here</a>.</p>
+            <p>Contact the National Eating Disorders Association helpline at <strong>1-800-931-2237</strong>, or explore local resources <a href="../../resources/">here</a>.</p>
         </div>
 
         <div class="article-links">
-            <a href="depression.html" class="prev-article"><i class="fa-solid fa-arrow-left"></i> Previous: Depression</a>
-            <a href="ptsd.html" class="next-article">Next: PTSD & Trauma <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="../depression/" class="prev-article"><i class="fa-solid fa-arrow-left"></i> Previous: Depression</a>
+            <a href="../ptsd/" class="next-article">Next: PTSD & Trauma <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </article>
 </main>
 
-<!-- ===== FOOTER ===== -->
 <footer class="footer">
     <div class="footer-container">
         <section class="footer-column">
@@ -141,7 +165,7 @@
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <form class="newsletter" aria-label="Newsletter sign-up">
-                <input type="email" placeholder="Join our newsletter" required />
+                <input aria-label="email" type="email" placeholder="Join our newsletter" required />
                 <button type="submit">Join</button>
             </form>
         </section>
@@ -152,6 +176,6 @@
     </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="../../js/script.js"></script>
 </body>
 </html>

@@ -150,7 +150,7 @@ nav li:hover > .dropdown {
         display: none;
         flex-direction: column;
         width: 100%;
-        background: #f5fcf0; /* soft ThriveWell green */
+        background: #f5fcf0;
         border-top: 1px solid rgba(55,128,86,0.15);
         box-shadow: 0 6px 16px rgba(0,0,0,0.08);
         border-radius: 0 0 12px 12px;
@@ -158,7 +158,7 @@ nav li:hover > .dropdown {
     }
 
     nav ul.open {
-        display: flex;
+        display: flex !important;
     }
 
     nav ul li {

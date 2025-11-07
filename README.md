@@ -13,9 +13,7 @@ Another thing: BPA Regionals is December 13th and we have to submit website befo
 * Finally, our color pallete may need to change but since I added all colors as root in CSS that is an easy fix. <br>
 
 FINAL LAYOUT:
-Index is just a home page, tell me if you want to remove like the appointment scheduler or something then we need to add a news section on recent mental health charities, events, and so on.<br>
-Disorders page is just some quick cards with a modal preview then full articles written on disorders<br>
-Take action will be a things you can do, charities and finally goals/motives of the website<br>
-A resources page will have some contact info using a database to find your area to find local helplines then the national helplines will be on there. The data will show graphs on things like mental health in certain areas then what are money will go to/has gone too.<br>
+Take action will be a things you can do, charities and finally goals/motives of the website<br><br>
+A resources page will have some contact info using a database to find your area to find local helplines then the national helplines will be on there. The data will show graphs on things like mental health in certain areas then what are money will go to/has gone too. this will be added onto with animations, interactive charts, and geolocation<br><br>
 The forum will be a signup/login page then the forum (will probably be hard to setup this will be a 3 person thing during a meeting)<br>
 Final thing I want to work on together is making sure parts of the website are actually relevant to mental health like color scheme, info, footer, etc.<br>

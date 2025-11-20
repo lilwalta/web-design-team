@@ -6,9 +6,9 @@
     <title>ThriveWell</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/index.css"/>
-    <link rel="icon" type="image/x-icon" href="../Favicon/favicon.ico">
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/news.css"/>
+    <link rel="icon" type="image/x-icon" href="../../Favicon/favicon.ico">
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
@@ -38,7 +38,7 @@
     <div class="container">
         <a href="#" class="brand">
             <div class="brand-logo">
-                <img src="../Favicon/favicon-32x32.png" alt="ThriveWell Logo">
+                <img src="../../Favicon/" alt="ThriveWell Logo">
             </div>
             <span>ThriveWell</span>
         </a>
@@ -94,114 +94,74 @@
         </div>
     </div>
 </header>
-<main>
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1>Supporting Mental Health, Empowering Wellness</h1>
-            <p>ThriveWell is dedicated to promoting mental health awareness and connecting individuals with the support and resources they need to thrive.</p>
-            <div class="hero-buttons">
-                <a href="#support" class="btn primary">Find Help</a>
-                <a href="#about" class="btn secondary">Learn More</a>
-            </div>
-        </div>
-    </section>
+<section class="news-hero">
+    <div class="news-hero-overlay">
+        <h1>News & Events</h1>
+        <p>Stay informed with the latest updates in mental health, community support, and wellness initiatives.</p>
+    </div>
+</section>
 
-    <section id="about" class="about">
-        <div class="about-container">
-            <div class="about-text">
-                <h2>About ThriveWell</h2>
-                <p>At ThriveWell, we believe that mental health is just as vital as physical health. Our mission is to help individuals understand, manage, and embrace their mental well-being through education, resources, and community support.</p>
-                <p>We aim to de-stigmatize mental health challenges and empower everyone to seek the help they deserve — because no one should face their struggles alone. We are currently operating as a charitable initiative and working toward official nonprofit status</p>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1527236438218-d82077ae1f85?auto=format&fit=crop&w=800&q=80" alt="Calm forest landscape">
-            </div>
-        </div>
-    </section>
-    <div class="section-divider">
-        <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path fill="#eaf4eb" d="M0,32L80,37.3C160,43,320,53,480,69.3C640,85,800,107,960,106.7C1120,107,1280,85,1360,74.7L1440,64V0H0Z"></path>
-        </svg>
+<section class="news-list-container">
+    <div class="news-item">
+        <a href="annual-mental-health-walk-returns"><h2 class="news-headline">Annual “Step Forward for Mental Health” Walk Returns This May</h2></a>
+        <p class="news-date">Fri, May 12, 2025</p>
+        <p class="news-summary">
+            Join hundreds of advocates and families as we walk to raise awareness and support for those
+            experiencing mental health challenges in our community.
+        </p>
+        <a href="annual-mental-health-walk-returns" class="news-readmore">Read More...</a>
     </div>
 
-    <section class="news">
-        <section class="news-section-header">
-            <div class="news-header-container">
-                <div class="news-heading-block">
-                    <span class="news-heading-line"></span>
-                    <h2 class="news-title">News & Events</h2>
-                </div>
+    <div class="news-item">
+        <a href="reduce-cost-therapy-program"><h2 class="news-headline">New Reduced-Cost Therapy Program Launches</h2></a>
+        <p class="news-date">Tue, Apr 22, 2025</p>
+        <p class="news-summary">
+            A new initiative now provides affordable therapy sessions for individuals and families facing financial
+            barriers to mental health care.
+        </p>
+        <a href="reduce-cost-therapy-program" class="news-readmore">Read More...</a>
+    </div>
 
-                <a href="news/index.html" class="news-view-more">View All News</a>
-            </div>
-        </section>
+    <div class="news-item">
+        <a href="free-community-education-night"><h2 class="news-headline">Free Community Education Night</h2></a>
+        <p class="news-date">Wed, Mar 19, 2025</p>
+        <p class="news-summary">
+            Mental health experts host an evening focused on recognizing anxiety, depression, and ways to support
+            loved ones struggling with emotional well-being.
+        </p>
+        <a href="free-community-education-night" class="news-readmore">Read More...</a>
+    </div>
+    <div class="news-item">
+        <a href="annual-mental-health-walk-returns"><h2 class="news-headline">Annual “Step Forward for Mental Health” Walk Returns This May</h2></a>
+        <p class="news-date">Fri, May 12, 2025</p>
+        <p class="news-summary">
+            Join hundreds of advocates and families as we walk to raise awareness and support for those
+            experiencing mental health challenges in our community.
+        </p>
+        <a href="annual-mental-health-walk-returns" class="news-readmore">Read More...</a>
+    </div>
 
-        <div class="news-grid">
+    <div class="news-item">
+        <a href="reduce-cost-therapy-program"><h2 class="news-headline">New Reduced-Cost Therapy Program Launches</h2></a>
+        <p class="news-date">Tue, Apr 22, 2025</p>
+        <p class="news-summary">
+            A new initiative now provides affordable therapy sessions for individuals and families facing financial
+            barriers to mental health care.
+        </p>
+        <a href="reduce-cost-therapy-program" class="news-readmore">Read More...</a>
+    </div>
 
-            <div class="news-card">
-                <div class="news-image">
-                    <img src="img/mental-health-walk.jpg" alt="">
-                    <div class="overlay"></div>
-                    <button class="read-more">Read More</button>
-                </div>
+    <div class="news-item">
+        <a href="free-community-education-night"><h2 class="news-headline">Free Community Education Night</h2></a>
+        <p class="news-date">Wed, Mar 19, 2025</p>
+        <p class="news-summary">
+            Mental health experts host an evening focused on recognizing anxiety, depression, and ways to support
+            loved ones struggling with emotional well-being.
+        </p>
+        <a href="free-community-education-night" class="news-readmore">Read More...</a>
+    </div>
 
-                <div class="news-content">
-                    <h3>Community Mental Health Walk</h3>
-                    <p>Join us for a 5K walk to raise awareness and support mental wellness programs.</p>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="news-image">
-                    <img src="img/therapy-program.jpg" alt="">
-                    <div class="overlay"></div>
-                    <button class="read-more">Read More</button>
-                </div>
-
-                <div class="news-content">
-                    <h3>Community Mental Health Walk</h3>
-                    <p>Join us for a 5K walk to raise awareness and support mental wellness programs.</p>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="news-image">
-                    <img src="img/mental-health-education.jpg" alt="">
-                    <div class="overlay"></div>
-                    <button class="read-more">Read More</button>
-                </div>
-
-                <div class="news-content">
-                    <h3>Community Mental Health Walk</h3>
-                    <p>Join us for a 5K walk to raise awareness and support mental wellness programs.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-
-    <section id="support" class="support">
-        <h2>You’re Not Alone</h2>
-        <p>Reach out to trusted organizations and helplines that are ready to listen and help.</p>
-        <div class="support-grid">
-            <div class="support-card">
-                <h3>988 Suicide & Crisis Lifeline</h3>
-                <p>Call or text <strong>988</strong> to connect with trained counselors anytime.</p>
-            </div>
-            <div class="support-card">
-                <h3>NAMI Helpline</h3>
-                <p>Call <strong>1-800-950-NAMI</strong> (6264) or text <strong>“HELPLINE”</strong> to 62640 for support.</p>
-            </div>
-            <div class="support-card">
-                <h3>SAMHSA Treatment Locator</h3>
-                <p>Find local mental health and substance use treatment near you at <a href="https://findtreatment.gov">findtreatment.gov</a>.</p>
-            </div>
-        </div>
-    </section>
-
-</main>
+</section>
 
 <footer class="footer">
     <div class="footer-container">
@@ -251,7 +211,7 @@
         <p>© 2025 ThriveWell — Promoting Mental Health Awareness</p>
     </div>
 </footer>
-<script src="js/script.js"></script>
-<script src="js/email.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/email.js"></script>
 </body>
 </html>

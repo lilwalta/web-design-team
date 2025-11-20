@@ -6,39 +6,39 @@
     <title>ThriveWell</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="icon" type="image/x-icon" href="../../Favicon/favicon.ico">
-    <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="stylesheet" href="../../css/articles.css"/>
+    <link rel="icon" type="image/x-icon" href="../../../Favicon/favicon.ico">
     <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCTSRF-h2aqYeH3XULdFAwf922iMXpwTso",
-    authDomain: "thrive-well-ad722.firebaseapp.com",
-    projectId: "thrive-well-ad722",
-    storageBucket: "thrive-well-ad722.firebasestorage.app",
-    messagingSenderId: "181096169687",
-    appId: "1:181096169687:web:aeda0c5ec6607db2de7092",
-    measurementId: "G-4FGT7THNGY"
-  };
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCTSRF-h2aqYeH3XULdFAwf922iMXpwTso",
+            authDomain: "thrive-well-ad722.firebaseapp.com",
+            projectId: "thrive-well-ad722",
+            storageBucket: "thrive-well-ad722.firebasestorage.app",
+            messagingSenderId: "181096169687",
+            appId: "1:181096169687:web:aeda0c5ec6607db2de7092",
+            measurementId: "G-4FGT7THNGY"
+        };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 </head>
 <body>
 <header>
     <div class="container">
-        <a href="#" class="brand">
+        <a href="../../" class="brand">
             <div class="brand-logo">
-                <img src="../../Favicon/favicon-32x32.png" alt="ThriveWell Logo"> <!-- Add alt for image later -->
+                <img src="../../../Favicon/" alt="ThriveWell Logo">
             </div>
             <span>ThriveWell</span>
         </a>
@@ -52,10 +52,10 @@
         <nav aria-label="Main navigation">
             <ul>
                 <li>
-                    <a href="../">Home</a>
+                    <a href="../../">Home</a>
                 </li>
                 <li>
-                    <a href="../disorders/">Disorders</a>
+                    <a href="../../disorders/">Disorders</a>
                     <div class="dropdown" role="menu">
                         <a href="#">Overview</a>
                         <a href="#">Goals</a>
@@ -63,7 +63,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="../action/">Take Action</a>
+                    <a href="../../action/">Take Action</a>
                     <div class="dropdown" role="menu">
                         <a href="#">Contacts</a>
                         <a href="#">Support a Charity</a>
@@ -71,7 +71,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="../resources/">Resources</a>
+                    <a href="../../resources/">Resources</a>
                     <div class="dropdown" role="menu">
                         <a href="#">Local Helplines</a>
                         <a href="#">National Helplines</a>
@@ -94,7 +94,38 @@
         </div>
     </div>
 </header>
+<section class="article-hero">
+    <div class="article-hero-overlay">
+        <h1>Highlights from the Youth Mental Health Summit</h1>
+    </div>
+</section>
 
+<p class="article-meta">Published on Feb 2, 2025 • Awareness & Education</p>
+
+<div class="article-content">
+    <p>
+        This year’s Youth Mental Health Summit brought together educators, counselors, and young
+        leaders to discuss the growing mental health challenges faced by teens and young adults.
+        Sessions focused on emotional resilience, social media pressure, and the increasing demand
+        for accessible support.
+    </p>
+
+    <h2>Empowering the Next Generation</h2>
+    <p>
+        Workshops helped young attendees learn coping strategies, communication skills, and methods
+        for recognizing when peers may need help. Mental health professionals emphasized the
+        importance of early intervention.
+    </p>
+
+    <h2>Bridging the Gap</h2>
+    <p>
+        A recurring theme throughout the summit was the need for stronger school-based mental health
+        programs. Attendees left with resources and action plans they could take back to their local
+        communities.
+    </p>
+
+    <p class="back-news"><a href="../index.html">← Back to News</a></p>
+</div>
 
 <footer class="footer">
     <div class="footer-container">
@@ -144,7 +175,7 @@
         <p>© 2025 ThriveWell — Promoting Mental Health Awareness</p>
     </div>
 </footer>
-<script src="../js/script.js"></script>
-<script src="../js/email.js"></script>
+<script src="../../js/script.js"></script>
+<script src="../../js/email.js"></script>
 </body>
 </html>

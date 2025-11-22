@@ -93,6 +93,10 @@ nav a:hover {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     z-index: 100;
 }
+.news-link {
+    text-decoration: none;
+    color: #ffffff;
+}
 nav li:hover > .dropdown {
     display: flex;
 }

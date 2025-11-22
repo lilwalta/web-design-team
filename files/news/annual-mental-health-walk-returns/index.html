@@ -34,66 +34,11 @@
     </script>
 </head>
 <body>
-<header>
-    <div class="container">
-        <a href="../../index.html" class="brand">
-            <div class="brand-logo">
-                <img src="../../../Favicon/favicon-32x32.png" alt="ThriveWell Logo">
-            </div>
-            <span>ThriveWell</span>
-        </a>
-
-        <button class="menu-toggle" aria-label="Toggle navigation">
-            <svg stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-        </button>
-
-        <nav aria-label="Main navigation">
-            <ul>
-                <li>
-                    <a href="../../">Home</a>
-                </li>
-                <li>
-                    <a href="../../disorders/">Disorders</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Overview</a>
-                        <a href="#">Goals</a>
-                        <a href="#">Deep Dive</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="../../action/">Take Action</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Contacts</a>
-                        <a href="#">Support a Charity</a>
-                        <a href="#">Goals</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="../../resources/">Resources</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Local Helplines</a>
-                        <a href="#">National Helplines</a>
-                        <a href="#">Data</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">Forum</a>
-                    <div class="dropdown" role="menu">
-                        <a href="#">Sign Up</a>
-                        <a href="#">Log In</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="actions">
-            <a href="#" class="search">Search</a>
-            <a href="#" class="cta">Get Involved</a>
-        </div>
-    </div>
-</header>
+<script>
+  fetch('templates/header.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('header').innerHTML = html);
+</script>
 <section class="article-hero">
     <div class="article-hero-overlay">
         <h1>Community Mental Health Walk</h1>

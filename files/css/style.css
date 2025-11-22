@@ -117,13 +117,7 @@ nav li:hover > .dropdown {
 .actions .search:hover {
     background: #e8f6e8;
 }
-.actions .cta {
-    background: var(--teal);
-    color: white;
-}
-.actions .cta:hover {
-    opacity: 0.9;
-}
+
 .menu-toggle {
     display: none;
     background: none;
@@ -372,3 +366,38 @@ html, body {
 .social-icons a:hover .fa-x-twitter { color: #68d7ff; }
 .social-icons a:hover .fa-linkedin-in { color: #146bb6; }
 
+
+.breadcrumb {
+    width: 100%;
+    background: #f5fcf0;
+}
+
+.breadcrumb-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #5d825a;
+}
+
+.breadcrumb-container a {
+    color: #378056;
+    text-decoration: none;
+    font-size: .84rem;
+}
+
+.breadcrumb-container a:hover {
+    background: none;
+}
+
+.separator {
+    color: #5d825a;
+    font-weight: 600;
+}
+
+.current {
+    color: #101b05;
+    font-weight: 300;
+}

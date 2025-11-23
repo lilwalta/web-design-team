@@ -43,18 +43,12 @@ header {
 }
 .brand-logo {
     margin-bottom: 0.5rem;
-    width: 40px;
-    height: 40px;
-    background: var(--accent-green);
-    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.brand-logo svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--light-green);
+.brand-logo img {
+    width: 3rem;
 }
 nav ul {
     list-style: none;

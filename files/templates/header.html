@@ -1,35 +1,53 @@
 <header>
     <div class="container">
-        <a href="#" class="brand">
+        <!-- Brand / Logo -->
+        <a href="../../../web-design-team/files/" class="brand">
             <div class="brand-logo">
                 <img src="../../../web-design-team/files/img/android-chrome-192x192.png" alt="ThriveWell Logo">
             </div>
             <span>ThriveWell</span>
         </a>
 
+        <!-- Hamburger for mobile -->
+        <div class="hamburger" aria-label="Open mobile menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
+        <!-- Desktop & Mobile Navigation -->
         <nav aria-label="Main navigation">
-            <ul>
-                <li>
-                    <a href="../../../web-design-team/files/">Home</a>
-                </li>
-                <li>
-                    <a href="../../../web-design-team/files/disorders/">Disorders</a>
-                </li>
-                <li>
-                    <a href="../../../web-design-team/files/action/">Take Action</a>
-                </li>
-                <li>
-                    <a href="../../../web-design-team/files/resources/">Resources</a>
-                </li>
-                <li>
-                    <a href="">Forum</a>
-                </li>
+            <ul class="desktop-menu">
+                <li><a href="../../../web-design-team/files/">Home</a></li>
+                <li><a href="../../../web-design-team/files/disorders/">Disorders</a></li>
+                <li><a href="../../../web-design-team/files/action/">Take Action</a></li>
+                <li><a href="../../../web-design-team/files/resources/">Resources</a></li>
+                <li><a href="#">Forum</a></li>
+            </ul>
+
+            <!-- Mobile Menu (hidden by default) -->
+            <ul class="mobile-menu">
+                <li><a href="../../../web-design-team/files/">Home</a></li>
+                <li><a href="../../../web-design-team/files/disorders/">Disorders</a></li>
+                <li><a href="../../../web-design-team/files/action/">Take Action</a></li>
+                <li><a href="../../../web-design-team/files/resources/">Resources</a></li>
+                <li><a href="#">Forum</a></li>
             </ul>
         </nav>
-
-        <div class="actions">
-            <a href="#" class="search">Search</a>
-        </div>
     </div>
 </header>
+
+<script>
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('show');
+    });
+
+    // Close menu when a link is clicked (good for UX)
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.remove('show'));
+    });
+</script>

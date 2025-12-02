@@ -38,7 +38,23 @@
 <script>
   fetch('templates/header.html')
     .then(res => res.text())
-    .then(html => document.getElementById('header').innerHTML = html);
+    .then(html => {
+        document.getElementById('header').innerHTML = html;
+
+        // MOBILE MENU JS AFTER HEADER LOADED
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+            });
+        });
+    });
 </script>
 <main>
     <section id="hero" class="hero">

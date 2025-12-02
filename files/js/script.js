@@ -139,16 +139,51 @@ prevBtn.addEventListener('click', () => {
     }
 });
 
-guidedClose.addEventListener('click', () => guidedOverlay.classList.remove('show'));
-window.addEventListener('click', e => {
-    if(e.target === guidedOverlay) guidedOverlay.classList.remove('show');
-});
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const mobileMenu = document.querySelector(".mobile-menu");
 
-document.getElementById('reveal-news').addEventListener('click', () => {
-    const extraNews = document.querySelector('.additional-news');
-    extraNews.classList.toggle('hidden');
+    // Toggle mobile menu
+    function toggleMenu() {
+        const isOpen = mobileMenu.classList.toggle("show");
 
-    const btn = document.getElementById('reveal-news');
-    btn.textContent = extraNews.classList.contains('hidden') ? 'Reveal More' : 'Show Less';
+        // Accessibility attributes
+        hamburger.setAttribute("aria-expanded", isOpen);
+
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = isOpen ? "hidden" : "";
+    }
+
+    // Open / close menu when clicking hamburger
+    hamburger.addEventListener("click", toggleMenu);
+
+    // Allow Enter/Space keys to activate hamburger
+    hamburger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleMenu();
+        }
+    });
+
+    // Close if clicking anywhere outside the menu
+    document.addEventListener("click", (e) => {
+        const clickedInsideMenu = mobileMenu.contains(e.target);
+        const clickedHamburger = hamburger.contains(e.target);
+        if (!clickedInsideMenu && !clickedHamburger) {
+            if (mobileMenu.classList.contains("show")) {
+                mobileMenu.classList.remove("show");
+                document.body.style.overflow = "";
+                hamburger.setAttribute("aria-expanded", "false");
+            }
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu.classList.contains("show")) {
+            mobileMenu.classList.remove("show");
+            hamburger.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+        }
+    });
 });
-s

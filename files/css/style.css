@@ -25,9 +25,13 @@ main {
     flex: 1;
 }
 
-/* ===========================
-   HEADER / NAVIGATION
-=========================== */
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* pushes hamburger to far right */
+    position: relative;
+}
+
 header {
     background: var(--light-green);
     border-bottom: 1px solid rgba(0,0,0,0.06);

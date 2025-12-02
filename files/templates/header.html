@@ -15,7 +15,7 @@
             <span></span>
         </div>
 
-        <!-- Desktop & Mobile Navigation -->
+        <!-- Navigation -->
         <nav aria-label="Main navigation">
             <ul class="desktop-menu">
                 <li><a href="../../../web-design-team/files/">Home</a></li>
@@ -35,19 +35,3 @@
             </ul>
         </nav>
     </div>
-</header>
-
-<script>
-    // Mobile menu toggle
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile-menu');
-
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('show');
-    });
-
-    // Close menu when a link is clicked (good for UX)
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => mobileMenu.classList.remove('show'));
-    });
-</script>

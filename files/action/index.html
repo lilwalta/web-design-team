@@ -3,12 +3,124 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ThriveWell</title>
+    <title>Take Action - ThriveWell</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
-    <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <style>
+        /* =================================
+           TAKE ACTION SPECIFIC STYLES
+        ================================= */
+        .action-section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .action-section h2 {
+            font-size: 2rem;
+            color: #101b05;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .action-section p {
+            color: #5d825a;
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .action-card {
+            background: #f5fcf0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .action-card h3 {
+            color: #378056;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .zip-search {
+            max-width: 400px;
+            margin: 2rem auto 1rem auto;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .zip-search input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 1px solid #d5e6d5;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .zip-search button {
+            padding: 0.8rem 1rem;
+            background: #378056;
+            color: #f5fcf0;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .zip-search button:hover {
+            background: #5d825a;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            background: #eaf4eb;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .resource-card h4 {
+            margin: 0 0 0.5rem 0;
+            color: #234f32;
+        }
+
+        .resource-card p {
+            margin: 0;
+            color: #4c6b52;
+            line-height: 1.4;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #a2a2a2;
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 <body>
 <div id="header"></div>
@@ -17,13 +129,86 @@
     .then(res => res.text())
     .then(html => document.getElementById('header').innerHTML = html);
 </script>
+
+<main>
+    <!-- Volunteer & Donate -->
+    <section class="action-section">
+        <h2>Volunteer & Donate</h2>
+        <p>Support mental health initiatives by volunteering your time or donating to programs that make a real difference.</p>
+        <div class="action-grid">
+            <div class="action-card">
+                <h3>Volunteer Locally</h3>
+                <p>Join a local mental health organization and help run events, support hotlines, or provide peer guidance.</p>
+            </div>
+            <div class="action-card">
+                <h3>Donate</h3>
+                <p>Contribute financially to mental health nonprofits to fund therapy programs, awareness campaigns, and research.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Others -->
+    <section class="action-section" style="background:#eaf4eb;">
+        <h2>Support Others</h2>
+        <p>You can make a difference by being there for someone, sharing resources, or advocating for mental health awareness.</p>
+        <div class="action-grid">
+            <div class="action-card">
+                <h3>Be a Listener</h3>
+                <p>Check in with friends or family, listen without judgment, and encourage professional help when needed.</p>
+            </div>
+            <div class="action-card">
+                <h3>Spread Awareness</h3>
+                <p>Share mental health information online or participate in campaigns to reduce stigma in your community.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zip Code Resource Finder -->
+    <section class="action-section">
+        <h2>Find Resources Near You</h2>
+        <p>Enter your zip code to see local mental health resources, hotlines, and support services.</p>
+        <div class="zip-search">
+            <input type="text" id="zipInput" placeholder="Enter Zip Code">
+            <button onclick="searchZip()">Search</button>
+        </div>
+        <div id="resourceResults" class="resource-grid"></div>
+        <div id="noResults" class="no-results hidden">Couldn't find any resources for this zip code.</div>
+    </section>
+</main>
+
 <div id="footer"></div>
 <script>
-    fetch('../templates/footer.html')
-        .then(res => res.text())
-        .then(html => document.getElementById('footer').innerHTML = html);
-</script>
+fetch(../'templates/footer.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('footer').innerHTML = html);
 
-<script src="../js/script.js"></script>
+// Zip code resource data
+const zipResources = {
+    "92801": [
+        {name: "OC Mental Health Clinic", description: "Affordable therapy and counseling sessions."},
+        {name: "ThriveWell Support Group", description: "Weekly peer support meetings."},
+        {name: "Mental Health Helpline", description: "Call 1-800-555-1234 for 24/7 assistance."},
+        {name: "Youth Therapy Program", description: "Programs for teens and young adults dealing with anxiety or depression."}
+    ]
+};
+
+function searchZip() {
+    const zip = document.getElementById('zipInput').value.trim();
+    const resultsContainer = document.getElementById('resourceResults');
+    const noResults = document.getElementById('noResults');
+    resultsContainer.innerHTML = "";
+    if(zipResources[zip]) {
+        zipResources[zip].forEach(resource => {
+            const card = document.createElement('div');
+            card.className = "resource-card";
+            card.innerHTML = `<h4>${resource.name}</h4><p>${resource.description}</p>`;
+            resultsContainer.appendChild(card);
+        });
+        noResults.classList.add("hidden");
+    } else {
+        noResults.classList.remove("hidden");
+    }
+}
+</script>
 </body>
 </html>

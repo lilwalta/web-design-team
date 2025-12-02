@@ -103,25 +103,34 @@ nav ul.desktop-menu a:hover {
 }
 
 /* MOBILE MENU */
+/* MOBILE MENU CLEANUP */
 .mobile-menu {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* adjust if header height changes */
+    top: 60px; /* adjust for header height */
     right: 0;
     background-color: var(--light-green);
-    width: 220px;
+    width: 100%; /* full width is usually better for mobile */
+    max-width: 300px; /* optional limit */
     box-shadow: 0 2px 12px rgba(0,0,0,0.2);
     border-radius: 0 0 12px 12px;
     padding: 0.5rem 0;
+    margin: 0;
+    list-style: none; /* remove bullets */
 }
 
-.mobile-menu.show {
-    display: flex;
+/* Make sure <li> has no default spacing */
+.mobile-menu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
+/* Mobile links */
 .mobile-menu a {
-    padding: 0.75rem 1.25rem;
+    display: block;
+    padding: 1rem 1.5rem;
     font-weight: 600;
     color: var(--dark-green);
     text-decoration: none;
@@ -133,6 +142,12 @@ nav ul.desktop-menu a:hover {
     background: #dce9df;
     color: var(--accent-green);
 }
+
+/* Optional: add spacing between links if needed */
+.mobile-menu li + li {
+    margin-top: 0.25rem;
+}
+
 
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 768px) {

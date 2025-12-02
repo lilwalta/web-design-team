@@ -41,20 +41,6 @@ header {
     padding: 0.75rem 1rem;
 }
 
-/* Brand / Logo */
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: var(--dark-green);
-    font-weight: 600;
-    font-size: 1.25rem;
-}
-
-.brand-logo img {
-    width: 3rem;
-}
 
 /* Desktop menu */
 nav ul.desktop-menu {
@@ -80,94 +66,128 @@ nav ul.desktop-menu a:hover {
     background: #e8f6e8;
 }
 
-/* RESET ALL UL/LI INSIDE HEADER */
-header ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+header {
+    background: var(--light-green);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    position: relative;
+    z-index: 10;
 }
 
-/* ------------------------
-   HAMBURGER STYLES
--------------------------*/
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--dark-green);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.brand-logo img {
+    width: 3rem;
+}
+
+/* DESKTOP MENU */
+.desktop-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.desktop-menu li a {
+    text-decoration: none;
+    color: var(--dark-green);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+}
+
+.desktop-menu li a:hover {
+    background: #e8f6e8;
+}
+
+/* HAMBURGER (VISIBLE ON MOBILE ONLY) */
 .hamburger {
     display: none;
     flex-direction: column;
-    justify-content: center;
-    gap: 4px;
-    width: 28px;
-    height: 24px;
+    gap: 5px;
     cursor: pointer;
 }
 
 .hamburger span {
-    display: block;
-    width: 100%;
+    width: 28px;
     height: 3px;
     background: var(--dark-green);
     border-radius: 3px;
+    transition: 0.3s ease;
 }
 
-/* Hide desktop menu on mobile */
-@media (max-width: 768px) {
+/* MOBILE MENU (HIDDEN BY DEFAULT) */
+.mobile-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #f5fcf0;
+    border-top: 1px solid rgba(55,128,86,0.15);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    border-radius: 0 0 12px 12px;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+
+.mobile-menu li a {
+    padding: 1rem 1.25rem;
+    display: block;
+    color: #101b05;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.mobile-menu li a:hover {
+    background: #dce9df;
+    color: #378056;
+}
+
+/* SHOW MENU WHEN TOGGLED */
+.mobile-menu.show {
+    display: flex !important;
+}
+
+/* ------------------------------------------------------
+   MOBILE RESPONSIVE RULES
+------------------------------------------------------ */
+
+@media (max-width: 900px) {
+
+    /* Desktop menu hidden */
     .desktop-menu {
-        display: none;
+        display: none !important;
     }
+
+    /* Hamburger shown */
     .hamburger {
         display: flex;
+        margin-left: auto;
     }
-}
 
-/* ------------------------
-   MOBILE MENU
--------------------------*/
-.mobile-menu {
-    display: none;            /* hidden by default */
-    flex-direction: column;
-    position: absolute;
-    top: 70px;                /* just below header */
-    right: 0;
-    width: 100%;
-    background: var(--light-green);
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-
-    padding: 0;
-    margin: 0;
-    list-style: none;         /* REMOVE BULLETS */
-    z-index: 999;
-}
-
-/* SHOW MENU WHEN JS ADDS .show */
-.mobile-menu.show {
-    display: flex;
-}
-
-/* Mobile menu link styles */
-.mobile-menu li {
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-
-.mobile-menu li:last-child {
-    border-bottom: none;
-}
-
-.mobile-menu a {
-    display: block;
-    padding: 1rem 1.2rem;
-    text-decoration: none;
-    color: var(--dark-green);
-    font-weight: 600;
-}
-
-.mobile-menu a:hover {
-    background: rgba(0,0,0,0.05);
-    color: var(--accent-green);
-}
-
-/* Prevent flex issues inside header */
-header nav {
-    position: relative;
+    /* Make sure nav doesn't push anything */
+    nav {
+        flex: none;
+    }
 }
 
 .footer {

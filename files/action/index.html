@@ -9,29 +9,6 @@
     <link rel="stylesheet" href="../css/style.css"/>
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
     <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCTSRF-h2aqYeH3XULdFAwf922iMXpwTso",
-    authDomain: "thrive-well-ad722.firebaseapp.com",
-    projectId: "thrive-well-ad722",
-    storageBucket: "thrive-well-ad722.firebasestorage.app",
-    messagingSenderId: "181096169687",
-    appId: "1:181096169687:web:aeda0c5ec6607db2de7092",
-    measurementId: "G-4FGT7THNGY"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 </head>
 <body>
 <script>
@@ -41,54 +18,12 @@
 </script>
 
 
-<footer class="footer">
-    <div class="footer-container">
-        <section class="footer-column">
-            <h3>Getting Started</h3>
-            <ul>
-                <li><a href="#">Start Your Journey</a></li>
-                <li><a href="#">Mental Health Tips</a></li>
-                <li><a href="#">Find Support</a></li>
-            </ul>
-        </section>
-
-        <section class="footer-column">
-            <h3>Resources</h3>
-            <ul>
-                <li><a href="#">Articles</a></li>
-                <li><a href="#">Community Forums</a></li>
-                <li><a href="#">Crisis Hotlines</a></li>
-            </ul>
-        </section>
-
-        <section class="footer-column">
-            <h3>About</h3>
-            <ul>
-                <li><a href="#">Our Mission</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Events</a></li>
-            </ul>
-        </section>
-
-        <section class="footer-column">
-            <h3>Connect</h3>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <form class="newsletter" aria-label="Newsletter sign-up">
-                <input aria-label="email" type="email" placeholder="Join our newsletter" required />
-                <button type="submit">Join</button>
-            </form>
-        </section>
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2025 ThriveWell — Promoting Mental Health Awareness</p>
-    </div>
-</footer>
+<div id="footer"></div>
+<script>
+    fetch('../templates/footer.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('footer').innerHTML = html);
+</script>
 <script src="../js/script.js"></script>
 <script src="../js/email.js"></script>
 </body>

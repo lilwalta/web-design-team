@@ -9,75 +9,6 @@
     <link rel="stylesheet" href="../css/style.css"/>
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
     <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
-    <style>
-        <style>
-        .action-wrapper {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 20px;
-        }
-
-        h1 {
-            margin-bottom: 10px;
-        }
-
-        .action-section {
-            margin: 30px 0;
-            padding: 20px;
-            background: #f7f7f7;
-            border-radius: 8px;
-        }
-
-        .zip-area {
-            margin-top: 15px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .zip-area input {
-            padding: 10px;
-            width: 140px;
-            font-size: 1rem;
-        }
-
-        .zip-results {
-            margin-top: 15px;
-            padding: 15px;
-            background: #fff;
-            border-radius: 6px;
-            display: none;
-        }
-
-        .resource-card {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            border-left: 4px solid #4B8DF8;
-        }
-
-        .charity {
-            background: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border-left: 4px solid #4CAF50;
-        }
-
-        .btn {
-            padding: 10px 15px;
-            background: #4B8DF8;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: #3a79d6;
-        }
-    </style>
-    </style>
 </head>
 <body>
 <div id="header"></div>
@@ -86,133 +17,13 @@
     .then(res => res.text())
     .then(html => document.getElementById('header').innerHTML = html);
 </script>
-<div class="action-wrapper">
-    <h1>Take Action</h1>
-    <p>Your steps today can improve mental health in your community. Find resources, volunteer, or support national charities.</p>
-    <div style="margin:10px 0 25px; color:#555;">
-        <a href="/web-design-team/index.html">Home</a> › 
-        <span>Take Action</span>
-    </div>
-    <div class="action-section">
-        <h2>Find Mental Health Resources Near You</h2>
-        <p>Search for therapists, crisis centers, and affordable help near your ZIP code.</p>
-
-        <button class="btn" onclick="getLocation()">📍 Use My Location</button>
-
-        <div class="zip-area">
-            <input type="text" id="zipInput" placeholder="Enter ZIP code" maxlength="5">
-            <button class="btn" onclick="lookupZip()">Search</button>
-        </div>
-
-        <div id="zipResults" class="zip-results"></div>
-    </div>
-    <div class="action-section">
-        <h2>Support Mental Health Charities</h2>
-        <p>Every donation helps fund treatment, support groups, research, and crisis services.</p>
-
-        <div class="charity">
-            <h3>NAMI (National Alliance on Mental Illness)</h3>
-            <p>Leading support and advocacy organization for mental health.</p>
-            <a class="btn" href="https://donate.nami.org" target="_blank">Donate</a>
-        </div>
-
-        <div class="charity">
-            <h3>AFSP – American Foundation for Suicide Prevention</h3>
-            <p>Funds research, community walks, and suicide prevention programs.</p>
-            <a class="btn" href="https://supporting.afsp.org" target="_blank">Donate</a>
-        </div>
-
-        <div class="charity">
-            <h3>Mental Health America</h3>
-            <p>Supports early intervention, screening, and public education.</p>
-            <a class="btn" href="https://mhanational.org/donate" target="_blank">Donate</a>
-        </div>
-
-        <div class="charity">
-            <h3>Crisis Text Line</h3>
-            <p>Free 24/7 mental health support via text messaging.</p>
-            <a class="btn" href="https://www.crisistextline.org/donate" target="_blank">Donate</a>
-        </div>
-    </div>
-    <div class="action-section">
-        <h2>Take Action in Your Community</h2>
-
-        <div class="resource-card">
-            <h3>Join a Local Mental Health Walk</h3>
-            <p>Walks raise awareness & fund life-saving programs.</p>
-            <a class="btn" href="/web-design-team/files/news/community-walk.html">Learn More</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Volunteer at a Crisis Center</h3>
-            <p>Many centers are actively recruiting trained volunteers.</p>
-            <a class="btn" href="https://988lifeline.org/help" target="_blank">Find Opportunities</a>
-        </div>
-
-        <div class="resource-card">
-            <h3>Start a Peer Support Group</h3>
-            <p>Bring people together to reduce isolation and build healing.</p>
-            <a class="btn" href="https://www.nami.org/Support-Education" target="_blank">Get Training</a>
-        </div>
-    </div>
-
-</div>
-
 <div id="footer"></div>
 <script>
     fetch('../templates/footer.html')
         .then(res => res.text())
         .then(html => document.getElementById('footer').innerHTML = html);
 </script>
-    <script>
-function lookupZip() {
-    const zip = document.getElementById("zipInput").value.trim();
-    if (zip.length !== 5) {
-        alert("Please enter a valid 5-digit ZIP code.");
-        return;
-    }
-    showZipResults(zip);
-}
 
-function showZipResults(zip) {
-    const box = document.getElementById("zipResults");
-    box.style.display = "block";
-
-    // Placeholder data — you can replace with a real API later
-    box.innerHTML = `
-        <h3>Resources near ZIP ${zip}:</h3>
-        <ul>
-            <li><strong>Local Crisis Center:</strong> 1.2 miles away</li>
-            <li><strong>Affordable Therapy Clinic:</strong> Sliding scale options</li>
-            <li><strong>Support Group:</strong> Weekly depression/anxiety meeting</li>
-        </ul>
-    `;
-}
-
-function getLocation() {
-    if (!navigator.geolocation) {
-        alert("Your browser does not support location. Please enter ZIP manually.");
-        return;
-    }
-
-    navigator.geolocation.getCurrentPosition(
-        (pos) => {
-            const lat = pos.coords.latitude;
-            const lng = pos.coords.longitude;
-
-            // Fake ZIP until we add real API
-            const fakeZip = "90210";
-
-            document.getElementById("zipInput").value = fakeZip;
-            showZipResults(fakeZip);
-        },
-        () => {
-            alert("Location denied. Please enter your ZIP code instead.");
-            document.getElementById("zipInput").focus();
-        }
-    );
-}
-</script>
 <script src="../js/script.js"></script>
 </body>
 </html>

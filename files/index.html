@@ -9,14 +9,21 @@
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script>
+window.addEventListener("DOMContentLoaded", () => {
+    Promise.all([
+        fetch("/web-design-team/templates/header.html").then(r => r.text()),
+        fetch("/web-design-team/templates/footer.html").then(r => r.text())
+    ]).then(([header, footer]) => {
+        document.getElementById("header").innerHTML = header;
+        document.getElementById("footer").innerHTML = footer;
+    });
+});
+</script>
 </head>
 <body>
 <div id="header"></div>
 <script>
-  fetch('templates/header.html')
-    .then(res => res.text())
-    .then(html => {
-        document.getElementById('header').innerHTML = html;
 
         // MOBILE MENU JS AFTER HEADER LOADED
         const hamburger = document.querySelector('.hamburger');
@@ -140,55 +147,7 @@
     </section>
 
 </main>
-
-<footer class="footer">
-    <div class="footer-container">
-        <section class="footer-column">
-            <h3>Getting Started</h3>
-            <ul>
-                <li><a href="#">Start Your Journey</a></li>
-                <li><a href="#">Mental Health Tips</a></li>
-                <li><a href="#">Find Support</a></li>
-            </ul>
-        </section>
-
-        <section class="footer-column">
-            <h3>Resources</h3>
-            <ul>
-                <li><a href="#">Articles</a></li>
-                <li><a href="#">Community Forums</a></li>
-                <li><a href="#">Crisis Hotlines</a></li>
-            </ul>
-        </section>
-
-        <section class="footer-column">
-            <h3>About</h3>
-            <ul>
-                <li><a href="#">Our Mission</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Events</a></li>
-            </ul>
-        </section>
-
-        <section class="footer-column">
-            <h3>Connect</h3>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <form class="newsletter" aria-label="Newsletter sign-up">
-                <input aria-label="email" type="email" placeholder="Join our newsletter" required />
-                <button type="submit">Join</button>
-            </form>
-        </section>
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2025 ThriveWell — Promoting Mental Health Awareness</p>
-    </div>
-</footer>
+<div id="footer"></div>
 <script src="js/script.js"></script>
 <script src="js/email.js"></script>
 </body>

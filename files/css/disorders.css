@@ -251,35 +251,3 @@
 @media (min-width: 769px) and (max-width: 1024px) {
     .guided-content { max-width: 650px; padding: 2.5rem 2rem; }
 }
-
-.disorders-section {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 40px;
-    align-items: start;
-    margin-top: 40px;
-}
-
-.disorders-left h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0;
-}
-
-.disorders-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.disorder-card {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: .2s;
-}
-
-.disorder-card:hover {
-    transform: translateY(-4px);
-}

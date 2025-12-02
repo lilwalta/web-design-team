@@ -9,22 +9,13 @@
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <script>
-window.addEventListener("DOMContentLoaded", () => {
-    Promise.all([
-        fetch("/web-design-team/templates/header.html").then(r => r.text()),
-        fetch("/web-design-team/templates/footer.html").then(r => r.text())
-    ]).then(([header, footer]) => {
-        document.getElementById("header").innerHTML = header;
-        document.getElementById("footer").innerHTML = footer;
-    });
-});
-</script>
 </head>
 <body>
 <div id="header"></div>
 <script>
-
+    fetch('templates/header.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('header').innerHTML = html);
         // MOBILE MENU JS AFTER HEADER LOADED
         const hamburger = document.querySelector('.hamburger');
         const mobileMenu = document.querySelector('.mobile-menu');
@@ -124,9 +115,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
         </div>
     </section>
-
-
-
     <section id="support" class="support">
         <h2>You’re Not Alone</h2>
         <p>Reach out to trusted organizations and helplines that are ready to listen and help.</p>
@@ -148,6 +136,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
 </main>
 <div id="footer"></div>
+    <script>
+    fetch('templates/footer.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('footer').innerHTML = html);
+</script>
 <script src="js/script.js"></script>
 <script src="js/email.js"></script>
 </body>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThriveWell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="../../css/articles.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+</head>
+<body>
+<div id="header"></div>
+<script>
+    fetch('../../templates/header.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('header').innerHTML = html);
+</script>
+<section class="article-hero">
+    <div class="article-hero-overlay">
+        <h1>Community Mental Health Education Night</h1>
+    </div>
+</section>
+<nav class="breadcrumb">
+    <div class="breadcrumb-container">
+        <a href="../../">Home</a>
+        <span class="separator">›</span>
+        <a href="../">News</a>
+        <span class="separator">›</span>
+        <a href="../community-education">Community Mental Health Education Night</a>
+    </div>
+</nav>
+
+<p class="article-meta">Published on Mar 19, 2025 • Awareness & Education</p>
+
+<div class="article-content">
+    <p>
+        Mental health experts host a virtual and in-person event focused on recognizing anxiety, depression, and ways to support
+        loved ones struggling with emotional well-being.
+    </p>
+  
+    <h2>How to Participate</h2>
+    <p>
+      On Saturday, March 22, you can join the event live either online via the ThriveWell Youtube account,
+      or in-person at the City College of New York library building at 160 Convent Ave., New York, NY from 5:00 PM
+      to 7:00 PM (Dinner provided).
+    </p>
+
+    <h2>Who's Speaking</h2>
+    <p>
+      Two of the college's top psychology grad students have kindly offered to host the event and speak on a variety
+      of topics focused on family and friend support systems.
+    <p class="back-news"><a href="../">← Back to News</a></p>
+</div>
+
+<div id="footer"></div>
+<script>
+    fetch('../../templates/footer.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('footer').innerHTML = html);
+</script>
+<script src="../../js/script.js"></script>
+</body>
+</html>

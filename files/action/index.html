@@ -125,11 +125,67 @@
             </div>
         </div>
     </section>
+    <!-- Stories + Pledge Section -->
+<section class="action-section" id="stories-pledge" style="background:#f3faef;">
+    <h2>Real Stories, Real Impact</h2>
+    <p>Hear from people whose lives have been touched by mental health awareness, and take your pledge to make a difference.</p>
+
+    <!-- Stories Grid -->
+    <div class="action-grid" style="margin-bottom:3rem;">
+        <div class="action-card">
+            <h3>Alex, 24</h3>
+            <p>"I used to feel completely alone with my anxiety. Joining a local support group changed my life—I now volunteer to help others do the same."</p>
+        </div>
+        <div class="action-card">
+            <h3>Sara, 31</h3>
+            <p>"Sharing my story publicly helped me find connection and hope. I realized there are so many people willing to listen and support."</p>
+        </div>
+        <div class="action-card">
+            <h3>Jordan, 19</h3>
+            <p>"Taking the pledge to check in with friends each week has strengthened my relationships and made me more aware of my own mental health."</p>
+        </div>
+    </div>
+
+    <!-- Pledge Form -->
+    <div class="scheduler-container" style="max-width:500px; margin:0 auto; text-align:center;">
+        <h2 style="color:#378056;">Take the Pledge</h2>
+        <p style="color:#5d825a;">Commit to checking in with someone, sharing awareness, or supporting mental health in your community.</p>
+        <div class="form-row">
+            <label for="pledgeName">Your Name</label>
+            <input type="text" id="pledgeName" placeholder="Enter your name">
+        </div>
+        <div class="form-row">
+            <label for="pledgeEmail">Email (optional)</label>
+            <input type="email" id="pledgeEmail" placeholder="Enter your email">
+        </div>
+        <button class="btn primary" onclick="submitPledge()">Take the Pledge</button>
+        <div id="pledgeConfirmation" class="confirmation hidden">Thank you for taking the pledge! 🌿</div>
+    </div>
+</section>
 </main>
 
 <div id="footer"></div>
 <script>fetch(../'templates/footer.html')
     .then(res => res.text())
-    .then(html => document.getElementById('footer').innerHTML = html);</script>
+    .then(html => document.getElementById('footer').innerHTML = html);
+
+function submitPledge() {
+    const name = document.getElementById('pledgeName').value.trim();
+    const email = document.getElementById('pledgeEmail').value.trim();
+    const confirmation = document.getElementById('pledgeConfirmation');
+
+    if(name === "") {
+        alert("Please enter your name to take the pledge.");
+        return;
+    }
+
+    // For now, just show confirmation. You can expand to store in a database later.
+    confirmation.innerHTML = `Thank you, ${name}, for taking the pledge! 🌿`;
+    confirmation.classList.remove("hidden");
+
+    // Clear inputs
+    document.getElementById('pledgeName').value = "";
+    document.getElementById('pledgeEmail').value = "";
+}</script>
 </body>
 </html>

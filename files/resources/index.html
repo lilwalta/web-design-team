@@ -132,16 +132,18 @@
     <h2>Resources</h2>
     <p>Find support and educational resources to help you or someone you care about thrive.</p>
 
-<div class="zip-code-resources" style="margin-bottom:3rem;">
-    <h3 style="color:#378056; text-align:center;">Find Local Resources</h3>
-    <p style="text-align:center; color:#5d825a;">Enter your zip code to see nearby mental health services and hotlines.</p>
-    <div class="zip-search">
-        <input type="text" id="zipInput" placeholder="Enter Zip Code">
-        <button id="zipSearchBtn">Search</button>
+    <!-- Zip Code Resource Finder -->
+    <div class="zip-code-resources" style="margin-bottom:3rem;">
+        <h3 style="color:#378056; text-align:center;">Find Local Resources</h3>
+        <p style="text-align:center; color:#5d825a;">Enter your zip code to see nearby mental health services and hotlines.</p>
+        <div class="zip-search">
+            <input type="text" id="zipInput" placeholder="Enter Zip Code">
+            <button onclick="searchZip()">Search</button>
+        </div>
+        <div id="resourceResults" class="resource-grid"></div>
+        <div id="noResults" class="no-results hidden">Couldn't find any resources for this zip code.</div>
     </div>
-    <div id="resourceResults" class="resource-grid"></div>
-    <div id="noResults" class="no-results hidden">Couldn't find any resources for this zip code.</div>
-</div>
+
     <!-- General Educational Resources -->
     <div class="general-resources">
         <h3 style="color:#378056; text-align:center;">General Mental Health Resources</h3>
@@ -232,30 +234,33 @@
 </main>
 
 <div id="footer"></div>
-<script src="../js/script.js"></script>
+<script>
+    fetch('../templates/footer.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('footer').innerHTML = html);
+</script><script src="../js/script.js"></script>
 <script src="../js/email.js"></script>
 <script>
-fetch('..templates/footer.html')
+fetch(../'templates/footer.html')
     .then(res => res.text())
     .then(html => document.getElementById('footer').innerHTML = html);
 
+// Zip code resource data
 const zipResources = {
     "92801": [
         {name: "OC Mental Health Clinic", description: "Affordable therapy and counseling sessions."},
         {name: "ThriveWell Support Group", description: "Weekly peer support meetings."},
         {name: "Mental Health Helpline", description: "Call 1-800-555-1234 for 24/7 assistance."},
         {name: "Youth Therapy Program", description: "Programs for teens and young adults dealing with anxiety or depression."}
-    ],
-    // add more zip codes here
+    ]
 };
 
 function searchZip() {
     const zip = document.getElementById('zipInput').value.trim();
     const resultsContainer = document.getElementById('resourceResults');
     const noResults = document.getElementById('noResults');
-
     resultsContainer.innerHTML = "";
-    if (zipResources[zip]) {
+    if(zipResources[zip]) {
         zipResources[zip].forEach(resource => {
             const card = document.createElement('div');
             card.className = "resource-card";
@@ -267,14 +272,6 @@ function searchZip() {
         noResults.classList.remove("hidden");
     }
 }
-
-// Attach event listener
-document.getElementById('zipSearchBtn').addEventListener('click', searchZip);
-
-// Optional: allow Enter key to trigger search
-document.getElementById('zipInput').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') searchZip();
-});
 </script>
 </body>
 </html>

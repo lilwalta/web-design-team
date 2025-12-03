@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThriveWell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="../../css/articles.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+</head>
+<body>
+<div id="header"></div>
+<script>
+    fetch('../../templates/header.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('header').innerHTML = html);
+</script>
+<section class="article-hero">
+    <div class="article-hero-overlay">
+        <h1>Troubling AI Relationships</h1>
+    </div>
+</section>
+<nav class="breadcrumb">
+    <div class="breadcrumb-container">
+        <a href="../../">Home</a>
+        <span class="separator">›</span>
+        <a href="../">News</a>
+        <span class="separator">›</span>
+        <a href="../reduced-cost-therapy">Reduced Cost Therapy Initiative</a>
+    </div>
+</nav>
+
+<p class="article-meta">Published on Apr 22, 2025 • Awareness & Education</p>
+
+<div class="article-content">
+  <p>Mental health care is essential, but for many people, the cost of therapy can be a serious barrier. Open Path Psychotherapy Collective was created to change that. 
+    This nonprofit organization connects individuals, couples, and families with licensed therapists who offer affordable therapy sessions to those in need.
+  </p>
+
+  <h2>What Is Open Path Psychotherapy Collective?</h2>
+  <p>
+    Open Path Psychotherapy Collective is a group founded in 2012 in the San Francisco Bay Area by Chris Elliot, Elizabeth Hanks, and Alexander “Sandy” Clarke.
+    Open Path is a national nonprofit network made up of licensed mental health professionals who are committed to increasing access to therapy. 
+    The organization helps people who are uninsured, underinsured, or facing financial hardship find quality counseling at a reduced cost.
+    Members pay a one-time lifetime fee of $65, which gives them access to a network of therapists who agree to charge between $30–$70 per session for 
+    individuals and $30–$80 for couples and families.
+  </p>
+
+  <h2>Who's Eligible?</h2>
+  <p>
+    Open Path is designed for people who can't afford support without additional assistance. To be eligible you must be one of the following:
+    <ul>
+      <li>Uninsured</li>
+      <li>Underinsured (current insurance has too large of a copay or has no coverage at all)</li>
+      <li>Current college student</li>
+      <li>Experiencing significant financial struggle</li>
+    </ul>
+  </p>
+</div>
+
+<div id="footer"></div>
+<script>
+    fetch('../../templates/footer.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('footer').innerHTML = html);
+</script>
+<script src="../../js/script.js"></script>
+</body>
+</html>

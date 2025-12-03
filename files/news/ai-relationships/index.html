@@ -1,1 +1,91 @@
-a
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThriveWell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="../../css/articles.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+</head>
+<body>
+<div id="header"></div>
+<script>
+    fetch('../../templates/header.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('header').innerHTML = html);
+</script>
+<section class="article-hero">
+    <div class="article-hero-overlay">
+        <h1>Community Mental Health Walk</h1>
+    </div>
+</section>
+<nav class="breadcrumb">
+    <div class="breadcrumb-container">
+        <a href="../../">Home</a>
+        <span class="separator">›</span>
+        <a href="../">News</a>
+        <span class="separator">›</span>
+        <a href="../ai-relationships">Troubling AI Relationships</a>
+    </div>
+</nav>
+
+<p class="article-meta">Published on Dec 1, 2025 • Awareness & Education</p>
+
+<div class="article-content">
+    <p>
+        As you may already know, AI is slowly becoming more and more integrated into all of our daily lives. 
+        From faster internet researching and generating images, to drafting your essays and writing your emails.
+        But what if you're looking for something a little "deeper?"
+        According to a study by Center for Democracy & Technology, 19% of all student respondants either have had or 
+        know someone who has had a romantic relationship with an AI chatbot.
+    </p>
+
+    <h2>The Perfect Partner </h2>
+    <p>
+        As AI has gotten better at assuming personalities and analyzing user input, a new use has begun to emerge.
+        Many have begun to turn to AI for its unique capabality of acting as the perfect romantic partner.
+        AI can't turn you down, AI will always validate your feelings (no matter how delusional), and AI wil never leave you.
+        For many people, the perceived social risk of reaching for comapnionship is too high a cost, when you can just open
+        your phone and talk to your AI boy/girlfriend without any such risk.
+    </p>
+
+    <h2>Effects of Loneliness</h2>
+    <p>
+        Although official statistics on loneliness is hard to come by due to the lack of a standard measuring system for it,
+        anecdotal evidence strongly suggests that adolescents and young adults, particularaly males, are facing a growing epidemic
+        of loneliness, especially after the COVID Pandemic. The <a href="https://www.cdc.gov/suicide/facts/data.html">CDC</a> reports
+        rates of suicide reaching all-time highs in the years following the pandemic. Rates among men are reported to be around four times higher than that of women. 
+        A common reason for suicide is social isolation which is especially prevalant post-lockdown. So what does this mean?
+        Well, if so many young adults and teens are lonely and socially isolated after having key developmental years taken away by COVID,
+        can you blame them for wanting an easy relationship without the baggage of the real world?
+    </p>
+
+    <h2>What Can We Do?</h2>
+    <p>
+      Trends like these are likely only going to increase as AI gets better and better and comapnies shove it down our throats
+      more and more. However, there is still hope. Here are some steps you can take to help our teens and adults the help they need:
+      <ol>
+        <li>Reach out to family member and get to know them.</li>
+        <li>Send a letter to a lawmaker about potential AI legislation.</li>
+        <li>Start or participate in community events.</li>
+        <li>Talk to someone new at school.</li>
+        <li>Ask out your crush.</li>
+      </ol>
+      Don't let your fear control you. If you're lonely, reach out! You may get rejected, but, statistically speaking,
+      they're probably just as lonely as you.
+    </p>
+    <p class="back-news"><a href="../">← Back to News</a></p>
+</div>
+
+<div id="footer"></div>
+<script>
+    fetch('../../templates/footer.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('footer').innerHTML = html);
+</script>
+<script src="../../js/script.js"></script>
+</body>
+</html>

@@ -100,10 +100,12 @@
             <div class="action-card">
                 <h3>Volunteer Locally</h3>
                 <p>Join a local mental health organization and help run events, support hotlines, or provide peer guidance.</p>
+                <a href="volunteer.html" class="btn primary" style="margin-top:1rem; display:inline-block;">Volunteer Now</a>
             </div>
             <div class="action-card">
                 <h3>Donate</h3>
                 <p>Contribute financially to mental health nonprofits to fund therapy programs, awareness campaigns, and research.</p>
+            <a href="donate.html" class="btn primary" style="margin-top:1rem; display:inline-block;">Donate Now</a>
             </div>
         </div>
     </section>
@@ -126,5 +128,8 @@
 </main>
 
 <div id="footer"></div>
+<script>fetch(../'templates/footer.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('footer').innerHTML = html);</script>
 </body>
 </html>

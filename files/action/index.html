@@ -10,10 +10,21 @@
     <link rel="stylesheet" href="../css/index.css"/>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <style>
+        /* =========================
+           Action Page Styles
+        ========================= */
         .action-section {
             padding: 4rem 2rem;
-            max-width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .action-section.bg-light {
+            background: #eaf4eb;
+        }
+
+        .action-section.bg-lighter {
+            background: #f3faef;
         }
 
         .action-section h2 {
@@ -30,7 +41,8 @@
             line-height: 1.6;
         }
 
-        .action-grid {
+        .action-grid,
+        .resource-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
@@ -56,11 +68,26 @@
             font-size: 1.4rem;
             margin-bottom: 1rem;
         }
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+
+        .action-card a.btn {
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            background-color: #378056; /* Accent green */
+            color: #f5fcf0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            margin-top: 1rem;
+        }
+
+        .action-card a.btn:hover {
+            background-color: #5d825a; 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
         }
 
         .resource-card {
@@ -81,25 +108,59 @@
             color: #4c6b52;
             line-height: 1.4;
         }
-        .action-card a.btn {
-    display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    background-color: #378056; /* Accent green */
-    color: #f5fcf0;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
 
-.action-card a.btn:hover {
-    background-color: #5d825a; 
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-}
+        /* Scheduler / Pledge form */
+        .scheduler-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .form-row {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-row label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: #101b05;
+        }
+
+        .form-row input {
+            padding: 0.8rem 1rem;
+            border: 1px solid #d5e6d5;
+            border-radius: 10px;
+            font-size: 1rem;
+            background-color: #f9fbf9;
+            color: #101b05;
+        }
+
+        .btn.primary {
+            cursor: pointer;
+        }
+
+        .confirmation {
+            text-align: center;
+            background: #edf6ee;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .action-section {
+                padding: 3rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -119,18 +180,18 @@
             <div class="action-card">
                 <h3>Volunteer Locally</h3>
                 <p>Join a local mental health organization and help run events, support hotlines, or provide peer guidance.</p>
-                <a href="volunteer.html" class="btn primary" style="margin-top:1rem; display:inline-block;">Volunteer Now</a>
+                <a href="volunteer.html" class="btn primary" aria-label="Volunteer with ThriveWell">Volunteer Now</a>
             </div>
             <div class="action-card">
                 <h3>Donate</h3>
                 <p>Contribute financially to mental health nonprofits to fund therapy programs, awareness campaigns, and research.</p>
-            <a href="donate.html" class="btn primary" style="margin-top:1rem; display:inline-block;">Donate Now</a>
+                <a href="donate.html" class="btn primary" aria-label="Donate to ThriveWell">Donate Now</a>
             </div>
         </div>
     </section>
 
     <!-- Support Others -->
-    <section class="action-section" style="background:#eaf4eb;">
+    <section class="action-section bg-light">
         <h2>Support Others</h2>
         <p>You can make a difference by being there for someone, sharing resources, or advocating for mental health awareness.</p>
         <div class="action-grid">
@@ -144,67 +205,70 @@
             </div>
         </div>
     </section>
+
     <!-- Stories + Pledge Section -->
-<section class="action-section" id="stories-pledge" style="background:#f3faef;">
-    <h2>Real Stories, Real Impact</h2>
-    <p>Hear from people whose lives have been touched by mental health awareness, and take your pledge to make a difference.</p>
+    <section class="action-section bg-lighter" id="stories-pledge">
+        <h2>Real Stories, Real Impact</h2>
+        <p>Hear from people whose lives have been touched by mental health awareness, and take your pledge to make a difference.</p>
 
-    <!-- Stories Grid -->
-    <div class="action-grid" style="margin-bottom:3rem;">
-        <div class="action-card">
-            <h3>Alex, 24</h3>
-            <p>"I used to feel completely alone with my anxiety. Joining a local support group changed my life—I now volunteer to help others do the same."</p>
+        <!-- Stories Grid -->
+        <div class="action-grid" style="margin-bottom:3rem;">
+            <div class="action-card">
+                <h3>Alex, 24</h3>
+                <p>"I used to feel completely alone with my anxiety. Joining a local support group changed my life—I now volunteer to help others do the same."</p>
+            </div>
+            <div class="action-card">
+                <h3>Sara, 31</h3>
+                <p>"Sharing my story publicly helped me find connection and hope. I realized there are so many people willing to listen and support."</p>
+            </div>
+            <div class="action-card">
+                <h3>Jordan, 19</h3>
+                <p>"Taking the pledge to check in with friends each week has strengthened my relationships and made me more aware of my own mental health."</p>
+            </div>
         </div>
-        <div class="action-card">
-            <h3>Sara, 31</h3>
-            <p>"Sharing my story publicly helped me find connection and hope. I realized there are so many people willing to listen and support."</p>
-        </div>
-        <div class="action-card">
-            <h3>Jordan, 19</h3>
-            <p>"Taking the pledge to check in with friends each week has strengthened my relationships and made me more aware of my own mental health."</p>
-        </div>
-    </div>
 
-    <!-- Pledge Form -->
-    <div class="scheduler-container" style="max-width:500px; margin:0 auto; text-align:center;">
-        <h2 style="color:#378056;">Take the Pledge</h2>
-        <p style="color:#5d825a;">Commit to checking in with someone, sharing awareness, or supporting mental health in your community.</p>
-        <div class="form-row">
-            <label for="pledgeName">Your Name</label>
-            <input type="text" id="pledgeName" placeholder="Enter your name">
+        <!-- Pledge Form -->
+        <div class="scheduler-container">
+            <h2 style="color:#378056;">Take the Pledge</h2>
+            <p style="color:#5d825a;">Commit to checking in with someone, sharing awareness, or supporting mental health in your community.</p>
+            <div class="form-row">
+                <label for="pledgeName">Your Name</label>
+                <input type="text" id="pledgeName" placeholder="Enter your name" required>
+            </div>
+            <div class="form-row">
+                <label for="pledgeEmail">Email (optional)</label>
+                <input type="email" id="pledgeEmail" placeholder="Enter your email">
+            </div>
+            <button class="btn primary" onclick="submitPledge()">Take the Pledge</button>
+            <div id="pledgeConfirmation" class="confirmation hidden">Thank you for taking the pledge! 🌿</div>
         </div>
-        <div class="form-row">
-            <label for="pledgeEmail">Email (optional)</label>
-            <input type="email" id="pledgeEmail" placeholder="Enter your email">
-        </div>
-        <button class="btn primary" onclick="submitPledge()">Take the Pledge</button>
-        <div id="pledgeConfirmation" class="confirmation hidden">Thank you for taking the pledge! 🌿</div>
-    </div>
-</section>
+    </section>
 </main>
 
 <div id="footer"></div>
-<script>fetch(../'templates/footer.html')
+<script>
+fetch('../templates/footer.html')
     .then(res => res.text())
     .then(html => document.getElementById('footer').innerHTML = html);
 
-function submitPledge() {
-    const name = document.getElementById('pledgeName').value.trim();
-    const email = document.getElementById('pledgeEmail').value.trim();
-    const confirmation = document.getElementById('pledgeConfirmation');
+document.addEventListener("DOMContentLoaded", () => {
+    window.submitPledge = function() {
+        const name = document.getElementById('pledgeName').value.trim();
+        const email = document.getElementById('pledgeEmail').value.trim();
+        const confirmation = document.getElementById('pledgeConfirmation');
 
-    if(name === "") {
-        alert("Please enter your name to take the pledge.");
-        return;
-    }
+        if(name === "") {
+            alert("Please enter your name to take the pledge.");
+            return;
+        }
 
-    // For now, just show confirmation. You can expand to store in a database later.
-    confirmation.innerHTML = `Thank you, ${name}, for taking the pledge! 🌿`;
-    confirmation.classList.remove("hidden");
+        confirmation.innerHTML = `Thank you, ${name}, for taking the pledge! 🌿`;
+        confirmation.classList.remove("hidden");
 
-    // Clear inputs
-    document.getElementById('pledgeName').value = "";
-    document.getElementById('pledgeEmail').value = "";
-}</script>
+        document.getElementById('pledgeName').value = "";
+        document.getElementById('pledgeEmail').value = "";
+    };
+});
+</script>
 </body>
 </html>

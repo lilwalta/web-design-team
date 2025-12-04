@@ -16,3 +16,10 @@ Take action will be a things you can do, charities and finally goals/motives of 
 A resources page will have some contact info using a database to find your area to find local helplines then the national helplines will be on there. The data will show graphs on things like mental health in certain areas then what are money will go to/has gone too. this will be added onto with animations, interactive charts, and geolocation<br><br>
 The forum will be a signup/login page then the forum (will probably be hard to setup this will be a more than one person thing during a meeting)<br>
 Final thing I want to work on together is making sure parts of the website are actually relevant to mental health like color scheme, info, footer, logo, etc.<br>
+
+
+### Externalities ### <br>
+* Best domain for price is $4.28 and it's thrivewell.website, I think one of us can host it or get it free hosted by github or other.
+* However, I think it would be professional and cool to have an email server setup with an admin email etc.
+* We need social media websites setup for thrivewell with some small posted material (news/events/whatever)
+* Get a real gofundme started

@@ -85,105 +85,92 @@ const guidedData = {
     ]
 };
 
-let currentSteps = [];
-let currentIndex = 0;
+        // Open modal
+        document.querySelectorAll('.disorders-grid .card a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
 
-document.querySelectorAll('.disorders-grid .card a').forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
-        const cardTitle = link.closest('.card').querySelector('h3').innerText;
-        if(!guidedData[cardTitle]) return;
+                const cardTitle = link.closest('.card').querySelector('h3').innerText;
+                if (!guidedData[cardTitle]) return;
 
-        currentSteps = guidedData[cardTitle];
-        currentIndex = 0;
-        guidedTitle.innerText = cardTitle;
+                currentSteps = guidedData[cardTitle];
+                currentIndex = 0;
 
-        guidedText.style.opacity = 0;
-        setTimeout(() => {
+                guidedTitle.innerText = cardTitle;
+                guidedText.innerText = currentSteps[currentIndex].text;
+                fullArticleBtn.href = currentSteps[currentIndex].link;
+                progressBar.style.width = "25%";
+
+                prevBtn.disabled = true;
+                nextBtn.disabled = false;
+
+                guidedOverlay.classList.add('show');
+            });
+        });
+
+        // Update modal content
+        function updateStep() {
             guidedText.innerText = currentSteps[currentIndex].text;
             fullArticleBtn.href = currentSteps[currentIndex].link;
-            guidedText.style.opacity = 1;
-        }, 200);
 
-        prevBtn.disabled = true;
-        nextBtn.disabled = currentSteps.length === 1;
-        progressBar.style.width = `${((currentIndex+1)/currentSteps.length)*100}%`;
-        guidedOverlay.classList.add('show');
-    });
-});
+            progressBar.style.width =
+                `${((currentIndex + 1) / currentSteps.length) * 100}%`;
 
-function updateStep() {
-    guidedText.style.opacity = 0;
-    setTimeout(() => {
-        guidedText.innerText = currentSteps[currentIndex].text;
-        fullArticleBtn.href = currentSteps[currentIndex].link;
-        guidedText.style.opacity = 1;
-    }, 200);
-
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex === currentSteps.length - 1;
-    progressBar.style.width = `${((currentIndex+1)/currentSteps.length)*100}%`;
-}
-
-nextBtn.addEventListener('click', () => {
-    if(currentIndex < currentSteps.length - 1){
-        currentIndex++;
-        updateStep();
-    }
-});
-
-prevBtn.addEventListener('click', () => {
-    if(currentIndex > 0){
-        currentIndex--;
-        updateStep();
-    }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.querySelector(".hamburger");
-    const mobileMenu = document.querySelector(".mobile-menu");
-
-    // Toggle mobile menu
-    function toggleMenu() {
-        const isOpen = mobileMenu.classList.toggle("show");
-
-        // Accessibility attributes
-        hamburger.setAttribute("aria-expanded", isOpen);
-
-        // Prevent body scroll when menu is open
-        document.body.style.overflow = isOpen ? "hidden" : "";
-    }
-
-    // Open / close menu when clicking hamburger
-    hamburger.addEventListener("click", toggleMenu);
-
-    // Allow Enter/Space keys to activate hamburger
-    hamburger.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            toggleMenu();
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === currentSteps.length - 1;
         }
-    });
 
-    // Close if clicking anywhere outside the menu
-    document.addEventListener("click", (e) => {
-        const clickedInsideMenu = mobileMenu.contains(e.target);
-        const clickedHamburger = hamburger.contains(e.target);
-        if (!clickedInsideMenu && !clickedHamburger) {
-            if (mobileMenu.classList.contains("show")) {
-                mobileMenu.classList.remove("show");
-                document.body.style.overflow = "";
-                hamburger.setAttribute("aria-expanded", "false");
+        // Buttons
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < currentSteps.length - 1) {
+                currentIndex++;
+                updateStep();
             }
-        }
-    });
+        });
 
-    // Close on Escape key
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && mobileMenu.classList.contains("show")) {
-            mobileMenu.classList.remove("show");
-            hamburger.setAttribute("aria-expanded", "false");
-            document.body.style.overflow = "";
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateStep();
+            }
+        });
+
+        // Close modal
+        document.querySelector('.guided-close').addEventListener('click', () => {
+            guidedOverlay.classList.remove('show');
+        });
+    }
+
+    /************************************************************
+     *  MOBILE MENU (ALL PAGES)
+     ************************************************************/
+    const hamburger = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector("nav ul");
+
+    if (hamburger && mobileMenu) {
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.toggle("open");
+            hamburger.setAttribute("aria-expanded", isOpen);
+            document.body.style.overflow = isOpen ? "hidden" : "";
         }
-    });
+
+        hamburger.addEventListener("click", toggleMenu);
+
+        // Close on outside click
+        document.addEventListener("click", (e) => {
+            const clickedInsideMenu = mobileMenu.contains(e.target);
+            const clickedHamburger = hamburger.contains(e.target);
+            if (!clickedInsideMenu && !clickedHamburger && mobileMenu.classList.contains("open")) {
+                toggleMenu();
+            }
+        });
+
+        // Close on ESC
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && mobileMenu.classList.contains("open")) {
+                toggleMenu();
+            }
+        });
+    }
+
 });

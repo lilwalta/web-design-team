@@ -100,7 +100,7 @@ header .container {
     background: #ffffff;
     border-top: 1px solid rgba(0,0,0,0.08);
     padding: 0.5rem 0;
-    border-radius: 0 0 14px 14px;
+    border-radius: 0 0 12px 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     animation: menuSlide 0.25s ease-out;
 }
@@ -109,6 +109,10 @@ header .container {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+ .mobile-menu.show {
+    display: flex;
+  }
 
 .mobile-menu li {
     list-style: none;

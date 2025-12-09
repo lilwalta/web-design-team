@@ -144,7 +144,7 @@ const guidedData = {
     /************************************************************
      *  MOBILE MENU (ALL PAGES)
      ************************************************************/
-    const hamburger = document.querySelector(".menu-toggle");
+    const hamburger = document.querySelector(".hamburger");
     const mobileMenu = document.querySelector("nav ul");
 
     if (hamburger && mobileMenu) {

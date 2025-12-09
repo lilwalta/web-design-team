@@ -37,9 +37,8 @@ header .container {
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 1rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
-
 .brand {
     display: flex;
     align-items: center;
@@ -149,6 +148,9 @@ header .container {
 
     .mobile-menu {
         text-align: center;
+    }
+    header .container {
+        flex-wrap: wrap; /* only wrap on mobile */
     }
 }
 

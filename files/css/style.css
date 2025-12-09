@@ -152,6 +152,12 @@ header .container {
     }
 }
 
+@media (min-width: 901px) {
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
 .footer {
     background-color: var(--dark-green);
     color: var(--light-green);

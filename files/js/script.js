@@ -141,36 +141,4 @@ const guidedData = {
         });
     }
 
-    /************************************************************
-     *  MOBILE MENU (ALL PAGES)
-     ************************************************************/
-    const hamburger = document.querySelector(".hamburger");
-    const mobileMenu = document.querySelector("nav ul");
-
-    if (hamburger && mobileMenu) {
-        function toggleMenu() {
-            const isOpen = mobileMenu.classList.toggle("open");
-            hamburger.setAttribute("aria-expanded", isOpen);
-            document.body.style.overflow = isOpen ? "hidden" : "";
-        }
-
-        hamburger.addEventListener("click", toggleMenu);
-
-        // Close on outside click
-        document.addEventListener("click", (e) => {
-            const clickedInsideMenu = mobileMenu.contains(e.target);
-            const clickedHamburger = hamburger.contains(e.target);
-            if (!clickedInsideMenu && !clickedHamburger && mobileMenu.classList.contains("open")) {
-                toggleMenu();
-            }
-        });
-
-        // Close on ESC
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && mobileMenu.classList.contains("open")) {
-                toggleMenu();
-            }
-        });
-    }
-
 });

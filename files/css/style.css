@@ -57,6 +57,7 @@ header .container {
     display: flex;
     list-style: none;
     gap: 1.5rem;
+    white-space: nowrap; 
     margin-left: auto;
 }
 
@@ -87,7 +88,6 @@ header .container {
     transition: 0.3s ease;
 }
 
-/* Mobile menu dropdown */
 .mobile-menu {
     display: none;
     flex-direction: column;

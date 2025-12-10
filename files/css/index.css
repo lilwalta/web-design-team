@@ -477,7 +477,7 @@ button.btn.primary:hover {
 .news-title {
     font-size: 2.8rem;
     font-weight: 700;
-    color: #101b05; /* Dark green from your palette */
+    color: #101b05;
     margin: 0;
 }
 
@@ -501,10 +501,10 @@ button.btn.primary:hover {
 
 .news-heading-line {
     display: block;
-    width: 50px;        /* length of the little bar */
-    height: 4px;        /* thickness */
+    width: 50px;
+    height: 4px;
     border-radius: 10px;
-    background-color: #378056; /* your accent green */
+    background-color: #378056;
 }
 
 .news-title {

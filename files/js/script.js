@@ -85,60 +85,69 @@ const guidedData = {
     ]
 };
 
-        // Open modal
-        document.querySelectorAll('.disorders-grid .card a').forEach(link => {
-            link.addEventListener('click', e => {
-                e.preventDefault();
+function initDisorderModal() {
+    const guidedOverlay = document.getElementById('guided-modal');
+    const guidedTitle = document.getElementById('guided-title');
+    const guidedText = document.getElementById('guided-text');
+    const prevBtn = document.getElementById('prev-step');
+    const nextBtn = document.getElementById('next-step');
+    const guidedClose = document.querySelector('.guided-close');
+    const progressBar = document.getElementById('guided-progress-bar');
+    const fullArticleBtn = document.getElementById('modal-link');
 
-                const cardTitle = link.closest('.card').querySelector('h3').innerText;
-                if (!guidedData[cardTitle]) return;
+    if (!guidedOverlay) return; // safemode
 
-                currentSteps = guidedData[cardTitle];
-                currentIndex = 0;
+    let currentSteps = [];
+    let currentIndex = 0;
 
-                guidedTitle.innerText = cardTitle;
-                guidedText.innerText = currentSteps[currentIndex].text;
-                fullArticleBtn.href = currentSteps[currentIndex].link;
-                progressBar.style.width = "25%";
+    document.querySelectorAll('.disorders-grid .card a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const cardTitle = link.closest('.card').querySelector('h3').innerText;
 
-                prevBtn.disabled = true;
-                nextBtn.disabled = false;
+            if (!guidedData[cardTitle]) return;
 
-                guidedOverlay.classList.add('show');
-            });
+            currentSteps = guidedData[cardTitle];
+            currentIndex = 0;
+
+            guidedTitle.innerText = cardTitle;
+            guidedText.innerText = currentSteps[0].text;
+            fullArticleBtn.href = currentSteps[0].link;
+
+            progressBar.style.width = `${(1 / currentSteps.length) * 100}%`;
+            prevBtn.disabled = true;
+            nextBtn.disabled = false;
+
+            guidedOverlay.classList.add('show');
         });
+    });
 
-        // Update modal content
-        function updateStep() {
-            guidedText.innerText = currentSteps[currentIndex].text;
-            fullArticleBtn.href = currentSteps[currentIndex].link;
+    guidedClose.addEventListener('click', () => {
+        guidedOverlay.classList.remove('show');
+    });
 
-            progressBar.style.width =
-                `${((currentIndex + 1) / currentSteps.length) * 100}%`;
-
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex === currentSteps.length - 1;
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < currentSteps.length - 1) {
+            currentIndex++;
+            updateStep();
         }
+    });
 
-        // Buttons
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < currentSteps.length - 1) {
-                currentIndex++;
-                updateStep();
-            }
-        });
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateStep();
+        }
+    });
 
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateStep();
-            }
-        });
+    function updateStep() {
+        guidedText.innerText = currentSteps[currentIndex].text;
+        fullArticleBtn.href = currentSteps[currentIndex].link;
 
-        // Close modal
-        document.querySelector('.guided-close').addEventListener('click', () => {
-            guidedOverlay.classList.remove('show');
-        });
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === currentSteps.length - 1;
+
+        progressBar.style.width = `${((currentIndex + 1) / currentSteps.length) * 100}%`;
     }
+}
 
-});

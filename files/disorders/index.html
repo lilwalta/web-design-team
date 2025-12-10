@@ -15,8 +15,10 @@
 <script>
     fetch('../templates/header.html')
         .then(res => res.text())
-        .then(html => document.getElementById('header').innerHTML = html);
-        initDisorderModal();
+        .then(html => {
+            document.getElementById('header').innerHTML = html;
+            initDisorderModal(); // <-- MUST be inside this function
+        });
 </script>
 
 <section class="hero info-hero">

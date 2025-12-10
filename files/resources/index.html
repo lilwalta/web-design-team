@@ -122,9 +122,12 @@
 <body>
 <div id="header"></div>
 <script>
-    fetch('../templates/header.html')
-        .then(res => res.text())
-        .then(html => document.getElementById('header').innerHTML = html);
+fetch('../templates/header.html')
+  .then(res => res.text())
+  .then(html => {
+      document.getElementById('header').innerHTML = html;
+      initMobileMenu();
+  });
 </script>
 <main>
 <!-- Resources Section -->

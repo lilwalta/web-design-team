@@ -210,6 +210,10 @@ header .container {
     font-size: 1.1rem;
     transition: color 0.3s ease;
 }
+.social-icons a:hover .fa-facebook-f { color: #4f77c3; }
+.social-icons a:hover .fa-instagram { color: #fb67a9; }
+.social-icons a:hover .fa-x-twitter { color: #68d7ff; }
+.social-icons a:hover .fa-linkedin-in { color: #146bb6; }
 
 .newsletter {
     display: flex;

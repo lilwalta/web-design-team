@@ -150,4 +150,32 @@ function initDisorderModal() {
         progressBar.style.width = `${((currentIndex + 1) / currentSteps.length) * 100}%`;
     }
 }
+function initMobileMenu() {
+    const hamburger = document.querySelector(".hamburger");
+    const mobileMenu = document.querySelector(".mobile-menu");
+
+    if (!hamburger || !mobileMenu) return; // header not loaded yet
+
+    hamburger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("show");
+        document.body.style.overflow = mobileMenu.classList.contains("show") ? "hidden" : "";
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!mobileMenu.contains(e.target) &&
+            !hamburger.contains(e.target) &&
+            mobileMenu.classList.contains("show")) 
+        {
+            mobileMenu.classList.remove("show");
+            document.body.style.overflow = "";
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileMenu.classList.contains("show")) {
+            mobileMenu.classList.remove("show");
+            document.body.style.overflow = "";
+        }
+    });
+}
 

@@ -220,6 +220,7 @@ header .container {
     border: 1px solid var(--mid-green);
     border-radius: 30px;
     overflow: hidden;
+    width: 60%;
 }
 
 .newsletter input {

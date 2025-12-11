@@ -9,115 +9,6 @@
     <link rel="stylesheet" href="../css/style.css"/>
     <link rel="stylesheet" href="../css/index.css"/>
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
-       <style>
-        .action-section {
-            padding: 4rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .action-section h2 {
-            font-size: 2rem;
-            color: #101b05;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .action-section p {
-            color: #5d825a;
-            text-align: center;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .action-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .action-card {
-            background: #f5fcf0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-align: center;
-        }
-
-        .action-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
-
-        .action-card h3 {
-            color: #378056;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
-        .zip-search {
-            max-width: 400px;
-            margin: 2rem auto 1rem auto;
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .zip-search input {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            border: 1px solid #d5e6d5;
-            border-radius: 10px;
-            font-size: 1rem;
-        }
-
-        .zip-search button {
-            padding: 0.8rem 1rem;
-            background: #378056;
-            color: #f5fcf0;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .zip-search button:hover {
-            background: #5d825a;
-        }
-
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .resource-card {
-            background: #eaf4eb;
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            text-align: left;
-        }
-
-        .resource-card h4 {
-            margin: 0 0 0.5rem 0;
-            color: #234f32;
-        }
-
-        .resource-card p {
-            margin: 0;
-            color: #4c6b52;
-            line-height: 1.4;
-        }
-
-        .no-results {
-            text-align: center;
-            color: #a2a2a2;
-            margin-top: 1rem;
-        }
-    </style>
 </head>
 <body>
 <div id="header"></div>
@@ -130,12 +21,10 @@ fetch('../templates/header.html')
   });
 </script>
 <main>
-<!-- Resources Section -->
 <section class="action-section" id="resources">
     <h2>Resources</h2>
     <p>Find support and educational resources to help you or someone you care about thrive.</p>
 
-    <!-- Zip Code Resource Finder -->
     <div class="zip-code-resources" style="margin-bottom:3rem;">
         <h3 style="color:#378056; text-align:center;">Find Local Resources</h3>
         <p style="text-align:center; color:#5d825a;">Enter your zip code to see nearby mental health services and hotlines.</p>
@@ -147,7 +36,6 @@ fetch('../templates/header.html')
         <div id="noResults" class="no-results hidden">Couldn't find any resources for this zip code.</div>
     </div>
 
-    <!-- General Educational Resources -->
     <div class="general-resources" id="articles">
         <h3 style="color:#378056; text-align:center;">General Mental Health Resources</h3>
         <p style="text-align:center; color:#5d825a;">Explore blogs, articles, and educational sites to learn more about mental health and wellness.</p>
@@ -248,7 +136,6 @@ fetch(../'templates/footer.html')
     .then(res => res.text())
     .then(html => document.getElementById('footer').innerHTML = html);
 
-// Zip code resource data
 const zipResources = {
     "92801": [
         {name: "OC Mental Health Clinic", description: "Affordable therapy and counseling sessions."},

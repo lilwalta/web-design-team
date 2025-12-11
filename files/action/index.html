@@ -8,160 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="../css/style.css"/>
     <link rel="stylesheet" href="../css/index.css"/>
+    <link rel="stylesheet" href="../css/action.css"/>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <style>
-        /* =========================
-           Action Page Styles
-        ========================= */
-        .action-section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .action-section.bg-light {
-            background: #eaf4eb;
-        }
-
-        .action-section.bg-lighter {
-            background: #f3faef;
-        }
-
-        .action-section h2 {
-            font-size: 2rem;
-            color: #101b05;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .action-section p {
-            color: #5d825a;
-            text-align: center;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .action-grid,
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .action-card {
-            background: #f5fcf0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-align: center;
-        }
-
-        .action-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
-
-        .action-card h3 {
-            color: #378056;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
-        .action-card a.btn {
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            background-color: #378056; /* Accent green */
-            color: #f5fcf0;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            margin-top: 1rem;
-        }
-
-        .action-card a.btn:hover {
-            background-color: #5d825a; 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-        }
-
-        .resource-card {
-            background: #eaf4eb;
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            text-align: left;
-        }
-
-        .resource-card h4 {
-            margin: 0 0 0.5rem 0;
-            color: #234f32;
-        }
-
-        .resource-card p {
-            margin: 0;
-            color: #4c6b52;
-            line-height: 1.4;
-        }
-
-        /* Scheduler / Pledge form */
-        .scheduler-container {
-            max-width: 500px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .form-row {
-            margin-bottom: 1rem;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .form-row label {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-            color: #101b05;
-        }
-
-        .form-row input {
-            padding: 0.8rem 1rem;
-            border: 1px solid #d5e6d5;
-            border-radius: 10px;
-            font-size: 1rem;
-            background-color: #f9fbf9;
-            color: #101b05;
-        }
-
-        .btn.primary {
-            cursor: pointer;
-        }
-
-        .confirmation {
-            text-align: center;
-            background: #edf6ee;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-top: 2rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .action-section {
-                padding: 3rem 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
 <div id="header"></div>
@@ -172,7 +20,6 @@
 </script>
 
 <main>
-    <!-- Volunteer & Donate -->
     <section class="action-section">
         <h2>Volunteer & Donate</h2>
         <p>Support mental health initiatives by volunteering your time or donating to programs that make a real difference.</p>
@@ -189,8 +36,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Support Others -->
     <section class="action-section bg-light">
         <h2>Support Others</h2>
         <p>You can make a difference by being there for someone, sharing resources, or advocating for mental health awareness.</p>
@@ -206,7 +51,6 @@
         </div>
     </section>
 
-    <!-- Stories + Pledge Section -->
     <section class="action-section bg-lighter" id="stories-pledge">
         <h2>Real Stories, Real Impact</h2>
         <p>Hear from people whose lives have been touched by mental health awareness, and take your pledge to make a difference.</p>
@@ -227,7 +71,6 @@
             </div>
         </div>
 
-        <!-- Pledge Form -->
         <div class="scheduler-container">
             <h2 style="color:#378056;">Take the Pledge</h2>
             <p style="color:#5d825a;">Commit to checking in with someone, sharing awareness, or supporting mental health in your community.</p>
@@ -262,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        confirmation.innerHTML = `Thank you, ${name}, for taking the pledge! 🌿`;
+        confirmation.innerHTML = `Thank you, ${name}, for taking the pledge!;
         confirmation.classList.remove("hidden");
 
         document.getElementById('pledgeName').value = "";

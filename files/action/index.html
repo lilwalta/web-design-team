@@ -14,11 +14,13 @@
 <body>
 <div id="header"></div>
 <script>
-fetch('../../templates/header.html')
-  .then(res => res.text())
-  .then(html => {
-      document.getElementById('header').innerHTML = html;
-      initMobileMenu();
+fetch('../templates/header.html')
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById('header').innerHTML = html;
+            initDisorderModal();
+            initMobileMenu();
+        });
 </script>
 
 <main>

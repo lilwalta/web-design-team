@@ -238,6 +238,18 @@
     background: #5d825a;
     transform: translateY(-2px);
 }
+@media (max-width: 1024px) {
+    .disorders-grid .grid {
+        grid-template-columns: repeat(2, 1fr); /* tablet */
+    }
+}
+
+@media (max-width: 640px) {
+    .disorders-grid .grid {
+        grid-template-columns: 1fr; /* mobile */
+    }
+}
+
 
 @keyframes modalFadeIn {
     0% { opacity: 0; transform: translateY(30px); }

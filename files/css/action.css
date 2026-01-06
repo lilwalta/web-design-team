@@ -14,6 +14,7 @@
 .action-section-inner {
     max-width: 1100px;
     margin: 0 auto;
+       padding-inline: 1rem;
 }
 
 /* Section backgrounds (layered like homepage) */
@@ -159,6 +160,8 @@
     border-radius: 50%;
     background: #dce9df;
     margin: 0 auto 1rem;
+       background-size: cover;
+    background-position: center;
 }
 
 .testimonial h4 {
@@ -204,6 +207,50 @@
     border: 1px solid #d5e6d5;
     margin-bottom: 1rem;
     font-size: 1rem;
+}
+/* Pledge emphasis */
+.pledge-box {
+    background: linear-gradient(
+        135deg,
+        #e1f0e4,
+        #f6fbf7
+    );
+    border: 1px solid rgba(55, 128, 86, 0.15);
+}
+
+/* Optional subtle accent stripe */
+.pledge-box::before {
+    content: "";
+    display: block;
+    height: 6px;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(
+        90deg,
+        var(--accent-green),
+        var(--teal)
+    );
+    margin-bottom: 1.5rem;
+}
+.pledge-box .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.9rem 1.75rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.3px;
+    border-radius: 999px;
+    background: linear-gradient(
+        135deg,
+        var(--accent-green),
+        var(--teal)
+    );
+    color: var(--light-green);
+    box-shadow: 0 10px 25px rgba(16, 27, 5, 0.25);
+}
+
+.pledge-box .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(16, 27, 5, 0.35);
 }
 
 /* =========================

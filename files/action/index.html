@@ -1,3 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Action | ThriveWell</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/action.css">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body>
+
+<div id="header"></div>
+<script>
+fetch('../templates/header.html')
+  .then(res => res.text())
+  .then(html => {
+      document.getElementById('header').innerHTML = html;
+      initMobileMenu();
+  });
+</script>
+
 <main class="action-page">
 
 <!-- VOLUNTEER & DONATE -->
@@ -113,3 +140,15 @@
 </section>
 
 </main>
+
+<div id="footer"></div>
+<script>
+fetch('../templates/footer.html')
+  .then(res => res.text())
+  .then(html => document.getElementById('footer').innerHTML = html);
+</script>
+
+<script src="../js/action.js"></script>
+
+</body>
+</html>

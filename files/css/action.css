@@ -1,7 +1,3 @@
-/* =========================
-   ACTION PAGE – THRIVEWELL
-   ========================= */
-
 .action-page {
     background: var(--light-green);
 }
@@ -17,8 +13,7 @@
        padding-inline: 1rem;
 }
 
-/* Section backgrounds (layered like homepage) */
-.action-section.alt {
+.action-section.first {
     background: #eaf4eb;
 }
 
@@ -41,10 +36,6 @@
     color: var(--mid-green);
     line-height: 1.7;
 }
-
-/* =========================
-   CARDS
-   ========================= */
 
 .action-grid {
     display: grid;
@@ -97,10 +88,6 @@
     transform: translateY(-2px);
 }
 
-/* =========================
-   SUPPORT STEPS
-   ========================= */
-
 .support-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -134,10 +121,6 @@
     color: var(--mid-green);
     font-size: 0.95rem;
 }
-
-/* =========================
-   TESTIMONIALS
-   ========================= */
 
 .testimonial-grid {
     display: grid;
@@ -174,10 +157,6 @@
     font-style: italic;
     line-height: 1.6;
 }
-
-/* =========================
-   PLEDGE
-   ========================= */
 
 .pledge-box {
     max-width: 540px;
@@ -252,10 +231,6 @@
     transform: translateY(-2px);
     box-shadow: 0 14px 35px rgba(16, 27, 5, 0.35);
 }
-
-/* =========================
-   MOBILE
-   ========================= */
 
 @media (max-width: 768px) {
     .action-section {

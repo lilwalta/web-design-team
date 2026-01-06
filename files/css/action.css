@@ -1,17 +1,49 @@
+/* =========================
+   ACTION PAGE – THRIVEWELL
+   ========================= */
+
 .action-page {
-    background: #f5fcf0;
-    padding-top: 3rem;
+    background: var(--light-green);
 }
 
+/* Shared section layout */
 .action-section {
-    max-width: 1200px;
-    margin: 0 auto 4rem;
-    padding: 4rem 2rem;
-    border-radius: 24px;
+    padding: 5rem 1.5rem;
 }
 
-.bg-light { background: #eaf4eb; }
-.bg-lighter { background: #f3faef; }
+.action-section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Section backgrounds (layered like homepage) */
+.action-section.alt {
+    background: #eaf4eb;
+}
+
+.action-section.soft {
+    background: #f1f7f2;
+}
+
+/* Headings */
+.action-section h2 {
+    font-size: 2.2rem;
+    color: var(--dark-green);
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.action-section .section-subtext {
+    max-width: 650px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--mid-green);
+    line-height: 1.7;
+}
+
+/* =========================
+   CARDS
+   ========================= */
 
 .action-grid {
     display: grid;
@@ -19,68 +51,171 @@
     gap: 2rem;
 }
 
+/* Softer card look */
 .action-card {
-    background: #ffffff;
+    background: rgba(245, 252, 240, 0.85);
     border-radius: 18px;
-    padding: 2rem;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 12px 30px rgba(16, 27, 5, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    backdrop-filter: blur(4px);
+}
+
+.action-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(16, 27, 5, 0.12);
+}
+
+.action-card h3 {
+    color: var(--accent-green);
+    font-size: 1.45rem;
+    margin-bottom: 0.75rem;
+}
+
+.action-card p {
+    color: var(--mid-green);
+    line-height: 1.6;
+}
+
+/* Buttons */
+.action-card .btn {
+    margin-top: 1.25rem;
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 999px;
+    background: var(--accent-green);
+    color: var(--light-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.action-card .btn:hover {
+    background: var(--teal);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   SUPPORT STEPS
+   ========================= */
+
+.support-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.support-step {
+    text-align: center;
+}
+
+.support-step span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--accent-green);
+    color: var(--light-green);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.support-step h4 {
+    color: var(--dark-green);
+    margin-bottom: 0.25rem;
+}
+
+.support-step p {
+    color: var(--mid-green);
+    font-size: 0.95rem;
+}
+
+/* =========================
+   TESTIMONIALS
+   ========================= */
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
 }
 
 .testimonial {
-    padding-top: 4rem;
+    background: rgba(245, 252, 240, 0.9);
+    border-radius: 20px;
+    padding: 2.5rem 1.75rem 2rem;
+    box-shadow: 0 14px 35px rgba(16, 27, 5, 0.1);
+    text-align: center;
     position: relative;
 }
 
-.avatar {
-    width: 70px;
-    height: 70px;
+.testimonial-avatar {
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    overflow: hidden;
-    position: absolute;
-    top: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 4px solid #f5fcf0;
+    background: #dce9df;
+    margin: 0 auto 1rem;
 }
 
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.testimonial h4 {
+    color: var(--accent-green);
+    margin-bottom: 0.25rem;
 }
 
-.section-divider {
-    height: 1px;
-    background: linear-gradient(to right, transparent, #cfe2cf, transparent);
-    margin: 4rem auto;
-    max-width: 800px;
+.testimonial p {
+    color: var(--mid-green);
+    font-style: italic;
+    line-height: 1.6;
 }
 
-.scheduler-container {
-    max-width: 500px;
-    margin: auto;
+/* =========================
+   PLEDGE
+   ========================= */
+
+.pledge-box {
+    max-width: 540px;
+    margin: 3rem auto 0;
+    background: rgba(245, 252, 240, 0.95);
+    padding: 3rem 2rem;
+    border-radius: 22px;
+    box-shadow: 0 20px 45px rgba(16, 27, 5, 0.12);
     text-align: center;
 }
 
-.form-row {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
+.pledge-box h3 {
+    color: var(--accent-green);
+    margin-bottom: 0.75rem;
 }
 
-.form-row input,
-.form-row select {
-    padding: 0.8rem;
+.pledge-box p {
+    color: var(--mid-green);
+    margin-bottom: 1.5rem;
+}
+
+.pledge-box select,
+.pledge-box input {
+    width: 100%;
+    padding: 0.75rem 1rem;
     border-radius: 12px;
     border: 1px solid #d5e6d5;
+    margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
-.confirmation {
-    margin-top: 1.5rem;
-    background: #edf6ee;
-    padding: 1.5rem;
-    border-radius: 12px;
-}
+/* =========================
+   MOBILE
+   ========================= */
 
-.hidden { display: none; }
+@media (max-width: 768px) {
+    .action-section {
+        padding: 4rem 1.25rem;
+    }
+
+    .action-section h2 {
+        font-size: 1.9rem;
+    }
+}

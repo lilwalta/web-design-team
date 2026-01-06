@@ -1,147 +1,86 @@
-        .action-section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.action-page {
+    background: #f5fcf0;
+    padding-top: 3rem;
+}
 
-        .action-section.bg-light {
-            background: #eaf4eb;
-        }
+.action-section {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 4rem 2rem;
+    border-radius: 24px;
+}
 
-        .action-section.bg-lighter {
-            background: #f3faef;
-        }
+.bg-light { background: #eaf4eb; }
+.bg-lighter { background: #f3faef; }
 
-        .action-section h2 {
-            font-size: 2rem;
-            color: #101b05;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
 
-        .action-section p {
-            color: #5d825a;
-            text-align: center;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
+.action-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
 
-        .action-grid,
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
+.testimonial {
+    padding-top: 4rem;
+    position: relative;
+}
 
-        .action-card {
-            background: #f5fcf0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-align: center;
-        }
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid #f5fcf0;
+}
 
-        .action-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .action-card h3 {
-            color: #378056;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #cfe2cf, transparent);
+    margin: 4rem auto;
+    max-width: 800px;
+}
 
-        .action-card a.btn {
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            background-color: #378056; /* Accent green */
-            color: #f5fcf0;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            margin-top: 1rem;
-        }
+.scheduler-container {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
 
-        .action-card a.btn:hover {
-            background-color: #5d825a; 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-        }
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
 
-        .resource-card {
-            background: #eaf4eb;
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            text-align: left;
-        }
+.form-row input,
+.form-row select {
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 1px solid #d5e6d5;
+}
 
-        .resource-card h4 {
-            margin: 0 0 0.5rem 0;
-            color: #234f32;
-        }
+.confirmation {
+    margin-top: 1.5rem;
+    background: #edf6ee;
+    padding: 1.5rem;
+    border-radius: 12px;
+}
 
-        .resource-card p {
-            margin: 0;
-            color: #4c6b52;
-            line-height: 1.4;
-        }
-
-        .scheduler-container {
-            max-width: 500px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .form-row {
-            margin-bottom: 1rem;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .form-row label {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-            color: #101b05;
-        }
-
-        .form-row input {
-            padding: 0.8rem 1rem;
-            border: 1px solid #d5e6d5;
-            border-radius: 10px;
-            font-size: 1rem;
-            background-color: #f9fbf9;
-            color: #101b05;
-        }
-
-        .btn.primary {
-            cursor: pointer;
-        }
-
-        .confirmation {
-            text-align: center;
-            background: #edf6ee;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-top: 2rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .action-section {
-                padding: 3rem 1rem;
-            }
-        }
+.hidden { display: none; }

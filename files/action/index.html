@@ -1,121 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Take Action - ThriveWell</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="stylesheet" href="../css/index.css"/>
-    <link rel="stylesheet" href="../css/action.css"/>
-    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
-</head>
-<body>
-<div id="header"></div>
-<script>
-fetch('../templates/header.html')
-        .then(res => res.text())
-        .then(html => {
-            document.getElementById('header').innerHTML = html;
-            initDisorderModal();
-            initMobileMenu();
-        });
-</script>
+<main class="action-page">
 
-<main>
-    <section class="action-section">
-        <h2>Volunteer & Donate</h2>
-        <p>Support mental health initiatives by volunteering your time or donating to programs that make a real difference.</p>
+<!-- VOLUNTEER & DONATE -->
+<section class="action-section">
+    <div class="action-section-inner">
+        <h2>Take Meaningful Action</h2>
+        <p class="section-subtext">
+            Supporting mental health doesn’t require perfection — it starts with intention.
+        </p>
+
         <div class="action-grid">
             <div class="action-card">
-                <h3>Volunteer Locally</h3>
-                <p>Join a local mental health organization and help run events, support hotlines, or provide peer guidance.</p>
-                <a href="volunteer.html" class="btn primary" aria-label="Volunteer with ThriveWell">Volunteer Now</a>
+                <h3>Volunteer</h3>
+                <p>Support hotlines, events, or peer programs in your community.</p>
+                <a href="#" class="btn">Get Involved</a>
             </div>
+
             <div class="action-card">
                 <h3>Donate</h3>
-                <p>Contribute financially to mental health nonprofits to fund therapy programs, awareness campaigns, and research.</p>
-                <a href="donate.html" class="btn primary" aria-label="Donate to ThriveWell">Donate Now</a>
+                <p>Help fund therapy access, awareness campaigns, and research.</p>
+                <a href="#" class="btn">Support a Charity</a>
             </div>
         </div>
-    </section>
-    <section class="action-section bg-light">
-        <h2>Support Others</h2>
-        <p>You can make a difference by being there for someone, sharing resources, or advocating for mental health awareness.</p>
-        <div class="action-grid">
-            <div class="action-card">
-                <h3>Be a Listener</h3>
-                <p>Check in with friends or family, listen without judgment, and encourage professional help when needed.</p>
-            </div>
-            <div class="action-card">
-                <h3>Spread Awareness</h3>
-                <p>Share mental health information online or participate in campaigns to reduce stigma in your community.</p>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <section class="action-section bg-lighter" id="stories-pledge">
-        <h2>Real Stories, Real Impact</h2>
-        <p>Hear from people whose lives have been touched by mental health awareness, and take your pledge to make a difference.</p>
+<!-- SUPPORT STEPS -->
+<section class="action-section alt">
+    <div class="action-section-inner">
+        <h2>How You Can Support Others</h2>
+        <p class="section-subtext">
+            Small actions create real impact when practiced consistently.
+        </p>
 
-        <!-- Stories Grid -->
-        <div class="action-grid" style="margin-bottom:3rem;">
-            <div class="action-card">
-                <h3>Alex, 24</h3>
-                <p>"I used to feel completely alone with my anxiety. Joining a local support group changed my life—I now volunteer to help others do the same."</p>
+        <div class="support-steps">
+            <div class="support-step">
+                <span>1</span>
+                <h4>Listen</h4>
+                <p>Be present without judgment.</p>
             </div>
-            <div class="action-card">
-                <h3>Sara, 31</h3>
-                <p>"Sharing my story publicly helped me find connection and hope. I realized there are so many people willing to listen and support."</p>
+            <div class="support-step">
+                <span>2</span>
+                <h4>Check In</h4>
+                <p>Reach out regularly.</p>
             </div>
-            <div class="action-card">
-                <h3>Jordan, 19</h3>
-                <p>"Taking the pledge to check in with friends each week has strengthened my relationships and made me more aware of my own mental health."</p>
+            <div class="support-step">
+                <span>3</span>
+                <h4>Encourage Help</h4>
+                <p>Normalize professional support.</p>
+            </div>
+            <div class="support-step">
+                <span>4</span>
+                <h4>Educate</h4>
+                <p>Share trusted information.</p>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="scheduler-container">
-            <h2 style="color:#378056;">Take the Pledge</h2>
-            <p style="color:#5d825a;">Commit to checking in with someone, sharing awareness, or supporting mental health in your community.</p>
-            <div class="form-row">
-                <label for="pledgeName">Your Name</label>
-                <input type="text" id="pledgeName" placeholder="Enter your name" required>
+<!-- TESTIMONIALS -->
+<section class="action-section soft">
+    <div class="action-section-inner">
+        <h2>Real Stories</h2>
+        <p class="section-subtext">
+            Change starts when people feel seen and supported.
+        </p>
+
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="testimonial-avatar"></div>
+                <h4>Alex, 24</h4>
+                <p>“Volunteering helped me heal while helping others.”</p>
             </div>
-            <div class="form-row">
-                <label for="pledgeEmail">Email (optional)</label>
-                <input type="email" id="pledgeEmail" placeholder="Enter your email">
+            <div class="testimonial">
+                <div class="testimonial-avatar"></div>
+                <h4>Sara, 31</h4>
+                <p>“Sharing my story helped me find hope.”</p>
             </div>
-            <button class="btn primary" onclick="submitPledge()">Take the Pledge</button>
-            <div id="pledgeConfirmation" class="confirmation hidden">Thank you for taking the pledge! 🌿</div>
+            <div class="testimonial">
+                <div class="testimonial-avatar"></div>
+                <h4>Jordan, 19</h4>
+                <p>“Checking in weekly changed my relationships.”</p>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- PLEDGE -->
+<section class="action-section">
+    <div class="action-section-inner">
+        <h2>Take the ThriveWell Pledge</h2>
+        <p class="section-subtext">
+            Commit to small, consistent actions that support mental health.
+        </p>
+
+        <div class="pledge-box">
+            <h3>Your Commitment</h3>
+            <p>You’ll receive a gentle weekly reminder.</p>
+
+            <select>
+                <option>Check in with someone weekly</option>
+                <option>Share mental health resources</option>
+                <option>Volunteer monthly</option>
+                <option>Practice self-care intentionally</option>
+            </select>
+
+            <input type="text" placeholder="Your name">
+            <input type="email" placeholder="Email for reminders">
+
+            <button class="btn">Take the Pledge</button>
+        </div>
+    </div>
+</section>
+
 </main>
-
-<div id="footer"></div>
-<script>
-fetch('../templates/footer.html')
-    .then(res => res.text())
-    .then(html => document.getElementById('footer').innerHTML = html);
-
-document.addEventListener("DOMContentLoaded", () => {
-    window.submitPledge = function() {
-        const name = document.getElementById('pledgeName').value.trim();
-        const email = document.getElementById('pledgeEmail').value.trim();
-        const confirmation = document.getElementById('pledgeConfirmation');
-
-        if(name === "") {
-            alert("Please enter your name to take the pledge.");
-            return;
-        }
-
-        confirmation.innerHTML = `Thank you, ${name}, for taking the pledge!;
-        confirmation.classList.remove("hidden");
-
-        document.getElementById('pledgeName').value = "";
-        document.getElementById('pledgeEmail').value = "";
-    };
-});
-</script>
-</body>
-</html>

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ThriveWell</title>
+    <meta charset="UTF-8">
+    <title>Resources – ThriveWell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/resources.css">
-    <link rel="stylesheet" href="../css/index.css"/>
-    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="icon" href="../img/favicon.ico">
 </head>
 <body>
+
 <div id="header"></div>
 <script>
 fetch('../templates/header.html')
@@ -21,142 +22,99 @@ fetch('../templates/header.html')
       initMobileMenu();
   });
 </script>
-<main>
-<section class="action-section" id="resources">
-    <h2>Resources</h2>
-    <p>Find support and educational resources to help you or someone you care about thrive.</p>
 
-    <div class="zip-code-resources" style="margin-bottom:3rem;">
-        <h3 style="color:#378056; text-align:center;">Find Local Resources</h3>
-        <p style="text-align:center; color:#5d825a;">Enter your zip code to see nearby mental health services and hotlines.</p>
+<main>
+
+<!-- ZIP CODE RESOURCES -->
+<section class="section-soft section-wrap">
+    <div class="section-inner zip-code-resources">
+        <h2>Find Local Mental Health Resources</h2>
+        <p>Enter your zip code to discover nearby clinics, support groups, and hotlines.</p>
+
         <div class="zip-search">
             <input type="text" id="zipInput" placeholder="Enter Zip Code">
             <button onclick="searchZip()">Search</button>
         </div>
-        <div id="resourceResults" class="resource-grid"></div>
-        <div id="noResults" class="no-results hidden">Couldn't find any resources for this zip code.</div>
-    </div>
 
-    <div class="general-resources" id="articles">
-        <h3 style="color:#378056; text-align:center;">General Mental Health Resources</h3>
-        <p style="text-align:center; color:#5d825a;">Explore blogs, articles, and educational sites to learn more about mental health and wellness.</p>
+        <div id="resourceResults" class="resource-grid"></div>
+        <div id="noResults" class="no-results hidden">No resources found for this zip code.</div>
+    </div>
+</section>
+
+<!-- GENERAL RESOURCES -->
+<section class="section-plain section-wrap">
+    <div class="section-inner">
+        <h2>Trusted Mental Health Resources</h2>
+        <p>Educational articles, organizations, and tools you can rely on.</p>
+
         <div class="resource-grid">
             <div class="resource-card">
-                <h4>NAMI Blog</h4>
-                <p>Insights and stories from the National Alliance on Mental Illness about managing mental health.</p>
+                <h4>NAMI</h4>
+                <p>Support, education, and advocacy from the National Alliance on Mental Illness.</p>
             </div>
             <div class="resource-card">
                 <h4>Psychology Today</h4>
-                <p>Articles by licensed psychologists covering anxiety, depression, therapy tips, and coping strategies.</p>
+                <p>Expert-written articles covering mental health, therapy, and wellness.</p>
             </div>
             <div class="resource-card">
                 <h4>Verywell Mind</h4>
-                <p>Reliable mental health education, self-help guides, and stress management resources.</p>
+                <p>Evidence-based mental health information and coping strategies.</p>
             </div>
             <div class="resource-card">
-                <h4>Headspace Blog</h4>
-                <p>Meditation and mindfulness tips to improve mental wellness and daily life balance.</p>
+                <h4>Headspace</h4>
+                <p>Guided meditation and mindfulness practices for everyday life.</p>
             </div>
         </div>
     </div>
 </section>
-    </section>
-    <section class="scheduler" id="scheduler">
-        <div class="scheduler-container">
-            <h1>Book a Wellness Session</h1>
-            <p>Select a date and time to connect with a ThriveWell counselor or peer supporter.</p>
 
-            <form id="scheduler-form">
-                <div class="form-row">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Your name" required>
-                </div>
+<!-- STATISTICS -->
+<section class="section-soft section-wrap">
+    <div class="section-inner">
+        <h2>Mental Health by the Numbers</h2>
+        <p>Data-driven insight into mental health conditions worldwide.</p>
 
-                <div class="form-row">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="you@example.com" required>
-                </div>
-
-                <div class="form-row">
-                    <label for="date">Choose Date</label>
-                    <input type="date" id="date" required>
-                </div>
-
-                <div class="form-row">
-                    <label for="time">Choose Time</label>
-                    <select id="time" name="time" required>
-                        <option value="09:00">09:00 AM</option>
-                        <option value="09:30">09:30 AM</option>
-                        <option value="10:00">10:00 AM</option>
-                        <option value="10:30">10:30 AM</option>
-                        <option value="10:30">11:00 AM</option>
-                        <option value="10:30">11:30 AM</option>
-                        <option value="10:30">12:00 PM</option>
-                        <option value="10:30">12:30 PM</option>
-                        <option value="10:30">1:00 PM</option>
-                        <option value="10:30">1:30 PM</option>
-                        <option value="10:30">2:00 PM</option>
-                        <option value="10:30">2:30 PM</option>
-                        <option value="10:30">3:00 PM</option>
-                        <option value="10:30">3:30 PM</option>
-                        <option value="10:30">4:00 PM</option>
-                        <option value="17:00">4:30 PM</option>
-                    </select>
-                </div>
-
-                <div class="form-row">
-                    <label for="type">Session Type</label>
-                    <select id="type" required>
-                        <option value="counseling">Counseling Session</option>
-                        <option value="peer">Peer Support Chat</option>
-                        <option value="group">Group Session</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn primary">Schedule Appointment</button>
-            </form>
-
-            <div id="confirmation" class="confirmation hidden">
-                <h2>Thank You!</h2>
-                <p>Your session has been scheduled. A confirmation email will be sent shortly.</p>
+        <div class="stats-card">
+            <div class="stats-toggle">
+                <button id="usBtn" class="active">United States</button>
+                <button id="worldBtn">Worldwide</button>
             </div>
+            <canvas id="mentalHealthChart"></canvas>
         </div>
-    </section>
+    </div>
+</section>
 
 </main>
 
 <div id="footer"></div>
 <script>
-    fetch('../templates/footer.html')
-        .then(res => res.text())
-        .then(html => document.getElementById('footer').innerHTML = html);
-</script><script src="../js/script.js"></script>
-<script src="../js/email.js"></script>
-<script>
-fetch(../'templates/footer.html')
-    .then(res => res.text())
-    .then(html => document.getElementById('footer').innerHTML = html);
+fetch('../templates/footer.html')
+  .then(res => res.text())
+  .then(html => document.getElementById('footer').innerHTML = html);
+</script>
 
+<!-- ZIP CODE DATA -->
+<script>
 const zipResources = {
     "92801": [
-        {name: "OC Mental Health Clinic", description: "Affordable therapy and counseling sessions."},
+        {name: "OC Mental Health Clinic", description: "Affordable therapy and counseling services."},
         {name: "ThriveWell Support Group", description: "Weekly peer support meetings."},
-        {name: "Mental Health Helpline", description: "Call 1-800-555-1234 for 24/7 assistance."},
-        {name: "Youth Therapy Program", description: "Programs for teens and young adults dealing with anxiety or depression."}
+        {name: "24/7 Crisis Line", description: "Call or text 988 for immediate help."}
     ]
 };
 
 function searchZip() {
     const zip = document.getElementById('zipInput').value.trim();
-    const resultsContainer = document.getElementById('resourceResults');
+    const results = document.getElementById('resourceResults');
     const noResults = document.getElementById('noResults');
-    resultsContainer.innerHTML = "";
-    if(zipResources[zip]) {
-        zipResources[zip].forEach(resource => {
-            const card = document.createElement('div');
-            card.className = "resource-card";
-            card.innerHTML = `<h4>${resource.name}</h4><p>${resource.description}</p>`;
-            resultsContainer.appendChild(card);
+    results.innerHTML = "";
+
+    if (zipResources[zip]) {
+        zipResources[zip].forEach(r => {
+            const div = document.createElement('div');
+            div.className = "resource-card";
+            div.innerHTML = `<h4>${r.name}</h4><p>${r.description}</p>`;
+            results.appendChild(div);
         });
         noResults.classList.add("hidden");
     } else {
@@ -164,5 +122,48 @@ function searchZip() {
     }
 }
 </script>
+
+<!-- CHART.JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('mentalHealthChart');
+let chart;
+
+const usData = [31, 28, 8, 9, 24];
+const worldData = [26, 22, 7, 6, 39];
+
+function loadChart(data) {
+    if (chart) chart.destroy();
+    chart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Anxiety', 'Depression', 'PTSD', 'Eating Disorders', 'Other'],
+            datasets: [{
+                data,
+                backgroundColor: ['#378056','#5d825a','#8fbf9f','#b5d7c1','#dfeee4'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            plugins: { legend: { position: 'bottom' } }
+        }
+    });
+}
+
+document.getElementById('usBtn').onclick = () => {
+    loadChart(usData);
+    usBtn.classList.add("active");
+    worldBtn.classList.remove("active");
+};
+
+document.getElementById('worldBtn').onclick = () => {
+    loadChart(worldData);
+    worldBtn.classList.add("active");
+    usBtn.classList.remove("active");
+};
+
+loadChart(usData);
+</script>
+
 </body>
 </html>

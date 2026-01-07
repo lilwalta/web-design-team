@@ -24,3 +24,6 @@ The forum will be a signup/login page then the forum (will probably be hard to s
 
 ### Sources ###
 If you put any new images or something just paste a link to it here so we can cite it:
+https://unsplash.com/photos/a-man-sitting-at-a-table-with-a-pool-cue-in-his-hand-u6fXXvrvb0k
+https://unsplash.com/photos/woman-in-brown-scarf-and-brown-scarf-WzGC8xSyqfg
+https://unsplash.com/photos/man-in-black-and-white-button-up-shirt-smiling-3GUn7wUs52I

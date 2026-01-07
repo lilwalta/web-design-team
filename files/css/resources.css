@@ -1,107 +1,168 @@
-        .action-section {
-            padding: 4rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+/* ===============================
+   RESOURCES PAGE – ThriveWell
+   =============================== */
 
-        .action-section h2 {
-            font-size: 2rem;
-            color: #101b05;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
+.section-wrap {
+    padding: 4rem 2rem;
+}
 
-        .action-section p {
-            color: #5d825a;
-            text-align: center;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
+.section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-        .action-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
+.section-soft {
+    background: #f3faef;
+}
 
-        .action-card {
-            background: #f5fcf0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-align: center;
-        }
+.section-plain {
+    background: #ffffff;
+}
 
-        .action-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
+/* Headings */
+.section-inner h2 {
+    font-size: 2.1rem;
+    color: #101b05;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
 
-        .action-card h3 {
-            color: #378056;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
+.section-inner p {
+    color: #5d825a;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
 
-        .zip-search {
-            max-width: 400px;
-            margin: 2rem auto 1rem auto;
-            display: flex;
-            gap: 0.5rem;
-        }
+/* ===============================
+   ZIP SEARCH
+   =============================== */
 
-        .zip-search input {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            border: 1px solid #d5e6d5;
-            border-radius: 10px;
-            font-size: 1rem;
-        }
+.zip-code-resources {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 2.5rem;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+}
 
-        .zip-search button {
-            padding: 0.8rem 1rem;
-            background: #378056;
-            color: #f5fcf0;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+.zip-search {
+    max-width: 420px;
+    margin: 1.5rem auto 2rem auto;
+    display: flex;
+    gap: 0.5rem;
+}
 
-        .zip-search button:hover {
-            background: #5d825a;
-        }
+.zip-search input {
+    flex: 1;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #d5e6d5;
+    font-size: 1rem;
+    background: #f9fbf9;
+}
 
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
+.zip-search button {
+    padding: 0.9rem 1.3rem;
+    background: #378056;
+    color: #f5fcf0;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
 
-        .resource-card {
-            background: #eaf4eb;
-            border-radius: 12px;
-            padding: 1rem 1.5rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            text-align: left;
-        }
+.zip-search button:hover {
+    background: #5d825a;
+    transform: translateY(-2px);
+}
 
-        .resource-card h4 {
-            margin: 0 0 0.5rem 0;
-            color: #234f32;
-        }
+/* ===============================
+   RESOURCE CARDS
+   =============================== */
 
-        .resource-card p {
-            margin: 0;
-            color: #4c6b52;
-            line-height: 1.4;
-        }
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
 
-        .no-results {
-            text-align: center;
-            color: #a2a2a2;
-            margin-top: 1rem;
-        }
+.resource-card {
+    background: linear-gradient(180deg, #f5fcf0, #edf6ee);
+    border-radius: 16px;
+    padding: 1.6rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+}
+
+.resource-card h4 {
+    color: #234f32;
+    margin-bottom: 0.5rem;
+}
+
+.resource-card p {
+    color: #4c6b52;
+    line-height: 1.4;
+}
+
+/* ===============================
+   STATS SECTION
+   =============================== */
+
+.stats-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.08);
+    max-width: 850px;
+    margin: 2.5rem auto 0 auto;
+}
+
+.stats-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stats-toggle button {
+    padding: 0.6rem 1.3rem;
+    border-radius: 30px;
+    border: 1px solid #378056;
+    background: transparent;
+    color: #378056;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.stats-toggle button.active,
+.stats-toggle button:hover {
+    background: #378056;
+    color: #ffffff;
+}
+
+/* ===============================
+   NO RESULTS
+   =============================== */
+
+.no-results {
+    text-align: center;
+    color: #a2a2a2;
+    margin-top: 1rem;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 768px) {
+    .section-wrap {
+        padding: 3rem 1.2rem;
+    }
+}

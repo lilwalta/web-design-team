@@ -158,6 +158,18 @@
     line-height: 1.6;
 }
 
+.av1{
+    background-image: url('../img/alex-pfp.jpg');
+}
+
+.av2{
+    background-image: url('../img/sara-pfp.jpg');
+}
+
+.av3{
+    background-image: url('../img/jordan-pfp.jpg');
+}
+
 .pledge-box {
     max-width: 540px;
     margin: 3rem auto 0;

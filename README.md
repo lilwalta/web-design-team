@@ -21,3 +21,6 @@ The forum will be a signup/login page then the forum (will probably be hard to s
 * However, I think it would be professional and cool to have an email server setup with an admin email etc.
 * We need social media websites setup for thrivewell with some small posted material (news/events/whatever)
 * Get a real gofundme started
+
+### Sources ###
+If you put any new images or something just paste a link to it here so we can cite it:

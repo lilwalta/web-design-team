@@ -1,91 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Resources – ThriveWell</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/resources.css">
-    <link rel="icon" href="../img/favicon.ico">
+  <meta charset="UTF-8">
+  <title>Resources – ThriveWell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Site Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/resources.css">
+
+  <link rel="icon" href="../img/favicon.ico">
 </head>
 <body>
 
+<!-- HEADER -->
 <div id="header"></div>
 <script>
 fetch('../templates/header.html')
   .then(res => res.text())
   .then(html => {
-      document.getElementById('header').innerHTML = html;
-      initMobileMenu();
+    document.getElementById('header').innerHTML = html;
+    if (typeof initMobileMenu === "function") initMobileMenu();
   });
 </script>
 
 <main>
 
-<!-- ZIP CODE RESOURCES -->
+<!-- ZIP CODE SEARCH -->
 <section class="section-soft section-wrap">
-    <div class="section-inner zip-code-resources">
-        <h2>Find Local Mental Health Resources</h2>
-        <p>Enter your zip code to discover nearby clinics, support groups, and hotlines.</p>
+  <div class="section-inner zip-code-resources">
+    <h2>Find Local Mental Health Resources</h2>
+    <p>Enter your zip code to discover nearby clinics, support groups, and hotlines.</p>
 
-        <div class="zip-search">
-            <input type="text" id="zipInput" placeholder="Enter Zip Code">
-            <button onclick="searchZip()">Search</button>
-        </div>
-
-        <div id="resourceResults" class="resource-grid"></div>
-        <div id="noResults" class="no-results hidden">No resources found for this zip code.</div>
+    <div class="zip-search">
+      <input type="text" id="zipInput" placeholder="Enter Zip Code">
+      <button onclick="searchZip()">Search</button>
     </div>
+
+    <div id="resourceResults" class="resource-grid"></div>
+    <div id="noResults" class="no-results hidden">No resources found for this zip code.</div>
+  </div>
 </section>
 
 <!-- GENERAL RESOURCES -->
 <section class="section-plain section-wrap">
-    <div class="section-inner">
-        <h2>Trusted Mental Health Resources</h2>
-        <p>Educational articles, organizations, and tools you can rely on.</p>
+  <div class="section-inner">
+    <h2>Trusted Mental Health Resources</h2>
+    <p>Educational organizations and evidence-based mental health tools.</p>
 
-        <div class="resource-grid">
-            <div class="resource-card">
-                <h4>NAMI</h4>
-                <p>Support, education, and advocacy from the National Alliance on Mental Illness.</p>
-            </div>
-            <div class="resource-card">
-                <h4>Psychology Today</h4>
-                <p>Expert-written articles covering mental health, therapy, and wellness.</p>
-            </div>
-            <div class="resource-card">
-                <h4>Verywell Mind</h4>
-                <p>Evidence-based mental health information and coping strategies.</p>
-            </div>
-            <div class="resource-card">
-                <h4>Headspace</h4>
-                <p>Guided meditation and mindfulness practices for everyday life.</p>
-            </div>
-        </div>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>NAMI</h4>
+        <p>Support, education, and advocacy from the National Alliance on Mental Illness.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Psychology Today</h4>
+        <p>Expert-written articles covering therapy, anxiety, and depression.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Verywell Mind</h4>
+        <p>Reliable mental health education and coping strategies.</p>
+      </div>
+      <div class="resource-card">
+        <h4>Headspace</h4>
+        <p>Mindfulness and meditation tools for daily mental wellness.</p>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- STATISTICS -->
-<section class="section-soft section-wrap">
-    <div class="section-inner">
-        <h2>Mental Health by the Numbers</h2>
-        <p>Data-driven insight into mental health conditions worldwide.</p>
+<!-- STATISTICS MAP -->
+<section class="stats-section">
+  <div class="stats-container">
+    <h2>Mental Health Statistics by State</h2>
+    <p>
+      Hover over a state to preview mental health trends.
+      Click to view detailed statistics and resources.
+    </p>
 
-        <div class="stats-card">
-            <div class="stats-toggle">
-                <button id="usBtn" class="active">United States</button>
-                <button id="worldBtn">Worldwide</button>
-            </div>
-            <canvas id="mentalHealthChart"></canvas>
-        </div>
+    <div class="map-wrapper">
+      <div id="map-tooltip" class="map-tooltip hidden" aria-live="polite"></div>
+
+      <!-- SVG MAP (PLACEHOLDER SHAPES) -->
+      <svg id="us-map" viewBox="0 0 959 593" xmlns="http://www.w3.org/2000/svg" aria-label="US Mental Health Map">
+        <path id="CA" class="state" d="M95,420 L130,470 L170,460 L160,420 Z"/>
+        <path id="TX" class="state" d="M300,420 L350,470 L420,450 L380,400 Z"/>
+        <path id="NY" class="state" d="M700,200 L740,210 L750,190 L710,180 Z"/>
+        <path id="FL" class="state" d="M680,420 L710,450 L730,430 L700,400 Z"/>
+      </svg>
     </div>
+  </div>
 </section>
+
+<!-- STATE MODAL -->
+<div id="state-modal" class="state-modal hidden" role="dialog" aria-modal="true">
+  <div class="state-modal-content">
+    <button class="modal-close" aria-label="Close statistics">&times;</button>
+
+    <h3 id="modal-state-name">State Name</h3>
+    <ul class="state-stats">
+      <li><strong>Anxiety:</strong> <span id="stat-anxiety"></span></li>
+      <li><strong>Depression:</strong> <span id="stat-depression"></span></li>
+      <li><strong>PTSD:</strong> <span id="stat-ptsd"></span></li>
+      <li><strong>Resources Available:</strong> <span id="stat-resources"></span></li>
+    </ul>
+  </div>
+</div>
 
 </main>
 
+<!-- FOOTER -->
 <div id="footer"></div>
 <script>
 fetch('../templates/footer.html')
@@ -93,76 +122,57 @@ fetch('../templates/footer.html')
   .then(html => document.getElementById('footer').innerHTML = html);
 </script>
 
-<!-- ZIP CODE DATA -->
+<!-- MAP SCRIPT -->
 <script>
-const zipResources = {
-    "92801": [
-        {name: "OC Mental Health Clinic", description: "Affordable therapy and counseling services."},
-        {name: "ThriveWell Support Group", description: "Weekly peer support meetings."},
-        {name: "24/7 Crisis Line", description: "Call or text 988 for immediate help."}
-    ]
-};
+document.addEventListener("DOMContentLoaded", () => {
+  const tooltip = document.getElementById("map-tooltip");
+  const modal = document.getElementById("state-modal");
+  const closeModal = document.querySelector(".modal-close");
+  const mapWrapper = document.querySelector(".map-wrapper");
 
-function searchZip() {
-    const zip = document.getElementById('zipInput').value.trim();
-    const results = document.getElementById('resourceResults');
-    const noResults = document.getElementById('noResults');
-    results.innerHTML = "";
+  const stateData = {
+    CA: { name: "California", anxiety: "31%", depression: "28%", ptsd: "6%", resources: "120+" },
+    TX: { name: "Texas", anxiety: "29%", depression: "26%", ptsd: "5%", resources: "95+" },
+    NY: { name: "New York", anxiety: "30%", depression: "27%", ptsd: "6%", resources: "110+" },
+    FL: { name: "Florida", anxiety: "28%", depression: "25%", ptsd: "5%", resources: "90+" }
+  };
 
-    if (zipResources[zip]) {
-        zipResources[zip].forEach(r => {
-            const div = document.createElement('div');
-            div.className = "resource-card";
-            div.innerHTML = `<h4>${r.name}</h4><p>${r.description}</p>`;
-            results.appendChild(div);
-        });
-        noResults.classList.add("hidden");
-    } else {
-        noResults.classList.remove("hidden");
-    }
-}
-</script>
+  document.querySelectorAll("#us-map .state").forEach(state => {
+    const data = stateData[state.id];
+    if (!data) return;
 
-<!-- CHART.JS -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-const ctx = document.getElementById('mentalHealthChart');
-let chart;
-
-const usData = [31, 28, 8, 9, 24];
-const worldData = [26, 22, 7, 6, 39];
-
-function loadChart(data) {
-    if (chart) chart.destroy();
-    chart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Anxiety', 'Depression', 'PTSD', 'Eating Disorders', 'Other'],
-            datasets: [{
-                data,
-                backgroundColor: ['#378056','#5d825a','#8fbf9f','#b5d7c1','#dfeee4'],
-                borderWidth: 0
-            }]
-        },
-        options: {
-            plugins: { legend: { position: 'bottom' } }
-        }
+    state.addEventListener("mousemove", e => {
+      const rect = mapWrapper.getBoundingClientRect();
+      tooltip.innerHTML = `<strong>${data.name}</strong><br>Anxiety: ${data.anxiety}`;
+      tooltip.style.left = `${e.clientX - rect.left}px`;
+      tooltip.style.top = `${e.clientY - rect.top}px`;
+      tooltip.classList.remove("hidden");
     });
-}
 
-document.getElementById('usBtn').onclick = () => {
-    loadChart(usData);
-    usBtn.classList.add("active");
-    worldBtn.classList.remove("active");
-};
+    state.addEventListener("mouseleave", () => {
+      tooltip.classList.add("hidden");
+    });
 
-document.getElementById('worldBtn').onclick = () => {
-    loadChart(worldData);
-    worldBtn.classList.add("active");
-    usBtn.classList.remove("active");
-};
+    state.addEventListener("click", () => {
+      document.getElementById("modal-state-name").innerText = data.name;
+      document.getElementById("stat-anxiety").innerText = data.anxiety;
+      document.getElementById("stat-depression").innerText = data.depression;
+      document.getElementById("stat-ptsd").innerText = data.ptsd;
+      document.getElementById("stat-resources").innerText = data.resources;
+      modal.classList.remove("hidden");
+    });
+  });
 
-loadChart(usData);
+  closeModal.addEventListener("click", () => modal.classList.add("hidden"));
+
+  modal.addEventListener("click", e => {
+    if (e.target === modal) modal.classList.add("hidden");
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") modal.classList.add("hidden");
+  });
+});
 </script>
 
 </body>

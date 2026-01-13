@@ -138,10 +138,11 @@
 /* ===============================
    MAP
 ================================ */
+/* MAP LAYOUT */
 .map-wrapper {
   position: relative;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 3rem auto;
 }
 
 #us-map {
@@ -149,17 +150,45 @@
   height: auto;
 }
 
+/* STATES */
 #us-map path {
-  fill: #cfe6d6;
-  stroke: #378056;
+  fill: #e3f0e6;
+  stroke: #5d825a;
   stroke-width: 1;
   cursor: pointer;
-  transition: fill 0.2s ease, transform 0.2s ease;
+  transition: fill 0.2s ease, transform 0.15s ease;
 }
 
 #us-map path:hover {
   fill: #378056;
 }
+
+/* TOOLTIP */
+.map-tooltip {
+  position: absolute;
+  background: #ffffff;
+  color: #101b05;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -120%);
+  transition: opacity 0.15s ease;
+}
+
+.map-tooltip.show {
+  opacity: 1;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .map-tooltip {
+    display: none;
+  }
+}
+
 
 /* ===============================
    TOOLTIP

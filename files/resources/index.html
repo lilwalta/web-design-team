@@ -482,46 +482,60 @@ fetch('../templates/footer.html')
 </script>
 
 <script>
-const stateData = {
-  CA: { name: "California", anxiety: "31%", depression: "28%", ptsd: "6%", resources: "120+", level: "high" },
-  TX: { name: "Texas", anxiety: "29%", depression: "26%", ptsd: "5%", resources: "95+", level: "medium" },
-  NY: { name: "New York", anxiety: "30%", depression: "27%", ptsd: "6%", resources: "110+", level: "high" },
-  FL: { name: "Florida", anxiety: "28%", depression: "25%", ptsd: "5%", resources: "90+", level: "medium" }
-};
+document.addEventListener("DOMContentLoaded", () => {
+  const tooltip = document.getElementById("map-tooltip");
+  const modal = document.getElementById("state-modal");
+  const closeBtn = document.querySelector(".modal-close");
 
-const tooltip = document.getElementById("map-tooltip");
-const modal = document.getElementById("state-modal");
+  const stateData = {
+    CA: { name: "California", anxiety: "31%", depression: "28%", ptsd: "6%", resources: "120+" },
+    TX: { name: "Texas", anxiety: "29%", depression: "26%", ptsd: "5%", resources: "95+" },
+    NY: { name: "New York", anxiety: "30%", depression: "27%", ptsd: "6%", resources: "110+" },
+    FL: { name: "Florida", anxiety: "28%", depression: "25%", ptsd: "5%", resources: "90+" }
+  };
 
-document.querySelectorAll("#us-map path").forEach(state => {
-  const data = stateData[state.id];
-  if (!data) return;
+  document.querySelectorAll("#us-map path").forEach(state => {
+    const data = stateData[state.id];
+    if (!data) return;
 
-  state.classList.add(data.level);
+    // Hover tooltip
+    state.addEventListener("mousemove", e => {
+      tooltip.innerHTML = `<strong>${data.name}</strong><br>Anxiety: ${data.anxiety}`;
+      tooltip.style.left = `${e.pageX}px`;
+      tooltip.style.top = `${e.pageY}px`;
+      tooltip.classList.add("show");
+    });
 
-  state.addEventListener("mousemove", e => {
-    tooltip.innerHTML = `<strong>${data.name}</strong><br>Anxiety: ${data.anxiety}`;
-    tooltip.style.left = `${e.pageX}px`;
-    tooltip.style.top = `${e.pageY}px`;
-    tooltip.classList.remove("hidden");
+    state.addEventListener("mouseleave", () => {
+      tooltip.classList.remove("show");
+    });
+
+    // Click modal
+    state.addEventListener("click", () => {
+      document.getElementById("modal-state-name").innerText = data.name;
+      document.getElementById("stat-anxiety").innerText = data.anxiety;
+      document.getElementById("stat-depression").innerText = data.depression;
+      document.getElementById("stat-ptsd").innerText = data.ptsd;
+      document.getElementById("stat-resources").innerText = data.resources;
+
+      modal.classList.add("show");
+    });
   });
 
-  state.addEventListener("mouseleave", () => {
-    tooltip.classList.add("hidden");
+  // Close modal
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
   });
 
-  state.addEventListener("click", () => {
-    document.getElementById("modal-state-name").innerText = data.name;
-    document.getElementById("stat-anxiety").innerText = data.anxiety;
-    document.getElementById("stat-depression").innerText = data.depression;
-    document.getElementById("stat-ptsd").innerText = data.ptsd;
-    document.getElementById("stat-resources").innerText = data.resources;
-    modal.classList.remove("hidden");
+  // Click outside modal closes it
+  modal.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+    }
   });
 });
-
-document.querySelector(".modal-close").onclick = () =>
-  modal.classList.add("hidden");
 </script>
+
 
 </body>
 </html>

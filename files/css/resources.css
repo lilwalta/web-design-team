@@ -1,163 +1,113 @@
 /* ===============================
-   RESOURCES PAGE – ThriveWell
-   =============================== */
+   RESOURCES – ThriveWell
+=============================== */
 
 .section-wrap {
-    padding: 4rem 2rem;
+  padding: 4rem 2rem;
 }
 
 .section-inner {
-    max-width: 1100px;
-    margin: 0 auto;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .section-soft {
-    background: #f3faef;
+  background: #f3faef;
 }
 
 .section-plain {
-    background: #ffffff;
+  background: #ffffff;
 }
 
 /* Headings */
 .section-inner h2 {
-    font-size: 2.1rem;
-    color: #101b05;
-    text-align: center;
-    margin-bottom: 0.75rem;
+  font-size: 2.1rem;
+  color: #101b05;
+  text-align: center;
 }
 
 .section-inner p {
-    color: #5d825a;
-    text-align: center;
-    margin-bottom: 2.5rem;
-    line-height: 1.6;
+  color: #5d825a;
+  text-align: center;
+  margin: 1rem auto 2.5rem;
+  max-width: 700px;
 }
 
-/* ===============================
-   ZIP SEARCH
-   =============================== */
-
+/* ZIP SEARCH */
 .zip-code-resources {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 2.5rem;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2.5rem;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.06);
 }
 
 .zip-search {
-    max-width: 420px;
-    margin: 1.5rem auto 2rem auto;
-    display: flex;
-    gap: 0.5rem;
+  max-width: 420px;
+  margin: 1.5rem auto 2rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .zip-search input {
-    flex: 1;
-    padding: 0.9rem 1rem;
-    border-radius: 12px;
-    border: 1px solid #d5e6d5;
-    font-size: 1rem;
-    background: #f9fbf9;
+  flex: 1;
+  padding: 0.9rem;
+  border-radius: 12px;
+  border: 1px solid #d5e6d5;
 }
 
 .zip-search button {
-    padding: 0.9rem 1.3rem;
-    background: #378056;
-    color: #f5fcf0;
-    border: none;
-    border-radius: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease;
+  background: #378056;
+  color: #f5fcf0;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  padding: 0.9rem 1.3rem;
+  cursor: pointer;
 }
 
 .zip-search button:hover {
-    background: #5d825a;
-    transform: translateY(-2px);
+  background: #5d825a;
 }
 
-/* ===============================
-   RESOURCE CARDS
-   =============================== */
-
+/* RESOURCE CARDS */
 .resource-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 1.5rem;
 }
 
 .resource-card {
-    background: linear-gradient(180deg, #f5fcf0, #edf6ee);
-    border-radius: 16px;
-    padding: 1.6rem;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: linear-gradient(180deg,#f5fcf0,#edf6ee);
+  border-radius: 16px;
+  padding: 1.6rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
 .resource-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  transform: translateY(-6px);
 }
 
-.resource-card h4 {
-    color: #234f32;
-    margin-bottom: 0.5rem;
-}
-
-.resource-card p {
-    color: #4c6b52;
-    line-height: 1.4;
-}
-
-/* ===============================
-   STATISTICS SECTION
-================================ */
+/* MAP */
 .stats-section {
   background: #f5fcf0;
   padding: 5rem 2rem;
 }
 
-.stats-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.stats-container h2 {
-  font-size: 2.3rem;
-  color: #101b05;
-}
-
-.stats-container p {
-  max-width: 650px;
-  margin: 1rem auto 3rem;
-  color: #5d825a;
-}
-
-/* ===============================
-   MAP
-================================ */
-/* MAP LAYOUT */
 .map-wrapper {
-  position: relative;
   max-width: 1000px;
   margin: 3rem auto;
+  position: relative;
 }
 
-#us-map {
-  width: 100%;
-  height: auto;
-}
-
-/* STATES */
 #us-map path {
   fill: #e3f0e6;
   stroke: #5d825a;
-  stroke-width: 1;
   cursor: pointer;
-  transition: fill 0.2s ease, transform 0.15s ease;
 }
+
+#us-map path.low { fill: #d9eadf; }
+#us-map path.medium { fill: #a8d5ba; }
+#us-map path.high { fill: #5fa777; }
 
 #us-map path:hover {
   fill: #378056;
@@ -166,111 +116,63 @@
 /* TOOLTIP */
 .map-tooltip {
   position: absolute;
-  background: #ffffff;
-  color: #101b05;
-  padding: 0.6rem 0.8rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  pointer-events: none;
-  opacity: 0;
-  transform: translate(-50%, -120%);
-  transition: opacity 0.15s ease;
-}
-
-.map-tooltip.show {
-  opacity: 1;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .map-tooltip {
-    display: none;
-  }
-}
-
-
-/* ===============================
-   TOOLTIP
-================================ */
-.map-tooltip {
-  position: absolute;
   background: #101b05;
   color: #f5fcf0;
   padding: 0.6rem 0.8rem;
   border-radius: 8px;
   font-size: 0.85rem;
   pointer-events: none;
-  transform: translate(-50%, -120%);
-  white-space: nowrap;
-  z-index: 10;
 }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
-/* ===============================
-   MODAL
-================================ */
+/* MODAL */
 .state-modal {
   position: fixed;
   inset: 0;
-  background: rgba(16, 27, 5, 0.7);
+  background: rgba(16,27,5,0.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
 }
 
 .state-modal-content {
   background: #f5fcf0;
   padding: 2.5rem;
   border-radius: 16px;
-  width: 90%;
   max-width: 420px;
-  text-align: left;
-  position: relative;
+  width: 90%;
 }
 
 .modal-close {
   position: absolute;
   top: 12px;
   right: 16px;
+  font-size: 1.8rem;
   background: none;
   border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
 }
 
-.state-stats {
-  list-style: none;
-  padding: 0;
+/* LEGEND */
+.map-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
-.state-stats li {
-  margin-bottom: 0.8rem;
-  color: #234f32;
+.legend {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border-radius: 4px;
 }
 
+.legend.low { background:#d9eadf; }
+.legend.medium { background:#a8d5ba; }
+.legend.high { background:#5fa777; }
 
-/* ===============================
-   NO RESULTS
-   =============================== */
-
-.no-results {
-    text-align: center;
-    color: #a2a2a2;
-    margin-top: 1rem;
-}
-
-/* ===============================
-   RESPONSIVE
-   =============================== */
-
-@media (max-width: 768px) {
-    .section-wrap {
-        padding: 3rem 1.2rem;
-    }
+/* MOBILE */
+@media (max-width:768px) {
+  .map-tooltip { display:none; }
 }

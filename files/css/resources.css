@@ -1,6 +1,3 @@
-/* ===============================
-   RESOURCES – ThriveWell
-=============================== */
 
 .section-wrap {
   padding: 4rem 2rem;
@@ -87,7 +84,6 @@
   transform: translateY(-6px);
 }
 
-/* MAP */
 .stats-section {
   background: #f5fcf0;
   padding: 5rem 2rem;
@@ -114,7 +110,6 @@
   fill: #378056;
 }
 
-/* TOOLTIP */
 .map-tooltip {
   position: absolute;
   background: #101b05;
@@ -158,7 +153,6 @@
   border: none;
 }
 
-/* LEGEND */
 .map-legend {
   display: flex;
   justify-content: center;
@@ -178,7 +172,6 @@
 .legend.high { background:#5fa777; }
 
 
-/* MOBILE */
 @media (max-width:768px) {
   .map-tooltip { display:none; }
 }

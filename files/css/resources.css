@@ -100,8 +100,9 @@
 }
 
 #us-map path {
-  fill: #e3f0e6;
-  stroke: #5d825a;
+  fill: #e3f0e6 !important;
+  pointer-events: all;
+   stroke: #5d825a;
   cursor: pointer;
 }
 
@@ -126,14 +127,18 @@
 
 .hidden { display: none; }
 
-/* MODAL */
 .state-modal {
   position: fixed;
   inset: 0;
-  background: rgba(16,27,5,0.7);
-  display: flex;
+  background: rgba(16, 27, 5, 0.7);
+  display: none;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
+}
+
+.state-modal.show {
+  display: flex;
 }
 
 .state-modal-content {
@@ -171,6 +176,7 @@
 .legend.low { background:#d9eadf; }
 .legend.medium { background:#a8d5ba; }
 .legend.high { background:#5fa777; }
+
 
 /* MOBILE */
 @media (max-width:768px) {

@@ -84,38 +84,69 @@
   transform: translateY(-6px);
 }
 
-.stats-section {
-  background: #f5fcf0;
-  padding: 5rem 2rem;
-  width: 100%;
+.map-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.map-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #102a12;
   text-align: center;
 }
 
-.controls {
+/* Controls */
+.map-controls {
   display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 15px;
 }
 
-button {
+.stat-btn {
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid #378056;
   background: transparent;
-  color: var(--text);
-  border: 1px solid var(--accent);
-  padding: 8px 14px;
-  border-radius: 8px;
+  color: #378056;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
-button.active,
-button:hover {
-  background: var(--accent);
+.stat-btn:hover {
+  background: #378056;
+  color: #f5fcf0;
 }
 
-#map {
+.stat-btn.active {
+  background: #378056;
+  color: #f5fcf0;
+}
+
+/* Map container */
+#usMentalHealthMap {
+  width: 100%;
+  max-width: 900px;
   display: flex;
   justify-content: center;
+}
+
+/* Tooltip */
+#mapTooltip {
+  position: absolute;
+  pointer-events: none;
+  background: #102a12;
+  color: #f5fcf0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 svg {
@@ -136,15 +167,3 @@ svg {
   cursor: pointer;
 }
 
-#tooltip {
-  position: absolute;
-  background: #12261c;
-  color: var(--text);
-  padding: 12px;
-  border-radius: 8px;
-  pointer-events: none;
-  font-size: 14px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}

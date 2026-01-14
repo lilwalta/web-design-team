@@ -87,6 +87,8 @@
 .stats-section {
   background: #f5fcf0;
   padding: 5rem 2rem;
+  width: 100%;
+  text-align: center;
 }
 
 .controls {

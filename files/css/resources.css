@@ -89,89 +89,60 @@
   padding: 5rem 2rem;
 }
 
-.map-wrapper {
-  max-width: 1000px;
-  margin: 3rem auto;
-  position: relative;
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
-#us-map path {
-  fill: #e3f0e6 !important;
-  pointer-events: all;
-   stroke: #5d825a;
+button {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--accent);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button.active,
+button:hover {
+  background: var(--accent);
+}
+
+#map {
+  display: flex;
+  justify-content: center;
+}
+
+svg {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.state {
+  stroke: #0a120e;
+  stroke-width: 1;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  transform-origin: center;
+}
+
+.state:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
   cursor: pointer;
 }
 
-#us-map path.low { fill: #d9eadf; }
-#us-map path.medium { fill: #a8d5ba; }
-#us-map path.high { fill: #5fa777; }
-
-#us-map path:hover {
-  fill: #378056;
-}
-
-.map-tooltip {
+#tooltip {
   position: absolute;
-  background: #101b05;
-  color: #f5fcf0;
-  padding: 0.6rem 0.8rem;
+  background: #12261c;
+  color: var(--text);
+  padding: 12px;
   border-radius: 8px;
-  font-size: 0.85rem;
   pointer-events: none;
-}
-
-.hidden { display: none; }
-
-.state-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(16, 27, 5, 0.7);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.state-modal.show {
-  display: flex;
-}
-
-.state-modal-content {
-  background: #f5fcf0;
-  padding: 2.5rem;
-  border-radius: 16px;
-  max-width: 420px;
-  width: 90%;
-}
-
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-}
-
-.map-legend {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.legend {
-  width: 14px;
-  height: 14px;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.legend.low { background:#d9eadf; }
-.legend.medium { background:#a8d5ba; }
-.legend.high { background:#5fa777; }
-
-
-@media (max-width:768px) {
-  .map-tooltip { display:none; }
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }

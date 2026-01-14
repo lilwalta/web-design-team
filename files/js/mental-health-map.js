@@ -94,9 +94,22 @@ d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json").then(us => {
     .attr("class", "state")
     .attr("d", path)
     .attr("fill", d => getColor(d))
-    .on("mouseenter", (event, d) => showTooltip(event, d))
-    .on("mousemove", moveTooltip)
-    .on("mouseleave", hideTooltip);
+.on("mousemove", (event, d) => {
+  const state = d.properties.name;
+  const value = data[state][currentMetric];
+
+  tooltip
+    .style("opacity", 1)
+    .style("left", `${event.pageX + 12}px`)
+    .style("top", `${event.pageY - 28}px`)
+    .html(`
+      <strong>${state}</strong><br>
+      ${currentMetric.toUpperCase()}: ${value}%
+    `);
+})
+.on("mouseout", () => {
+  tooltip.style("opacity", 0);
+});
 });
 
 

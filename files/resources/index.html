@@ -74,14 +74,14 @@ fetch('../templates/header.html')
 <section style="stats-section">
   <h1>US Mental Health Heatmap</h1>
   <div class="controls">
-    <button data-metric="anxiety" class="active">Anxiety</button>
-    <button data-metric="depression">Depression</button>
-    <button data-metric="ptsd">PTSD</button>
-    <button data-metric="suicide">Suicide</button>
+    <button class="stat-btn active" data-metric="anxiety">Anxiety</button>
+<button class="stat-btn" data-metric="depression">Depression</button>
+<button class="stat-btn" data-metric="ptsd">PTSD</button>
+<button class="stat-btn" data-metric="suicide">Suicide</button>
   </div>
 </section>
-  <div id="map"></div>
-<div id="tooltip"></div>
+<div id="usMentalHealthMap"></div>
+<div id="mapTooltip"></div>
 </main>
 
 <div id="footer"></div>
@@ -90,7 +90,7 @@ fetch('../templates/footer.html')
   .then(res => res.text())
   .then(html => document.getElementById('footer').innerHTML = html);
 </script>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson@3"></script>
 <script src="../js/mental-health-map.js"></script>
 </body>

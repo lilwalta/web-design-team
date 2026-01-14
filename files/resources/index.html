@@ -71,17 +71,23 @@ fetch('../templates/header.html')
   </div>
 </section>
 
-<section style="stats-section">
-  <h1>US Mental Health Heatmap</h1>
-  <div class="controls">
-    <button class="stat-btn active" data-metric="anxiety">Anxiety</button>
-<button class="stat-btn" data-metric="depression">Depression</button>
-<button class="stat-btn" data-metric="ptsd">PTSD</button>
-<button class="stat-btn" data-metric="suicide">Suicide</button>
+<section class="section-soft section-wrap">
+  <div class="section-inner map-section">
+
+    <h2 class="map-title">US Mental Health Heatmap</h2>
+
+    <div class="map-controls">
+      <button class="stat-btn active" data-metric="anxiety">Anxiety</button>
+      <button class="stat-btn" data-metric="depression">Depression</button>
+      <button class="stat-btn" data-metric="ptsd">PTSD</button>
+      <button class="stat-btn" data-metric="suicide">Suicide</button>
+    </div>
+
+    <div id="usMentalHealthMap"></div>
+    <div id="mapTooltip"></div>
+
   </div>
 </section>
-<div id="usMentalHealthMap"></div>
-<div id="mapTooltip"></div>
 </main>
 
 <div id="footer"></div>

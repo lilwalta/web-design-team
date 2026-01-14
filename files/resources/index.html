@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson@3"></script>
+
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/resources.css">
@@ -70,6 +73,17 @@ fetch('../templates/header.html')
   </div>
 </section>
 
+<section>
+  <h1>US Mental Health Heatmap</h1>
+  <div class="controls">
+    <button data-metric="anxiety" class="active">Anxiety</button>
+    <button data-metric="depression">Depression</button>
+    <button data-metric="ptsd">PTSD</button>
+    <button data-metric="suicide">Suicide</button>
+  </div>
+</section>
+  <div id="map"></div>
+<div id="tooltip"></div>
 </main>
 
 <div id="footer"></div>
@@ -77,6 +91,128 @@ fetch('../templates/header.html')
 fetch('../templates/footer.html')
   .then(res => res.text())
   .then(html => document.getElementById('footer').innerHTML = html);
+</script>
+  <script>
+// ======================
+// MOCK MENTAL HEALTH DATA
+// ======================
+const mentalHealthData = {
+  "AL": { name: "Alabama", anxiety: 23, depression: 20, ptsd: 7, suicide: 16 },
+  "AK": { name: "Alaska", anxiety: 26, depression: 22, ptsd: 9, suicide: 22 },
+  "AZ": { name: "Arizona", anxiety: 21, depression: 18, ptsd: 6, suicide: 15 },
+  "CA": { name: "California", anxiety: 22, depression: 19, ptsd: 7, suicide: 14 },
+  "NY": { name: "New York", anxiety: 24, depression: 21, ptsd: 8, suicide: 13 },
+  "TX": { name: "Texas", anxiety: 20, depression: 17, ptsd: 6, suicide: 15 },
+  "FL": { name: "Florida", anxiety: 23, depression: 20, ptsd: 7, suicide: 16 },
+  "WA": { name: "Washington", anxiety: 25, depression: 22, ptsd: 8, suicide: 15 },
+  // fallback handled later
+};
+
+// ======================
+// SVG SETUP
+// ======================
+const width = 960;
+const height = 600;
+
+const svg = d3.select("#map")
+  .append("svg")
+  .attr("viewBox", `0 0 ${width} ${height}`);
+
+const projection = d3.geoAlbersUsa()
+  .scale(1200)
+  .translate([width / 2, height / 2]);
+
+const path = d3.geoPath().projection(projection);
+
+const tooltip = d3.select("#tooltip");
+
+let currentMetric = "anxiety";
+
+const colorScale = d3.scaleSequential()
+  .domain([10, 30])
+  .interpolator(d3.interpolateReds);
+
+// ======================
+// LOAD MAP
+// ======================
+d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json").then(us => {
+  const states = topojson.feature(us, us.objects.states).features;
+
+  svg.selectAll("path")
+    .data(states)
+    .enter()
+    .append("path")
+    .attr("class", "state")
+    .attr("d", path)
+    .attr("fill", d => getColor(d))
+    .on("mouseenter", (event, d) => {
+      const code = stateCode(d.id);
+      const data = mentalHealthData[code];
+
+      if (!data) return;
+
+      tooltip
+        .style("opacity", 1)
+        .html(`
+          <strong>${data.name}</strong><br>
+          Anxiety: ${data.anxiety}%<br>
+          Depression: ${data.depression}%<br>
+          PTSD: ${data.ptsd}%<br>
+          Suicide: ${data.suicide}%
+        `);
+    })
+    .on("mousemove", event => {
+      tooltip
+        .style("left", event.pageX + 15 + "px")
+        .style("top", event.pageY + 15 + "px");
+    })
+    .on("mouseleave", () => {
+      tooltip.style("opacity", 0);
+    });
+
+  updateMap();
+});
+
+// ======================
+// HELPERS
+// ======================
+function getColor(d) {
+  const code = stateCode(d.id);
+  const data = mentalHealthData[code];
+  if (!data) return "#1a3327";
+  return colorScale(data[currentMetric]);
+}
+
+function stateCode(id) {
+  const map = {
+    1:"AL",2:"AK",4:"AZ",5:"AR",6:"CA",8:"CO",9:"CT",10:"DE",12:"FL",
+    13:"GA",15:"HI",16:"ID",17:"IL",18:"IN",19:"IA",20:"KS",21:"KY",
+    22:"LA",23:"ME",24:"MD",25:"MA",26:"MI",27:"MN",28:"MS",29:"MO",
+    30:"MT",31:"NE",32:"NV",33:"NH",34:"NJ",35:"NM",36:"NY",37:"NC",
+    38:"ND",39:"OH",40:"OK",41:"OR",42:"PA",44:"RI",45:"SC",46:"SD",
+    47:"TN",48:"TX",49:"UT",50:"VT",51:"VA",53:"WA",54:"WV",55:"WI",56:"WY"
+  };
+  return map[id];
+}
+
+function updateMap() {
+  svg.selectAll(".state")
+    .transition()
+    .duration(600)
+    .attr("fill", d => getColor(d));
+}
+
+// ======================
+// BUTTON CONTROLS
+// ======================
+document.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentMetric = btn.dataset.metric;
+    updateMap();
+  });
+});
 </script>
 </body>
 </html>

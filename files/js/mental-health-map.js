@@ -95,16 +95,20 @@ d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json").then(us => {
     .attr("d", path)
     .attr("fill", d => getColor(d))
 .on("mousemove", (event, d) => {
-  const state = d.properties.name;
-  const value = data[state][currentMetric];
+  const code = idToCode[d.id];
+  const data = mentalHealthData[code];
+  if (!data) return;
 
   tooltip
     .style("opacity", 1)
     .style("left", `${event.pageX + 12}px`)
     .style("top", `${event.pageY - 28}px`)
     .html(`
-      <strong>${state}</strong><br>
-      ${currentMetric.toUpperCase()}: ${value}%
+      <strong>${data.name}</strong><br>
+      Anxiety: ${data.anxiety}%<br>
+      Depression: ${data.depression}%<br>
+      PTSD: ${data.ptsd}%<br>
+      Suicide: ${data.suicide}%
     `);
 })
 .on("mouseout", () => {
@@ -119,31 +123,6 @@ function getColor(d) {
   return colorScale(mentalHealthData[code][currentMetric]);
 }
 
-function showTooltip(event, d) {
-  const code = idToCode[d.id];
-  const data = mentalHealthData[code];
-  if (!data) return;
-
-  tooltip
-    .style("opacity", 1)
-    .html(`
-      <strong>${data.name}</strong><br>
-      Anxiety: ${data.anxiety}%<br>
-      Depression: ${data.depression}%<br>
-      PTSD: ${data.ptsd}%<br>
-      Suicide: ${data.suicide}%
-    `);
-}
-
-function moveTooltip(event) {
-  tooltip
-    .style("left", event.pageX + 15 + "px")
-    .style("top", event.pageY + 15 + "px");
-}
-
-function hideTooltip() {
-  tooltip.style("opacity", 0);
-}
 
 function updateMap() {
   svg.selectAll(".state")

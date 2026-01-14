@@ -155,3 +155,31 @@
         updateMap();
       });
     });
+function addLegend() {
+  const legendWidth = 300;
+  const legendHeight = 10;
+
+  const legendSvg = d3.select("#usMentalHealthMap")
+    .append("svg")
+    .attr("width", legendWidth)
+    .attr("height", 50);
+
+  const gradient = legendSvg.append("defs")
+    .append("linearGradient")
+    .attr("id", "legendGradient");
+
+  gradient.append("stop").attr("offset", "0%").attr("stop-color", colorScale.range()[0]);
+  gradient.append("stop").attr("offset", "100%").attr("stop-color", colorScale.range()[1]);
+
+  legendSvg.append("rect")
+    .attr("x", 0)
+    .attr("y", 10)
+    .attr("width", legendWidth)
+    .attr("height", legendHeight)
+    .style("fill", "url(#legendGradient)");
+
+  // Add min/max labels
+  const values = Object.values(mentalHealthData).map(d => d[currentMetric]);
+  legendSvg.append("text").attr("x", 0).attr("y", 35).text(d3.min(values));
+  legendSvg.append("text").attr("x", legendWidth).attr("y", 35).attr("text-anchor", "end").text(d3.max(values));
+}

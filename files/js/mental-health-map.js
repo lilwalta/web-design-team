@@ -56,7 +56,9 @@ const height = 600;
 
 const svg = d3.select("#usMentalHealthMap")
   .append("svg")
-  .attr("viewBox", `0 0 ${width} ${height}`);
+  .attr("viewBox", `0 0 ${width} ${height}`)
+  .style("width", "100%")
+  .style("height", "auto");
 
 const projection = d3.geoAlbersUsa()
   .scale(1200)

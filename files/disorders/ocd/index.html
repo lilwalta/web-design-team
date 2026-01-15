@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obsessive-Compulsive Disorder | ThriveWell</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="stylesheet" href="../../css/disorder-article.css"/>
+    <link rel="icon" href="../../img/favicon.ico">
+</head>
+<body>
+
+<div id="header"></div>
+<script>
+fetch('../../templates/header.html')
+  .then(res => res.text())
+  .then(html => {
+      document.getElementById('header').innerHTML = html;
+      initMobileMenu();
+  });
+</script>
+
+<section class="article-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Obsessive-Compulsive Disorder (OCD)</h1>
+        <p>Understanding intrusive thoughts, compulsions, and evidence-based treatment.</p>
+    </div>
+</section>
+
+<nav class="breadcrumb">
+    <div class="breadcrumb-container">
+        <a href="../../">Home</a>
+        <span class="separator">›</span>
+        <a href="../../disorders">Disorders</a>
+        <span class="separator">›</span>
+        <a href="../ocd">OCD</a>
+    </div>
+</nav>
+
+<main class="article-content">
+<article>
+
+<h2>What is OCD?</h2>
+<p>Obsessive-Compulsive Disorder involves recurring, unwanted thoughts (obsessions) and repetitive behaviors (compulsions) performed to reduce anxiety.</p>
+
+<h2>Symptoms</h2>
+<ul>
+    <li>Intrusive thoughts or fears</li>
+    <li>Repetitive behaviors or rituals</li>
+    <li>Temporary relief followed by recurring anxiety</li>
+</ul>
+
+<h2>Causes</h2>
+<p>OCD is influenced by genetics, brain function, and environmental factors.</p>
+
+<h2>Treatment Options</h2>
+<ul>
+    <li>Exposure and Response Prevention (ERP)</li>
+    <li>Cognitive Behavioral Therapy</li>
+    <li>Medication such as SSRIs</li>
+</ul>
+
+<h2>Getting Help</h2>
+<p>Early treatment improves outcomes. OCD is manageable with professional support.</p>
+
+<div class="highlight-box">
+    <h3>Support & Resources</h3>
+    <p>International OCD Foundation: <strong>www.iocdf.org</strong></p>
+</div>
+
+<div class="article-links">
+    <a href="../adhd/" class="prev-article"><i class="fa-solid fa-arrow-left"></i> Previous: ADHD</a>
+    <a href="../../disorders" class="next-article">Back to Disorders <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+
+</article>
+</main>
+
+<div id="footer"></div>
+<script>
+fetch('../../templates/footer.html')
+  .then(res => res.text())
+  .then(html => document.getElementById('footer').innerHTML = html);
+</script>
+<script src="../../js/script.js"></script>
+
+</body>
+</html>

@@ -16,7 +16,6 @@
   background: #ffffff;
 }
 
-/* Headings */
 .section-inner h2 {
   font-size: 2.1rem;
   color: #101b05;
@@ -30,7 +29,6 @@
   max-width: 700px;
 }
 
-/* ZIP SEARCH */
 .zip-code-resources {
   background: #ffffff;
   border-radius: 18px;
@@ -85,6 +83,11 @@
 
 .resource-card a {
   text-decoration: none;
+  color: #102a12;
+}
+
+.resource-card a:hover, a:after, a:before {
+  color: #102a12;
 }
 
 .map-section {

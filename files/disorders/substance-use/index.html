@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Substance Use Disorders | ThriveWell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="stylesheet" href="../../css/disorder-article.css"/>
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+</head>
+<body>
+
+<div id="header"></div>
+<script>
+fetch('../../templates/header.html')
+  .then(res => res.text())
+  .then(html => {
+      document.getElementById('header').innerHTML = html;
+      initMobileMenu();
+  });
+</script>
+
+<section class="article-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Substance Use Disorders</h1>
+        <p>Learn about addiction, dependency, and recovery options for substance use disorders.</p>
+    </div>
+</section>
+
+<nav class="breadcrumb">
+    <div class="breadcrumb-container">
+        <a href="../../">Home</a>
+        <span class="separator">›</span>
+        <a href="../../disorders">Disorders</a>
+        <span class="separator">›</span>
+        <a href="../substance-use">Substance Use</a>
+    </div>
+</nav>
+
+<main class="article-content">
+    <article>
+        <h2>What Are Substance Use Disorders?</h2>
+        <p>Substance use disorders (SUDs) occur when the repeated use of alcohol or drugs leads to significant impairment, health issues, or inability to control use despite negative consequences.</p>
+
+        <h2>Common Substances</h2>
+        <ul>
+            <li>Alcohol</li>
+            <li>Opioids (prescription or illicit)</li>
+            <li>Stimulants (cocaine, methamphetamine)</li>
+            <li>Cannabis</li>
+            <li>Prescription medications</li>
+        </ul>
+
+        <h2>Signs and Symptoms</h2>
+        <ul>
+            <li>Cravings and loss of control</li>
+            <li>Neglecting responsibilities</li>
+            <li>Withdrawal symptoms</li>
+            <li>Increased tolerance</li>
+            <li>Continued use despite harm</li>
+        </ul>
+
+        <h2>Treatment and Recovery</h2>
+        <p>Recovery is possible and often involves a combination of:</p>
+        <ul>
+            <li><strong>Detoxification:</strong> Medically supervised withdrawal.</li>
+            <li><strong>Therapy:</strong> CBT, motivational interviewing, and group counseling.</li>
+            <li><strong>Medication-Assisted Treatment:</strong> Such as methadone or buprenorphine.</li>
+            <li><strong>Support Groups:</strong> Peer recovery programs like AA or SMART Recovery.</li>
+        </ul>
+
+        <h2>When to Get Help</h2>
+        <p>If substance use is affecting your health, safety, or relationships, seeking professional help can be life-saving.</p>
+
+        <div class="highlight-box">
+            <h3>Immediate Help</h3>
+            <p>Call the SAMHSA National Helpline at <strong>1-800-662-HELP (4357)</strong> or visit <a href="https://www.samhsa.gov">www.samhsa.gov</a>.</p>
+        </div>
+
+        <div class="article-links">
+            <a href="../schizophrenia/" class="prev-article"><i class="fa-solid fa-arrow-left"></i> Previous: Schizophrenia</a>
+            <a href="../../" class="next-article">Back to Home <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </article>
+</main>
+
+<div id="footer"></div>
+<script>
+fetch('../../templates/footer.html')
+  .then(res => res.text())
+  .then(html => document.getElementById('footer').innerHTML = html);
+</script>
+<script src="../../js/script.js"></script>
+
+</body>
+</html>

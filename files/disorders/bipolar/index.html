@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bipolar Disorder | ThriveWell</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="../../css/style.css"/>
+<link rel="stylesheet" href="../../css/disorder-article.css"/>
+<link rel="icon" href="../../img/favicon.ico">
+</head>
+<body>
+
+<div id="header"></div>
+<script>
+fetch('../../templates/header.html')
+.then(res => res.text())
+.then(html => {
+  document.getElementById('header').innerHTML = html;
+  initMobileMenu();
+});
+</script>
+
+<section class="article-hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Bipolar Disorder</h1>
+    <p>Mood shifts between depression and mania that require long-term care.</p>
+  </div>
+</section>
+
+<nav class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="../../">Home</a>
+    <span class="separator">›</span>
+    <a href="../../disorders">Disorders</a>
+    <span class="separator">›</span>
+    <a href="../bipolar">Bipolar</a>
+  </div>
+</nav>
+
+<main class="article-content">
+<article>
+
+<h2>Overview</h2>
+<p>Bipolar disorder causes intense emotional states known as manic, hypomanic, and depressive episodes.</p>
+
+<h2>Types</h2>
+<ul>
+  <li>Bipolar I</li>
+  <li>Bipolar II</li>
+  <li>Cyclothymic disorder</li>
+</ul>
+
+<h2>Management</h2>
+<ul>
+  <li>Mood-stabilizing medication</li>
+  <li>Psychotherapy</li>
+  <li>Sleep and stress regulation</li>
+</ul>
+
+<div class="highlight-box">
+  <h3>Support</h3>
+  <p>NAMI offers bipolar support groups nationwide.</p>
+</div>
+
+<div class="article-links">
+  <a href="../adhd/" class="prev-article"><i class="fa-solid fa-arrow-left"></i> ADHD</a>
+  <a href="../ocd/" class="next-article">Next: OCD <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+
+</article>
+</main>
+
+<div id="footer"></div>
+<script src="../../js/script.js"></script>
+</body>
+</html>

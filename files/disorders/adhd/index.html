@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADHD | ThriveWell</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="../../css/style.css"/>
+<link rel="stylesheet" href="../../css/disorder-article.css"/>
+<link rel="icon" href="../../img/favicon.ico">
+</head>
+<body>
+
+<div id="header"></div>
+<script>
+fetch('../../templates/header.html')
+.then(res => res.text())
+.then(html => {
+  document.getElementById('header').innerHTML = html;
+  initMobileMenu();
+});
+</script>
+
+<section class="article-hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>ADHD</h1>
+    <p>Understanding attention-deficit/hyperactivity disorder and how it affects daily life.</p>
+  </div>
+</section>
+
+<nav class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="../../">Home</a>
+    <span class="separator">›</span>
+    <a href="../../disorders">Disorders</a>
+    <span class="separator">›</span>
+    <a href="../adhd">ADHD</a>
+  </div>
+</nav>
+
+<main class="article-content">
+<article>
+
+<h2>What is ADHD?</h2>
+<p>Attention-Deficit/Hyperactivity Disorder (ADHD) is a neurodevelopmental condition affecting focus, impulse control, and activity levels. It affects both children and adults.</p>
+
+<h2>Symptoms</h2>
+<ul>
+  <li>Difficulty sustaining attention</li>
+  <li>Impulsivity and poor time management</li>
+  <li>Restlessness or hyperactivity</li>
+  <li>Forgetfulness and disorganization</li>
+</ul>
+
+<h2>Treatment & Support</h2>
+<ul>
+  <li>Behavioral therapy and coaching</li>
+  <li>Medication (stimulant or non-stimulant)</li>
+  <li>Structure, routines, and skill-building</li>
+</ul>
+
+<div class="highlight-box">
+  <h3>Helpful Resource</h3>
+  <p>Visit <a href="https://chadd.org" target="_blank">CHADD.org</a> for ADHD education and support.</p>
+</div>
+
+<div class="article-links">
+  <a href="../anxiety/" class="prev-article"><i class="fa-solid fa-arrow-left"></i> Anxiety</a>
+  <a href="../bipolar/" class="next-article">Next: Bipolar Disorder <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+
+</article>
+</main>
+
+<div id="footer"></div>
+<script>
+fetch('../../templates/footer.html')
+.then(res => res.text())
+.then(html => document.getElementById('footer').innerHTML = html);
+</script>
+
+<script src="../../js/script.js"></script>
+</body>
+</html>

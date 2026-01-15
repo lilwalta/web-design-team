@@ -104,9 +104,8 @@
         .append("path")
         .attr("class", "state")
         .attr("d", path)
-        .attr("fill", d => getColor(d))
         .on("mousemove", (event, d) => {
-          const code = idToCode[d.id];
+const code = idToCode[Number(d.id)];
           const stateName = codeToName[code];
           const data = mentalHealthData[stateName];
           if (!data) return;
@@ -126,10 +125,11 @@
         .on("mouseout", () => {
           tooltip.style("opacity", 0);
         });
+          updateMap();
     });
 
     function getColor(d) {
-      const code = idToCode[d.id];
+const code = idToCode[Number(d.id)];
       const stateName = codeToName[code];
       const data = mentalHealthData[stateName];
       if (!data) return "#1a3327"; // fallback color

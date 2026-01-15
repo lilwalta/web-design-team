@@ -66,7 +66,6 @@
   background: #5d825a;
 }
 
-/* RESOURCE CARDS */
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -82,6 +81,10 @@
 
 .resource-card:hover {
   transform: translateY(-6px);
+}
+
+.resource-card a {
+  text-decoration: none;
 }
 
 .map-section {

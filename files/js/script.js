@@ -82,7 +82,101 @@ const guidedData = {
             text: "Step 4: Get help – Recovery is possible with the right professional support. Seek a trauma-informed therapist, join a peer support group, or reach out to crisis hotlines if you need immediate help.",
             link: "ptsd/"
         }
-    ]
+    ],
+    "Bipolar Disorder": [
+    {
+        text: "Step 1: What it is – Bipolar disorder involves extreme mood changes ranging from manic or hypomanic episodes to depressive episodes. These shifts can affect energy, behavior, and decision-making.",
+        link: "bipolar/"
+    },
+    {
+        text: "Step 2: Symptoms – Symptoms may include periods of high energy, reduced sleep, impulsivity, followed by deep sadness, fatigue, and hopelessness during depressive phases.",
+        link: "bipolar/"
+    },
+    {
+        text: "Step 3: Coping tools – Mood stabilizing medication, therapy, structured routines, and sleep consistency are critical tools for managing bipolar disorder.",
+        link: "bipolar/"
+    },
+    {
+        text: "Step 4: Get help – Working closely with a psychiatrist and therapist can help manage symptoms long-term and reduce relapse risk.",
+        link: "bipolar/"
+    }
+],
+
+"ADHD": [
+    {
+        text: "Step 1: What it is – ADHD affects attention, impulse control, and activity levels. It can impact school, work, and relationships throughout life.",
+        link: "adhd/"
+    },
+    {
+        text: "Step 2: Symptoms – Common signs include difficulty focusing, restlessness, forgetfulness, and trouble organizing tasks or managing time.",
+        link: "adhd/"
+    },
+    {
+        text: "Step 3: Coping tools – Behavioral therapy, structured schedules, medication, and organizational strategies can greatly improve daily functioning.",
+        link: "adhd/"
+    },
+    {
+        text: "Step 4: Get help – Diagnosis and treatment from a healthcare professional can significantly improve quality of life.",
+        link: "adhd/"
+    }
+],
+
+"Obsessive-Compulsive Disorder (OCD)": [
+    {
+        text: "Step 1: What it is – OCD involves intrusive, unwanted thoughts (obsessions) and repetitive behaviors (compulsions) performed to reduce anxiety.",
+        link: "ocd/"
+    },
+    {
+        text: "Step 2: Symptoms – Common symptoms include excessive cleaning, checking, counting, or mental rituals driven by fear or distress.",
+        link: "ocd/"
+    },
+    {
+        text: "Step 3: Coping tools – Exposure and Response Prevention (ERP) therapy is highly effective, along with medication in some cases.",
+        link: "ocd/"
+    },
+    {
+        text: "Step 4: Get help – A mental health professional trained in OCD treatment can help reduce symptoms and improve daily life.",
+        link: "ocd/"
+    }
+],
+
+"Schizophrenia": [
+    {
+        text: "Step 1: What it is – Schizophrenia is a serious mental illness affecting perception, thought processes, and emotional regulation.",
+        link: "schizophrenia/"
+    },
+    {
+        text: "Step 2: Symptoms – Symptoms may include hallucinations, delusions, disorganized thinking, and reduced emotional expression.",
+        link: "schizophrenia/"
+    },
+    {
+        text: "Step 3: Coping tools – Medication, therapy, social support, and structured care plans help manage symptoms long-term.",
+        link: "schizophrenia/"
+    },
+    {
+        text: "Step 4: Get help – Early intervention and consistent treatment significantly improve outcomes and stability.",
+        link: "schizophrenia/"
+    }
+],
+
+"Substance Use Disorders": [
+    {
+        text: "Step 1: What it is – Substance use disorders involve dependency on drugs or alcohol that disrupts mental, physical, and social health.",
+        link: "substance-use/"
+    },
+    {
+        text: "Step 2: Symptoms – Warning signs include cravings, loss of control, withdrawal symptoms, and continued use despite harm.",
+        link: "substance-use/"
+    },
+    {
+        text: "Step 3: Coping tools – Treatment may include therapy, medication-assisted treatment, peer support groups, and lifestyle changes.",
+        link: "substance-use/"
+    },
+    {
+        text: "Step 4: Get help – Recovery is possible. Reach out to treatment centers, counselors, or addiction helplines for support.",
+        link: "substance-use/"
+    }
+]
 };
 
 function initDisorderModal() {

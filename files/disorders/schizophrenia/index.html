@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schizophrenia | ThriveWell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="../../css/style.css"/>
+    <link rel="stylesheet" href="../../css/disorder-article.css"/>
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+</head>
+<body>
+
+<div id="header"></div>
+<script>
+fetch('../../templates/header.html')
+  .then(res => res.text())
+  .then(html => {
+      document.getElementById('header').innerHTML = html;
+      initMobileMenu();
+  });
+</script>
+
+<section class="article-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Schizophrenia</h1>
+        <p>Understanding schizophrenia, its symptoms, causes, and paths to treatment and stability.</p>
+    </div>
+</section>
+
+<nav class="breadcrumb">
+    <div class="breadcrumb-container">
+        <a href="../../">Home</a>
+        <span class="separator">›</span>
+        <a href="../../disorders">Disorders</a>
+        <span class="separator">›</span>
+        <a href="../schizophrenia">Schizophrenia</a>
+    </div>
+</nav>
+
+<main class="article-content">
+    <article>
+        <h2>What is Schizophrenia?</h2>
+        <p>Schizophrenia is a chronic mental health disorder that affects how a person thinks, feels, and perceives reality. It often involves distortions in thinking, perception, emotions, and behavior, making daily functioning challenging without proper treatment.</p>
+
+        <h2>Symptoms and Signs</h2>
+        <ul>
+            <li><strong>Positive Symptoms:</strong> Hallucinations, delusions, and disorganized speech or behavior.</li>
+            <li><strong>Negative Symptoms:</strong> Reduced emotional expression, lack of motivation, and social withdrawal.</li>
+            <li><strong>Cognitive Symptoms:</strong> Difficulty concentrating, impaired memory, and trouble processing information.</li>
+        </ul>
+
+        <h2>Causes and Risk Factors</h2>
+        <p>The exact cause is unknown, but schizophrenia is believed to result from a combination of:</p>
+        <ul>
+            <li>Genetic vulnerability</li>
+            <li>Brain chemistry and structure differences</li>
+            <li>Environmental stressors or trauma</li>
+            <li>Substance use during adolescence</li>
+        </ul>
+
+        <h2>Treatment and Management</h2>
+        <p>With ongoing treatment, many people with schizophrenia can live meaningful, stable lives.</p>
+        <ul>
+            <li><strong>Medication:</strong> Antipsychotic medications help manage symptoms.</li>
+            <li><strong>Therapy:</strong> Cognitive behavioral therapy and supportive counseling improve coping skills.</li>
+            <li><strong>Community Support:</strong> Case management, vocational training, and supported housing.</li>
+        </ul>
+
+        <h2>Seeking Help</h2>
+        <p>Early treatment leads to better outcomes. If symptoms appear, seek evaluation from a mental health professional as soon as possible.</p>
+
+        <div class="highlight-box">
+            <h3>Support Resources</h3>
+            <p>Visit <a href="https://www.nami.org">www.nami.org</a> or call <strong>1-800-950-NAMI</strong> for education and support.</p>
+        </div>
+
+        <div class="article-links">
+            <a href="../ptsd/" class="prev-article"><i class="fa-solid fa-arrow-left"></i> Previous: PTSD</a>
+            <a href="../substance-use/" class="next-article">Next: Substance Use Disorders <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </article>
+</main>
+
+<div id="footer"></div>
+<script>
+fetch('../../templates/footer.html')
+  .then(res => res.text())
+  .then(html => document.getElementById('footer').innerHTML = html);
+</script>
+<script src="../../js/script.js"></script>
+
+</body>
+</html>

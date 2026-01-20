@@ -27,7 +27,7 @@ header {
     background: var(--light-green);
     border-bottom: 1px solid rgba(0,0,0,0.06);
     position: relative;
-    z-index: 20;
+    z-index: 1000;
 }
 
 header .container {

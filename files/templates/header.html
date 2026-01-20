@@ -15,25 +15,6 @@
         <li><a href="../../../../web-design-team/files/resources/">Resources</a></li>
         <li><a href="../../../../web-design-team/files/news/">News</a></li>
       </ul>
-      <!-- SEARCH ICON -->
-<button id="search-toggle" aria-label="Search" class="search-toggle">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
-
-<!-- SLIDE-DOWN SEARCH -->
-<div id="header-search" class="header-search">
-  <div class="search-inner">
-    <input
-      type="text"
-      id="siteSearch"
-      placeholder="Search resources, disorders, articles..."
-      autocomplete="off"
-    />
-    <button id="search-close" aria-label="Close search">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-  </div>
-</div>
     </nav>
 
     <div class="hamburger" aria-label="Open mobile menu" role="button" tabindex="0">
@@ -75,29 +56,4 @@
                 }
             });
         }
-function initHeaderSearch() {
-  const toggle = document.getElementById("search-toggle");
-  const searchPanel = document.getElementById("header-search");
-  const closeBtn = document.getElementById("search-close");
-  const input = document.getElementById("siteSearch");
-
-  if (!toggle || !searchPanel) return;
-
-  toggle.addEventListener("click", () => {
-    searchPanel.classList.add("active");
-    setTimeout(() => input.focus(), 200);
-  });
-
-  closeBtn.addEventListener("click", () => {
-    searchPanel.classList.remove("active");
-    input.value = "";
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      searchPanel.classList.remove("active");
-    }
-  });
-}
-
-document.addEventListener("DOMContentLoaded", initHeaderSearch);</script>
+</script>

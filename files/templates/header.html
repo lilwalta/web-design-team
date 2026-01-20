@@ -28,7 +28,6 @@
     aria-label="Search ThriveWell"
   />
 </div>
-</div>
     <div class="hamburger" aria-label="Open mobile menu" role="button" tabindex="0">
       <span></span>
       <span></span>
@@ -68,30 +67,32 @@
                 }
             });
         }
-document.addEventListener("DOMContentLoaded", () => {
-  const searchToggle = document.querySelector(".search-toggle");
+const searchToggle = document.querySelector(".search-toggle");
   const searchBar = document.querySelector(".header-search");
   const searchInput = document.getElementById("siteSearch");
 
-  if (!searchToggle || !searchBar) return;
+  if (searchToggle && searchBar && searchInput) {
+    searchToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      searchBar.classList.toggle("active");
 
-  searchToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    searchBar.classList.toggle("active");
-    if (searchBar.classList.contains("active")) {
-      searchInput.focus();
-    }
-  });
+      if (searchBar.classList.contains("active")) {
+        searchInput.focus();
+      }
+    });
 
-  document.addEventListener("click", (e) => {
-    if (!searchBar.contains(e.target) && !searchToggle.contains(e.target)) {
-      searchBar.classList.remove("active");
-    }
-  });
+    document.addEventListener("click", (e) => {
+      if (
+        !searchBar.contains(e.target) &&
+        !searchToggle.contains(e.target)
+      ) {
+        searchBar.classList.remove("active");
+      }
+    });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      searchBar.classList.remove("active");
-    }
-  });
-});</script>
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        searchBar.classList.remove("active");
+      }
+    });
+  }</script>

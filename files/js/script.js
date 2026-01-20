@@ -273,3 +273,34 @@ function initMobileMenu() {
     });
 }
 
+function initSearchMenu() {
+    const searchToggle = document.querySelector(".search-toggle");
+  const searchBar = document.querySelector(".header-search");
+  const searchInput = document.getElementById("siteSearch");
+
+  if (searchToggle && searchBar && searchInput) {
+    searchToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      searchBar.classList.toggle("active");
+
+      if (searchBar.classList.contains("active")) {
+        searchInput.focus();
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        !searchBar.contains(e.target) &&
+        !searchToggle.contains(e.target)
+      ) {
+        searchBar.classList.remove("active");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        searchBar.classList.remove("active");
+      }
+    });
+  }
+}

@@ -67,30 +67,25 @@
                 }
             });
         }
- const searchToggle = document.querySelector(".search-toggle");
-  const headerSearch = document.querySelector(".header-search");
-  const searchInput = document.getElementById("siteSearch");
+document.addEventListener("DOMContentLoaded", () => {
+  const searchToggle = document.querySelector(".search-toggle");
+  const searchBar = document.getElementById("headerSearch");
+  const searchClose = document.querySelector(".search-close");
 
-  if (searchToggle && headerSearch) {
-    searchToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      headerSearch.classList.toggle("active");
-      if (headerSearch.classList.contains("active")) {
-        setTimeout(() => searchInput.focus(), 150);
-      }
-    });
+  if (!searchToggle || !searchBar) return;
 
-    document.addEventListener("click", () => {
-      headerSearch.classList.remove("active");
-    });
+  searchToggle.addEventListener("click", () => {
+    searchBar.classList.add("active");
+    document.getElementById("siteSearch").focus();
+  });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        headerSearch.classList.remove("active");
-      }
-    });
+  searchClose.addEventListener("click", () => {
+    searchBar.classList.remove("active");
+  });
 
-    headerSearch.addEventListener("click", (e) => {
-      e.stopPropagation();
-    });
-  }</script>
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      searchBar.classList.remove("active");
+    }
+  });
+});</script>

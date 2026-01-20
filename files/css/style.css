@@ -331,45 +331,39 @@ header .container {
 .search-toggle {
   background: none;
   border: none;
-  cursor: pointer;
   font-size: 1.1rem;
+  cursor: pointer;
   color: #234f32;
-  margin-left: 0.75rem;
-  transition: color 0.2s ease;
 }
-
 .search-toggle:hover {
   color: #378056;
 }
 
-/* Hidden search container */
+
 .header-search {
   position: absolute;
-  top: 100%;
-  right: 2rem;
-  width: 0;
+  right: 4rem;
+  top: 50%;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: right;
+  width: 260px;
   opacity: 0;
-  overflow: hidden;
-  transition: all 0.35s ease;
-  z-index: 50;
+  pointer-events: none;
+  transition: all 0.25s ease;
 }
 
-/* Active state */
 .header-search.active {
-  width: 320px;
+  transform: translateY(-50%) scaleX(1);
   opacity: 1;
+  pointer-events: auto;
 }
 
-/* Search input */
 .header-search input {
   width: 100%;
-  padding: 0.9rem 1.1rem;
-  border-radius: 14px;
-  border: 1px solid #d5e6d5;
-  background: #ffffff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #cfe3cf;
   font-size: 0.95rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  outline: none;
 }
 
 /* Mobile */

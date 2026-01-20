@@ -384,10 +384,11 @@ header .container {
   outline: none;
 }
 
-/* Mobile */
 @media (max-width: 768px) {
-  .header-search.active {
-    width: calc(100vw - 3rem);
-    right: 1.5rem;
+  .header-search {
+    left: auto;
+    right: 0;
+    transform-origin: right;
+    width: calc(100vw - 6rem);
   }
 }

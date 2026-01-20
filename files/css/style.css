@@ -392,3 +392,49 @@ header .container {
     width: calc(100vw - 6rem);
   }
 }
+
+.search-results {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  max-height: 320px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-5px);
+  transition: 0.25s ease;
+  z-index: 1000;
+}
+
+.search-results.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.search-result {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: #1f2937;
+}
+
+.search-result:hover {
+  background: #f0f7f3;
+}
+
+.result-type {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.no-search-results {
+  padding: 16px;
+  text-align: center;
+  color: #777;
+}

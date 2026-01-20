@@ -28,6 +28,7 @@
     aria-label="Search ThriveWell"
   />
 </div>
+</div>
     <div class="hamburger" aria-label="Open mobile menu" role="button" tabindex="0">
       <span></span>
       <span></span>
@@ -69,18 +70,23 @@
         }
 document.addEventListener("DOMContentLoaded", () => {
   const searchToggle = document.querySelector(".search-toggle");
-  const searchBar = document.getElementById("headerSearch");
-  const searchClose = document.querySelector(".search-close");
+  const searchBar = document.querySelector(".header-search");
+  const searchInput = document.getElementById("siteSearch");
 
   if (!searchToggle || !searchBar) return;
 
-  searchToggle.addEventListener("click", () => {
-    searchBar.classList.add("active");
-    document.getElementById("siteSearch").focus();
+  searchToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    searchBar.classList.toggle("active");
+    if (searchBar.classList.contains("active")) {
+      searchInput.focus();
+    }
   });
 
-  searchClose.addEventListener("click", () => {
-    searchBar.classList.remove("active");
+  document.addEventListener("click", (e) => {
+    if (!searchBar.contains(e.target) && !searchToggle.contains(e.target)) {
+      searchBar.classList.remove("active");
+    }
   });
 
   document.addEventListener("keydown", (e) => {

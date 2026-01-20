@@ -303,4 +303,39 @@ function initSearchMenu() {
       }
     });
   }
+    const searchInput = document.getElementById("siteSearch");
+const resultsBox = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase().trim();
+  resultsBox.innerHTML = "";
+
+  if (!query) {
+    resultsBox.classList.remove("show");
+    return;
+  }
+
+  const matches = SEARCH_INDEX.filter(item =>
+    item.title.toLowerCase().includes(query) ||
+    item.keywords.some(k => k.includes(query))
+  );
+
+  if (matches.length === 0) {
+    resultsBox.innerHTML = `<div class="no-search-results">No results found</div>`;
+  } else {
+    matches.forEach(item => {
+      const result = document.createElement("a");
+      result.href = item.url;
+      result.className = "search-result";
+      result.innerHTML = `
+        <span class="result-title">${item.title}</span>
+        <span class="result-type">${item.type}</span>
+      `;
+      resultsBox.appendChild(result);
+    });
+  }
+
+  resultsBox.classList.add("show");
+});
 }
+

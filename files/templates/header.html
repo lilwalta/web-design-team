@@ -74,4 +74,30 @@
                     document.body.style.overflow = "";
                 }
             });
-        }</script>
+        }
+function initHeaderSearch() {
+  const toggle = document.getElementById("search-toggle");
+  const searchPanel = document.getElementById("header-search");
+  const closeBtn = document.getElementById("search-close");
+  const input = document.getElementById("siteSearch");
+
+  if (!toggle || !searchPanel) return;
+
+  toggle.addEventListener("click", () => {
+    searchPanel.classList.add("active");
+    setTimeout(() => input.focus(), 200);
+  });
+
+  closeBtn.addEventListener("click", () => {
+    searchPanel.classList.remove("active");
+    input.value = "";
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      searchPanel.classList.remove("active");
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initHeaderSearch);</script>

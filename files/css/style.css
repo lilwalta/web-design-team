@@ -360,6 +360,7 @@ header .container {
   background: #f6faf7; /* same tone as header */
   padding: 0.35rem;
   border-radius: 16px; /* more rounded */
+      border: 1px solid #cfe3cf;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 
   opacity: 0;
@@ -378,7 +379,6 @@ header .container {
   width: 100%;
   padding: 0.65rem 0.9rem;
   border-radius: 14px;
-  border: 1px solid #cfe3cf;
   font-size: 0.95rem;
   background: transparent;
   outline: none;

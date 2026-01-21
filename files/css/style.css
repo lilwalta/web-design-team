@@ -411,7 +411,7 @@ header .container {
 .search-results.show {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateY(-220px);
 }
 
 .search-result {
@@ -438,5 +438,5 @@ header .container {
 }
 .header-search.active ~ .search-toggle,
 .search-wrapper:has(.header-search.active) .search-toggle {
-  transform: translateX(-260px);
+  transform: translateX(-220px);
 }

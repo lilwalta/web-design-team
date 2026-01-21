@@ -329,9 +329,10 @@ header .container {
 }
 
 .search-wrapper {
-  position: relative;
   display: flex;
   align-items: center;
+  position: relative;
+  gap: 0.5rem;
 }
 
 /* Search icon stays normal */
@@ -348,21 +349,18 @@ header .container {
   color: #378056;
 }
 
-/* Search container */
 .header-search {
   position: absolute;
-  left: calc(100% + 0.5rem); /* right next to icon */
+  left: calc(100% + 0.5rem);
   top: 50%;
   transform: translateY(-50%) scaleX(0);
-  transform-origin: left; /* 🔥 key change */
+  transform-origin: left;
   width: 260px;
-
-  background: #f6faf7; /* same tone as header */
+  background: #f6faf7;
   padding: 0.35rem;
-  border-radius: 16px; /* more rounded */
-      border: 1px solid #cfe3cf;
+  border-radius: 16px;
+  border: 1px solid #cfe3cf;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-
   opacity: 0;
   pointer-events: none;
   transition: transform 0.25s ease, opacity 0.2s ease;
@@ -437,4 +435,8 @@ header .container {
   padding: 16px;
   text-align: center;
   color: #777;
+}
+.header-search.active ~ .search-toggle,
+.search-wrapper:has(.header-search.active) .search-toggle {
+  transform: translateX(-260px);
 }

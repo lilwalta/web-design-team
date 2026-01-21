@@ -367,12 +367,11 @@ header .container {
 }
 
 .header-search.active {
-  transform: translateY(-50%) scaleX(1);
+  transform: translateY(-220px);
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Input styling */
 .header-search input {
   width: 100%;
   padding: 0.65rem 0.9rem;
@@ -411,7 +410,7 @@ header .container {
 .search-results.show {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(-220px);
+  transform: translateY(0);
 }
 
 .search-result {

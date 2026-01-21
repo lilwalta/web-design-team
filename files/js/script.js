@@ -274,67 +274,71 @@ function initMobileMenu() {
 }
 
 function initSearchMenu() {
-    const searchToggle = document.querySelector(".search-toggle");
+  const searchToggle = document.querySelector(".search-toggle");
   const searchBar = document.querySelector(".header-search");
   const searchInput = document.getElementById("siteSearch");
+  const resultsBox = document.getElementById("searchResults");
 
-  if (searchToggle && searchBar && searchInput) {
-    searchToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      searchBar.classList.toggle("active");
-
-      if (searchBar.classList.contains("active")) {
-        searchInput.focus();
-      }
-    });
-
-    document.addEventListener("click", (e) => {
-      if (
-        !searchBar.contains(e.target) &&
-        !searchToggle.contains(e.target)
-      ) {
-        searchBar.classList.remove("active");
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        searchBar.classList.remove("active");
-      }
-    });
-  }
-const resultsBox = document.getElementById("searchResults");
-
-searchInput.addEventListener("input", () => {
-  const query = searchInput.value.toLowerCase().trim();
-  resultsBox.innerHTML = "";
-
-  if (!query) {
-    resultsBox.classList.remove("show");
+  if (!searchToggle || !searchBar || !searchInput || !resultsBox || typeof SEARCH_INDEX === "undefined") {
     return;
   }
 
-  const matches = SEARCH_INDEX.filter(item =>
-    item.title.toLowerCase().includes(query) ||
-    item.keywords.some(k => k.includes(query))
-  );
+  // Toggle open
+  searchToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    searchBar.classList.toggle("active");
 
-  if (matches.length === 0) {
-    resultsBox.innerHTML = `<div class="no-search-results">No results found</div>`;
-  } else {
-    matches.forEach(item => {
-      const result = document.createElement("a");
-      result.href = item.url;
-      result.className = "search-result";
-      result.innerHTML = `
-        <span class="result-title">${item.title}</span>
-        <span class="result-type">${item.type}</span>
-      `;
-      resultsBox.appendChild(result);
-    });
-  }
+    if (searchBar.classList.contains("active")) {
+      searchInput.focus();
+    }
+  });
 
-  resultsBox.classList.add("show");
-});
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!searchBar.contains(e.target) && !searchToggle.contains(e.target)) {
+      searchBar.classList.remove("active");
+      resultsBox.classList.remove("show");
+    }
+  });
+
+  // Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      searchBar.classList.remove("active");
+      resultsBox.classList.remove("show");
+    }
+  });
+
+  // Live search
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase().trim();
+    resultsBox.innerHTML = "";
+
+    if (!query) {
+      resultsBox.classList.remove("show");
+      return;
+    }
+
+    const matches = SEARCH_INDEX.filter(item =>
+      item.title.toLowerCase().includes(query) ||
+      item.keywords.some(k => k.includes(query))
+    );
+
+    if (matches.length === 0) {
+      resultsBox.innerHTML = `<div class="no-search-results">No results found</div>`;
+    } else {
+      matches.slice(0, 6).forEach(item => {
+        const result = document.createElement("a");
+        result.href = item.url;
+        result.className = "search-result";
+        result.innerHTML = `
+          <span class="result-title">${item.title}</span>
+          <span class="result-type">${item.type}</span>
+        `;
+        resultsBox.appendChild(result);
+      });
+    }
+
+    resultsBox.classList.add("show");
+  });
 }
-

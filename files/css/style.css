@@ -367,7 +367,7 @@ header .container {
 }
 
 .header-search.active {
-  transform: translateY(-220px);
+  transform: translateY(-50%) scaleX(1);
   opacity: 1;
   pointer-events: auto;
 }

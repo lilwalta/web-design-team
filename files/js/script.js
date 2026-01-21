@@ -303,7 +303,6 @@ function initSearchMenu() {
       }
     });
   }
-    const searchInput = document.getElementById("siteSearch");
 const resultsBox = document.getElementById("searchResults");
 
 searchInput.addEventListener("input", () => {

@@ -272,3 +272,71 @@ function initMobileMenu() {
         }
     });
 }
+const quizQuestions = [
+  "Over the last 2 weeks, how often have you felt little interest or pleasure in doing things?",
+  "How often have you felt nervous, anxious, or on edge?",
+  "How often have you felt overwhelmed or unable to cope with daily responsibilities?",
+  "How often have you had trouble sleeping or felt constantly tired?",
+  "How often have you felt disconnected or isolated from others?"
+];
+
+let quizIndex = 0;
+let quizScore = 0;
+
+const questionEl = document.getElementById("quizQuestion");
+const options = document.querySelectorAll(".quiz-option");
+const progressBar = document.getElementById("quizProgressBar");
+const resultBox = document.getElementById("quizResult");
+const summaryEl = document.getElementById("quizSummary");
+
+function initQuiz() {
+  quizIndex = 0;
+  quizScore = 0;
+  resultBox.classList.add("hidden");
+  questionEl.style.display = "block";
+  document.querySelector(".quiz-options").style.display = "grid";
+  loadQuestion();
+}
+
+function loadQuestion() {
+  questionEl.textContent = quizQuestions[quizIndex];
+  progressBar.style.width = `${(quizIndex / quizQuestions.length) * 100}%`;
+}
+
+options.forEach(btn => {
+  btn.addEventListener("click", () => {
+    quizScore += Number(btn.dataset.value);
+    quizIndex++;
+
+    if (quizIndex < quizQuestions.length) {
+      loadQuestion();
+    } else {
+      showResults();
+    }
+  });
+});
+
+function showResults() {
+  progressBar.style.width = "100%";
+  questionEl.style.display = "none";
+  document.querySelector(".quiz-options").style.display = "none";
+  resultBox.classList.remove("hidden");
+
+  let message = "";
+
+  if (quizScore <= 5) {
+    message = "Your responses suggest mild stress levels. Exploring wellness tools and self-care resources may be helpful.";
+  } else if (quizScore <= 9) {
+    message = "You may be experiencing moderate emotional distress. Consider exploring professional or community support resources.";
+  } else {
+    message = "Your responses suggest higher levels of distress. Reaching out to a mental health professional or trusted support could be beneficial.";
+  }
+
+  summaryEl.textContent = message;
+}
+
+function restartQuiz() {
+  initQuiz();
+}
+
+document.addEventListener("DOMContentLoaded", initQuiz);

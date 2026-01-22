@@ -13,17 +13,19 @@
   <link rel="icon" href="../img/favicon.ico">
 </head>
 <body>
-
+ <script src="../js/script.js">
+  </script>
 <div id="header"></div>
 <script>
 fetch('../templates/header.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('header').innerHTML = html;
-    if (typeof initMobileMenu === "function") initMobileMenu();
+    if (typeof initMobileMenu === "function")
+      initMobileMenu();
+        initQuiz();
   });
 </script>
-
 <main>
 
 <section class="section-soft section-wrap">
@@ -137,8 +139,5 @@ fetch('../templates/footer.html')
     <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson@3"></script>
 <script src="../js/mental-health-map.js"></script>
-  <script src="../js/script.js">
-    initQuiz();
-  </script>
 </body>
 </html>

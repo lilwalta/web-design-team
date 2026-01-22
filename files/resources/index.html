@@ -42,6 +42,46 @@ fetch('../templates/header.html')
     </div>
   </div>
 </section>
+<section class="section-plain section-wrap">
+  <div class="section-inner quiz-container">
+
+    <h2>Quick Mental Wellness Check</h2>
+    <p>
+      This short quiz helps you reflect on how you’ve been feeling lately.
+      It’s not a diagnosis — just a way to guide you toward helpful resources.
+    </p>
+
+    <div class="quiz-card">
+      <div class="quiz-progress">
+        <div id="quizProgressBar"></div>
+      </div>
+      <div id="quizQuestion" class="quiz-question">
+        Question text
+      </div>
+      <div class="quiz-options">
+        <button class="quiz-option" data-value="0">Not at all</button>
+        <button class="quiz-option" data-value="1">Several days</button>
+        <button class="quiz-option" data-value="2">More than half the days</button>
+        <button class="quiz-option" data-value="3">Nearly every day</button>
+      </div>
+      <div id="quizResult" class="quiz-result hidden">
+        <h3>Your Results</h3>
+        <p id="quizSummary"></p>
+
+        <div class="quiz-actions">
+          <a href="/resources/" class="btn primary">View Resources</a>
+          <button class="btn secondary" onclick="restartQuiz()">Retake Quiz</button>
+        </div>
+
+        <p class="quiz-disclaimer">
+          If you’re in crisis or feel unsafe, please contact <strong>988</strong>
+          or local emergency services immediately.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <section class="section-plain section-wrap">
   <div class="section-inner">

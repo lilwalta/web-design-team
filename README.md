@@ -3,16 +3,11 @@
 
 https://www.realtimecolors.com/?colors=101b05-f5fcf0-378056-5d825a-37807A&fonts=Inter-Inter <br>
 https://thrivewell.org/# has neat accessibility features<br> 
-Another thing: BPA State is March 2-4 so I assume this has to be submitted by February 22-23?
+Another thing: BPA State is March 2-4 and this needs to be done before then.
+FINAL Adjustments:
 
-### I'll let you know some things here:  ### <br>
-*  Work on base functionality for regionals, main pages, chat rooms, aesthetics, etc. <br>
-* Then for state and nationals we work on the complex things like advanced backend, hosting, complex animations, 3d elements, working chat rooms with clean look. <br>
-* Finally, our color pallete may need to change but since I added all colors as root in CSS that is an easy fix. <br>
-
-FINAL LAYOUT:
-Take action will be a things you can do, charities and finally goals/motives of the website<br><br>
-A resources page will have some contact info using a database to find your area to find local helplines then the national helplines will be on there. The data will show graphs on things like mental health in certain areas then what are money will go to/has gone too. this will be added onto with animations, interactive charts, and geolocation<br><br>
+Resource page needs a graph to show where/what the money goes to and the zip resource thing needs to be done
+The search bar needs to have actualy backend function
 The forum will be a signup/login page then the forum (will probably be hard to setup this will be a more than one person thing during a meeting)<br>
 
 
@@ -24,8 +19,3 @@ The forum will be a signup/login page then the forum (will probably be hard to s
 
 ### Sources ###
 If you put any new images or something just paste a link to it here so we can cite it:
-https://unsplash.com/photos/a-man-sitting-at-a-table-with-a-pool-cue-in-his-hand-u6fXXvrvb0k <br>
-https://unsplash.com/photos/woman-in-brown-scarf-and-brown-scarf-WzGC8xSyqfg <br>
-https://unsplash.com/photos/man-in-black-and-white-button-up-shirt-smiling-3GUn7wUs52I <br>
-https://imagecompressor.com/ <br>
-https://images.unsplash.com/photo-1527236438218-d82077ae1f85?auto=format&fit=crop&w=800&q=80 <br>

@@ -2,12 +2,12 @@
 ### The Official Website For SHS BPA Website Design Team 435 <br>
 
 https://www.realtimecolors.com/?colors=101b05-f5fcf0-378056-5d825a-37807A&fonts=Inter-Inter <br>
-https://thrivewell.org/# has neat accessibility features<br> 
 Another thing: BPA State is March 2-4 and this needs to be done before then.
 FINAL Adjustments:
 
-Resource page needs a graph to show where/what the money goes to and the zip resource thing needs to be done
-The search bar needs to have actualy backend function
+Resource page needs a graph to show where/what the money goes to and the zip resource thing needs to be done<br>
+Accessibility features <br>
+The search bar needs to have actualy backend function<br>
 The forum will be a signup/login page then the forum (will probably be hard to setup this will be a more than one person thing during a meeting)<br>
 
 

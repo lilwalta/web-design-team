@@ -457,14 +457,39 @@ header .container {
     border: 1px solid #cdd9cc;
   }
 
-  .search-results {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    max-height: 60vh;
-    overflow-y: auto;
-    border-radius: 0;
-  }
+}
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  z-index: 2000;
+  max-height: 300px;
+  overflow-y: auto;
+}
 
+.search-result-item {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #101b05;
+  border-bottom: 1px solid #eee;
+}
+
+.search-result-item:hover {
+  background: #f4f7f4;
+}
+
+.search-result-item span {
+  display: block;
+  font-size: 0.8rem;
+  color: #5d825a;
+}
+
+.search-no-result {
+  padding: 12px 16px;
+  color: #888;
 }

@@ -33,33 +33,38 @@ function initSearch() {
   resultsBox.classList.add("search-results");
   searchBar.appendChild(resultsBox);
 
-  searchInput.addEventListener("input", function () {
-  console.log("Typing:", this.value);
-    const query = this.value.toLowerCase().trim();
-    resultsBox.innerHTML = "";
+searchInput.addEventListener("input", function () {
 
-    if (query.length < 2) return;
+  const query = this.value.toLowerCase().trim();
+  resultsBox.innerHTML = "";
 
-    const matches = SEARCH_INDEX.filter(item =>
-      item.title.toLowerCase().includes(query)
-    );
+  if (query.length < 2) return;
 
-    if (matches.length === 0) {
-      resultsBox.innerHTML =
-        `<div class="search-no-result">No results found</div>`;
-      return;
-    }
+  const matches = SEARCH_INDEX.filter(item =>
+    item.title.toLowerCase().includes(query) ||
+    item.type.toLowerCase().includes(query) ||
+    item.url.toLowerCase().includes(query)
+  );
 
-    matches.forEach(match => {
-      const resultItem = document.createElement("a");
-      resultItem.href = match.url;
-      resultItem.classList.add("search-result-item");
-      resultItem.innerHTML = `
-        <strong>${match.title}</strong>
-        <span>${match.type}</span>
-      `;
-      resultsBox.appendChild(resultItem);
-    });
+  console.log("Matches:", matches);
+
+  if (matches.length === 0) {
+    resultsBox.innerHTML =
+      `<div class="search-no-result">No results found</div>`;
+    return;
+  }
+
+  matches.forEach(match => {
+    const resultItem = document.createElement("a");
+    resultItem.href = match.url;
+    resultItem.classList.add("search-result-item");
+    resultItem.innerHTML = `
+      <strong>${match.title}</strong>
+      <span>${match.type}</span>
+    `;
+    resultsBox.appendChild(resultItem);
   });
+
+});
 
 }

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
+    <script src="js/search-data.js"></script>
+<script src="js/search.js"></script>
 <body>
 <div id="header"></div>
 <script>
@@ -138,8 +140,6 @@ fetch('templates/header.html')
         .then(res => res.text())
         .then(html => document.getElementById('footer').innerHTML = html);
 </script>
-<script src="js/search-data.js"></script>
-<script src="js/search.js"></script>
 <script src="js/script.js"></script>
 <script src="js/email.js"></script>
 </body>

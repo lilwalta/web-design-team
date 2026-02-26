@@ -432,17 +432,17 @@ header .container {
   }
 
   .header-search {
-    position: absolute;
+    position: relative;
     top: 100%;
     left: 0;
     width: 100%;
     background: #e8f1e8;
-    overflow: hidden;
-    max-height: 0;
+    overflow: visible;
+    max-height: 300px;
     transition: max-height 0.3s ease, padding 0.3s ease;
     padding: 0 1rem;
     border-radius: 0;
-    z-index: 999;
+    z-index: 9999;
   }
 
   .header-search.active {

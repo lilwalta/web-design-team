@@ -34,7 +34,7 @@ function initSearch() {
   searchBar.appendChild(resultsBox);
 
   searchInput.addEventListener("input", function () {
-
+  console.log("Typing:", this.value);
     const query = this.value.toLowerCase().trim();
     resultsBox.innerHTML = "";
 

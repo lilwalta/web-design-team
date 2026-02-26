@@ -28,9 +28,6 @@ function initSearch() {
     }
   });
 
-  /* =====================
-     LIVE SEARCH RESULTS
-  ===================== */
 
   const resultsBox = document.createElement("div");
   resultsBox.classList.add("search-results");
@@ -66,5 +63,3 @@ function initSearch() {
   });
 
 }
-
-document.addEventListener("DOMContentLoaded", initSearch);

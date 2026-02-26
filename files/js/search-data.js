@@ -1,4 +1,4 @@
-const SEARCH_INDEX = [
+window.SEARCH_INDEX = [
   {
     title: "Depression",
     url: "/disorders/depression/",

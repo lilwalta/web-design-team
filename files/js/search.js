@@ -63,6 +63,11 @@ searchInput.addEventListener("input", function () {
       <span>${match.type}</span>
     `;
     resultsBox.appendChild(resultItem);
+    if (matches.length > 0) {
+  resultsBox.style.display = "block"; // make visible
+} else {
+  resultsBox.style.display = "none"; // hide when empty
+}
   });
 
 });

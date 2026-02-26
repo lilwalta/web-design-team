@@ -1,13 +1,42 @@
 function initSearch() {
 
-  const input = document.getElementById("siteSearch");
-  if (!input) return;
+  const searchToggle = document.querySelector(".search-toggle");
+  const searchBar = document.querySelector(".header-search");
+  const searchInput = document.getElementById("siteSearch");
+
+  if (!searchToggle || !searchBar || !searchInput) return;
+
+  searchToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    searchBar.classList.toggle("active");
+
+    if (searchBar.classList.contains("active")) {
+      searchInput.focus();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!searchBar.contains(e.target) &&
+        !searchToggle.contains(e.target)) {
+      searchBar.classList.remove("active");
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      searchBar.classList.remove("active");
+    }
+  });
+
+  /* =====================
+     LIVE SEARCH RESULTS
+  ===================== */
 
   const resultsBox = document.createElement("div");
   resultsBox.classList.add("search-results");
-  input.parentElement.appendChild(resultsBox);
+  searchBar.appendChild(resultsBox);
 
-  input.addEventListener("input", function () {
+  searchInput.addEventListener("input", function () {
 
     const query = this.value.toLowerCase().trim();
     resultsBox.innerHTML = "";
@@ -19,7 +48,8 @@ function initSearch() {
     );
 
     if (matches.length === 0) {
-      resultsBox.innerHTML = `<div class="search-no-result">No results found</div>`;
+      resultsBox.innerHTML =
+        `<div class="search-no-result">No results found</div>`;
       return;
     }
 
@@ -33,14 +63,8 @@ function initSearch() {
       `;
       resultsBox.appendChild(resultItem);
     });
-
   });
 
-  document.addEventListener("click", function (e) {
-    if (!input.contains(e.target)) {
-      resultsBox.innerHTML = "";
-    }
-  });
 }
 
 document.addEventListener("DOMContentLoaded", initSearch);

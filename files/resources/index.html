@@ -23,7 +23,8 @@ fetch('../templates/header.html')
     document.getElementById('header').innerHTML = html;
     if (typeof initMobileMenu === "function")
       initMobileMenu();
-        initQuiz();
+      initQuiz();
+      initSearch();
   });
 </script>
 <main>
@@ -140,5 +141,9 @@ fetch('../templates/footer.html')
 <script src="https://cdn.jsdelivr.net/npm/topojson@3"></script>
 <script src="../js/mental-health-map.js"></script>
   <script src="../js/quiz.js"></script>
+<script src="../js/search-data.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/email.js"></script>
 </body>
 </html>

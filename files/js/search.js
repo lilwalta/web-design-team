@@ -57,7 +57,7 @@ searchInput.addEventListener("input", function () {
   matches.forEach(match => {
     const resultItem = document.createElement("a");
     resultItem.href = match.url;
-    resultItem.classList.add("search-result");
+    resultItem.classList.add("search-result-item");
     resultItem.innerHTML = `
       <strong>${match.title}</strong>
       <span>${match.type}</span>

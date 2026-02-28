@@ -18,6 +18,7 @@ fetch('../templates/header.html')
   .then(html => {
       document.getElementById('header').innerHTML = html;
       initMobileMenu();
+      initSearch();
   });
 </script>
 <section class="news-hero">
